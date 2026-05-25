@@ -1,2 +1,187 @@
-/*amigos aqui van los estilos generales de la pagina*/
-/*ejemplo topbar, side bar y footer, accesibilidad*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+:root{
+    --principal:#394CAA;
+    --secundario:#010440;
+    --fondo:#B4B5B9;
+    --contenedor:#CACACC;
+    --texto:#0D0D0D;
+    --texto2:#404040;
+    --rojo:#FF0000;
+    --amarillo:#FFD800;
+    --verde:#00B333;
+    --white:#FFFFFF;
+}
+
+/* ESTRUCTURA GENERAL */
+
+html,
+body{
+    height:100%;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:var(--fondo);
+}
+
+/* HEADER */
+
+.topbar{
+    height:90px;
+    background:var(--principal);
+    color:var(--white);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 25px;
+
+    border-bottom:3px solid var(--secundario);
+}
+
+.logo h2{
+    font-size:22px;
+}
+
+.user-info{
+    display:flex;
+    align-items:center;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.profile img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* CONTENEDOR */
+
+.container{
+    flex:1;
+    display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:260px;
+    background:var(--principal);
+    color:var(--white);
+
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sidebar li:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.sidebar .active{
+    background:rgba(255,255,255,.2);
+}
+
+.logout{
+    border:none;
+    background:none;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* CONTENIDO */
+
+main{
+    flex:1;
+    background:var(--contenedor);
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: var(--principal);
+    color: var(--white);
+    margin-top: 40px;
+    border-top: 5px solid var(--secundario);
+}
+
+
+.secFooterPrincipal{
+    display: flex;
+    justify-content: justify;
+    align-items: center;
+    border-bottom: 2px solid var(--secundario);
+    padding: 5px;
+}
+
+.secFooterSecundario{
+ font-size: smaller;
+}
+
+.logoSenaFooter{
+    border-right: 5px solid var(--secundario);
+    height: 70px;
+    width: 70px;
+    padding: 20px;
+    
+} 
+.logoSmaqFooter{
+    height: 70px;
+    width: 75px;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    main {
+        padding: 20px;
+    }
+    footer {
+        padding: 10px;
+    }
+}
