@@ -1,0 +1,659 @@
+/* ═══════════════════════════════════════════
+   VARIABLES GLOBALES
+═══════════════════════════════════════════ */
+:root {
+  --principal:  #394CAA;
+  --secundario: #010440;
+  --fondo:      #B4B5B9;
+  --contenedor: #CACACC;
+  --texto:      #0D0D0D;
+  --texto2:     #404040;
+  --rojo:       #FF0000;
+  --amarillo:   #FFD800;
+  --verde:      #00B333;
+  --blanco:     #ffffff;
+}
+
+/* ═══════════════════════════════════════════
+   RESET Y BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════
+   CARRUSEL DE FONDO
+═══════════════════════════════════════════ */
+.bg-carrusel {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.slide.activo { opacity: 1; }
+
+.slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════
+   MODAL Y OVERLAY
+═══════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal {
+  background: var(--blanco);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  padding: 36px 40px 32px;
+  box-shadow: 0 24px 80px rgba(1,4,64,0.45), 0 4px 16px rgba(0,0,0,0.2);
+  position: relative;
+  margin: auto;
+  animation: fadeUp 0.4s cubic-bezier(0.25,0.46,0.45,0.94) both;
+}
+
+/* Variante más estrecha para inicio de sesión */
+.modal--estrecho { max-width: 460px; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(28px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════
+   LOGOS
+═══════════════════════════════════════════ */
+.modal-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.sep-logo {
+  width: 1.5px; height: 38px;
+  background: var(--contenedor);
+}
+.logo-sena {
+  height: 55px;
+  filter: invert(1) brightness(0.3) sepia(1) hue-rotate(195deg) saturate(3);
+}
+.logo-minova { height: 75px; }
+
+.logo-sena-box  { width: 70px;  display: flex; justify-content: center; }
+.logo-minova-box { width: 120px; display: flex; justify-content: center; }
+
+/* ═══════════════════════════════════════════
+   NAVEGACIÓN / TABS
+═══════════════════════════════════════════ */
+.tabs {
+  border-bottom: 2px solid var(--contenedor);
+  margin-bottom: 24px;
+}
+.tab-titulo {
+  display: inline-block;
+  padding: 10px 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--principal);
+  border-bottom: 2px solid var(--principal);
+  margin-bottom: -2px;
+}
+
+/* ═══════════════════════════════════════════
+   PASOS  (solo recuperar contraseña)
+═══════════════════════════════════════════ */
+.pasos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.paso-circulo {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--contenedor);
+  background: var(--blanco);
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.paso.activo .paso-circulo {
+  border-color: var(--principal);
+  background: var(--principal);
+  color: white;
+}
+.paso.completado .paso-circulo {
+  border-color: var(--verde);
+  background: var(--verde);
+  color: white;
+}
+
+.paso-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+.paso.activo .paso-label    { color: var(--principal); }
+.paso.completado .paso-label { color: var(--verde); }
+
+.paso-linea {
+  flex: 1;
+  height: 2px;
+  background: var(--contenedor);
+  margin: 0 6px;
+  margin-bottom: 18px;
+  transition: background 0.3s ease;
+  min-width: 28px;
+  max-width: 50px;
+}
+.paso-linea.completada { background: var(--verde); }
+
+/* ═══════════════════════════════════════════
+   ALERTAS
+═══════════════════════════════════════════ */
+.alert {
+  display: none;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  align-items: flex-start;
+  gap: 8px;
+}
+.alert-error {
+  background: #fff5f5;
+  color: var(--rojo);
+  border: 1px solid #fcc;
+  border-left: 3px solid var(--rojo);
+}
+.alert-success {
+  background: #f0fff4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  border-left: 3px solid var(--verde);
+}
+.alert-info {
+  background: #eff6ff;
+  color: var(--principal);
+  border: 1px solid #bfdbfe;
+  border-left: 3px solid var(--principal);
+}
+.alert.visible { display: flex; }
+
+/* Uso inline sin clase .visible (inicio sesión) */
+.alert-error[style*="block"] { display: block; }
+
+/* ═══════════════════════════════════════════
+   CAMPOS Y ETIQUETAS
+═══════════════════════════════════════════ */
+.campo { margin-bottom: 12px; }
+
+.campo label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--texto2);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.campo label .req { color: var(--rojo); }
+
+.aviso-obligatorio {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════
+   INPUT GROUP
+═══════════════════════════════════════════ */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f5f6;
+  border: 1.5px solid var(--contenedor);
+  border-radius: 50px;
+  padding: 12px 18px;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+}
+.input-group:focus-within {
+  border-color: var(--principal);
+  background: var(--blanco);
+  box-shadow: 0 0 0 3px rgba(57,76,170,0.12);
+}
+.input-group.valido   { border-color: var(--verde); background: var(--blanco); }
+.input-group.invalido { border-color: var(--rojo);  box-shadow: 0 0 0 3px rgba(255,0,0,0.08); }
+.input-group.error-field {
+  border-color: var(--rojo);
+  box-shadow: 0 0 0 3px rgba(255,0,0,0.08);
+}
+
+.input-group svg {
+  width: 16px; height: 16px;
+  stroke: #94a3b8; fill: none;
+  flex-shrink: 0;
+  stroke-width: 1.5;
+}
+
+.input-group input,
+.input-group select {
+  border: none; background: none; outline: none;
+  font-size: 14px;
+  color: var(--texto);
+  width: 100%;
+  font-family: inherit;
+}
+.input-group input::placeholder { color: #b0bec5; }
+.input-group select { cursor: pointer; -webkit-appearance: none; }
+.input-group select option { color: var(--texto); }
+
+/* Icono válido */
+.icono-ok {
+  flex-shrink: 0;
+  display: none;
+  width: 14px; height: 14px;
+  stroke: var(--verde); fill: none;
+  stroke-width: 2.5;
+}
+.input-group.valido .icono-ok { display: block; }
+
+/* Toggle ver contraseña */
+.btn-ver {
+  background: none; border: none;
+  cursor: pointer; padding: 0;
+  color: #94a3b8; display: flex;
+  flex-shrink: 0;
+  transition: color 0.18s;
+}
+.btn-ver:hover { color: var(--principal); }
+.btn-ver svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+/* ═══════════════════════════════════════════
+   SELECT WRAP  (solo recuperar contraseña)
+═══════════════════════════════════════════ */
+.select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f5f6;
+  border: 1.5px solid var(--contenedor);
+  border-radius: 50px;
+  padding: 12px 18px;
+  transition: border-color 0.18s;
+  cursor: pointer;
+}
+.select-wrap:focus-within {
+  border-color: var(--principal);
+  background: var(--blanco);
+  box-shadow: 0 0 0 3px rgba(57,76,170,0.12);
+}
+.select-wrap svg { width: 16px; height: 16px; stroke: #94a3b8; fill: none; flex-shrink: 0; }
+.select-wrap select {
+  border: none; background: none; outline: none;
+  font-size: 14px; color: var(--texto);
+  width: 100%; font-family: inherit; cursor: pointer;
+  -webkit-appearance: none;
+}
+.select-wrap .chevron { margin-left: auto; }
+
+/* ═══════════════════════════════════════════
+   MENSAJES DE VALIDACIÓN
+═══════════════════════════════════════════ */
+.msg-error,
+.msg-ok {
+  display: none;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 5px;
+  padding-left: 4px;
+}
+.msg-error { color: var(--rojo); }
+.msg-ok    { color: var(--verde); }
+.msg-error.visible,
+.msg-ok.visible { display: block; }
+
+/* ═══════════════════════════════════════════
+   FORTALEZA DE CONTRASEÑA
+═══════════════════════════════════════════ */
+.fuerza-wrap {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.fuerza-barras {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.fuerza-barra {
+  height: 4px;
+  flex: 1;
+  border-radius: 2px;
+  background: var(--contenedor);
+  transition: background 0.25s ease;
+}
+.fuerza-label {
+  font-size: 11px;
+  font-weight: 700;
+  min-height: 15px;
+  color: #94a3b8;
+}
+
+.hint-pass {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 6px;
+  padding-left: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   OTP  (solo recuperar contraseña)
+═══════════════════════════════════════════ */
+.otp-contenedor {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.otp-input {
+  width: 46px; height: 52px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--texto);
+  border: 1.5px solid var(--contenedor);
+  border-radius: 12px;
+  background: #f5f5f6;
+  outline: none;
+  transition: all 0.18s;
+  caret-color: var(--principal);
+}
+.otp-input:focus {
+  border-color: var(--principal);
+  background: var(--blanco);
+  box-shadow: 0 0 0 3px rgba(57,76,170,0.12);
+}
+.otp-input.lleno {
+  border-color: var(--principal);
+  background: rgba(57,76,170,0.05);
+}
+.otp-input.error {
+  border-color: var(--rojo);
+  background: #fff5f5;
+  animation: shake 0.35s ease;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%      { transform: translateX(-5px); }
+  75%      { transform: translateX(5px); }
+}
+
+.reenviar-wrap {
+  text-align: center;
+  font-size: 13px;
+  color: var(--texto2);
+  margin-top: 4px;
+}
+.btn-reenviar {
+  background: none; border: none;
+  color: var(--principal);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+.btn-reenviar:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ═══════════════════════════════════════════
+   BOTONES PRINCIPALES
+═══════════════════════════════════════════ */
+.btn-accion {
+  width: 100%;
+  background: var(--principal);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-top: 20px;
+  box-shadow: 0 4px 18px rgba(57,76,170,0.35);
+  letter-spacing: 0.2px;
+  text-decoration: none;
+}
+.btn-accion:hover {
+  background: var(--secundario);
+  box-shadow: 0 6px 22px rgba(57,76,170,0.45);
+  transform: translateY(-1px);
+}
+.btn-accion:active  { transform: translateY(0); }
+.btn-accion:disabled {
+  background: #b0bec5;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+.btn-accion svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 2; }
+
+.btn-accion .spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+.btn-accion.cargando .spinner   { display: block; }
+.btn-accion.cargando .btn-texto { display: none; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Alias para inicio_sesion.html */
+.btn-login {
+  width: 100%;
+  background: var(--principal);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-top: 24px;
+  box-shadow: 0 4px 18px rgba(57,76,170,0.35);
+  letter-spacing: 0.2px;
+}
+.btn-login:hover {
+  background: var(--secundario);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(57,76,170,0.45);
+}
+.btn-login:active { transform: translateY(0); }
+
+/* ═══════════════════════════════════════════
+   SECCIÓN ENCABEZADO  (solo recuperar contraseña)
+═══════════════════════════════════════════ */
+.seccion-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.seccion-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+.seccion-header p {
+  font-size: 13px;
+  color: var(--texto2);
+  line-height: 1.5;
+}
+
+.icono-lock {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(57,76,170,0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.icono-lock svg {
+  width: 26px; height: 26px;
+  stroke: var(--principal); fill: none;
+  stroke-width: 1.8;
+}
+
+/* ═══════════════════════════════════════════
+   PANEL  (solo recuperar contraseña)
+═══════════════════════════════════════════ */
+.panel        { display: none; }
+.panel.activo { display: block; }
+
+/* ═══════════════════════════════════════════
+   PANTALLA ÉXITO
+═══════════════════════════════════════════ */
+#exitoSection { display: none; }
+
+.exito-wrap {
+  text-align: center;
+  padding: 10px 0 8px;
+}
+.exito-icono {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(0,179,51,0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+}
+.exito-icono svg {
+  width: 34px; height: 34px;
+  stroke: var(--verde); fill: none; stroke-width: 2;
+}
+.exito-wrap h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 8px;
+}
+.exito-wrap p {
+  font-size: 14px;
+  color: var(--texto2);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════
+   LINKS Y NAVEGACIÓN
+═══════════════════════════════════════════ */
+.links-footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--texto2);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.links-footer a {
+  color: var(--principal); font-weight: 600; text-decoration: none;
+}
+.links-footer a:hover { text-decoration: underline; }
+
+.volver-link {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--texto2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.volver-link:hover { color: var(--principal); }
+.volver-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+
+/* ═══════════════════════════════════════════
+   PIE DEL MODAL
+═══════════════════════════════════════════ */
+.modal-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--contenedor);
+}
+.copy-text { font-size: 11px; color: #aaa; }
+
+.btn-ayuda {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--texto2);
+  border: 1.5px solid var(--contenedor);
+  border-radius: 50px; padding: 6px 14px;
+  background: none; cursor: pointer; text-decoration: none;
+  transition: border-color 0.18s, color 0.18s;
+}
+.btn-ayuda:hover { border-color: var(--principal); color: var(--principal); }
+.btn-ayuda svg { width: 14px; height: 14px; stroke: currentColor; fill: none; }
