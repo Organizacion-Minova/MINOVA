@@ -18,7 +18,9 @@
     --white:#FFFFFF;
 }
 
-/* ESTRUCTURA GENERAL */
+/* ======================
+   ESTRUCTURA GENERAL
+====================== */
 
 html,
 body{
@@ -32,7 +34,9 @@ body{
     background:var(--fondo);
 }
 
-/* HEADER */
+/* ======================
+   HEADER
+====================== */
 
 .topbar{
     height:90px;
@@ -50,6 +54,7 @@ body{
 
 .logo h2{
     font-size:22px;
+    font-weight:600;
 }
 
 .user-info{
@@ -70,14 +75,26 @@ body{
     object-fit:cover;
 }
 
-/* CONTENEDOR */
+.profile h4{
+    color:white;
+}
+
+.profile span{
+    color:#e5e5e5;
+}
+
+/* ======================
+   CONTENEDOR
+====================== */
 
 .container{
     flex:1;
     display:flex;
 }
 
-/* SIDEBAR */
+/* ======================
+   SIDEBAR
+====================== */
 
 .sidebar{
     width:260px;
@@ -108,7 +125,7 @@ body{
 }
 
 .sidebar .active{
-    background:rgba(255,255,255,.2);
+    background:rgba(255,255,255,.20);
 }
 
 .logout{
@@ -119,69 +136,100 @@ body{
     font-size:18px;
 }
 
-/* CONTENIDO */
+/* ======================
+   CONTENIDO
+====================== */
 
 main{
     flex:1;
     background:var(--contenedor);
 }
 
-/* FOOTER */
+/* ======================
+   FOOTER
+====================== */
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+footer{
     background: var(--principal);
     color: var(--white);
-    margin-top: 40px;
-    border-top: 5px solid var(--secundario);
-}
 
+    border-top: 4px solid var(--secundario);
+
+    padding: 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+}
 
 .secFooterPrincipal{
-    display: flex;
-    justify-content: justify;
-    align-items: center;
-    border-bottom: 2px solid var(--secundario);
-    padding: 5px;
-}
-
-.secFooterSecundario{
- font-size: smaller;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
 }
 
 .logoSenaFooter{
-    border-right: 5px solid var(--secundario);
-    height: 70px;
-    width: 70px;
-    padding: 20px;
-    
-} 
-.logoSmaqFooter{
-    height: 70px;
-    width: 75px;
-    padding: 20px;
+    height:60px;
+    width:auto;
+
+    padding-right:20px;
+    border-right:3px solid var(--white);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+.logoSmaqFooter{
+    height:60px;
+    width:auto;
+}
+
+.infoFooter{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:left;
+    line-height:1.4;
+}
+
+.infoFooter strong{
+    font-size:20px;
+}
+
+.infoFooter span{
+    font-size:14px;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+@media(max-width:768px){
+
+    .container{
+        flex-direction:column;
     }
 
-    .sidebar {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-around;
+    .sidebar{
+        width:100%;
     }
 
-    main {
-        padding: 20px;
+    footer{
+        padding:20px;
     }
-    footer {
-        padding: 10px;
+
+    .secFooterPrincipal{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .logoSenaFooter{
+        border-right:none;
+        padding-right:0;
+    }
+
+    .infoFooter{
+        text-align:center;
     }
 }
