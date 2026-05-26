@@ -1,15 +1,4 @@
-:root{
-    --principal:#394CAA;
-    --secundario:#010440;
-    --fondo:#B4B5B9;
-    --contenedor:#CACACC;
-    --texto:#0D0D0D;
-    --texto2:#404040;
-    --rojo:#FF0000;
-    --amarillo:#FFD800;
-    --verde:#00B333;
-    --white:#FFFFFF;
-}
+
 main,
 .content{
     flex:1;
@@ -38,18 +27,17 @@ main,
 table{
     width:100%;
     border-collapse:collapse;
+    text-align: center;
     
 }
 
 table th{
     padding:15px;
     border:2px solid var(--secundario);
-    text-align:left;
 }
 table td{
     padding:15px;
     border:2px solid var(--secundario);
-    text-align:left;
 }
 .acciones{
     display:flex;
