@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOVA - USO DIARIO</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/estilos_uso_diario.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    </head>
+<body>
+    <!-- Aquí se inyecta el layout base -->
+    <div id="base-container"></div>
+
+    <!-- Contenido de esta página -->
+    <template id="page-content">
+        <div class="welcome">
+            <div>
+                <h1>USO DIARIO</h1>
+                <p>Este es el formato que se debe llenar diariamente.</p>
+            </div>
+
+            <div class="date">
+                <i class="fa-regular fa-calendar"></i>
+                26 de mayo de 2029
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th colSpan="6">REGISTRO DIARIO DE USO DE MAQUINARIA Y EQUIPOS MINA DIDACTICA</th>
+            </tr>
+            <tr>
+                <th colSpan="2">NOMBRE MAQUINA:</th>
+                <td colSpan="4"></td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <th>Verificacion de estado de <br> funcionamiento de la máquina</th>
+                <th>Inicio de operacion</th>
+                <th>Fin de operacion</th>
+                <th>Responsable a cargo</th>
+                <th>Observaciones</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br>
+    <div class="acciones">
+
+    <button id="btnAgregar" class="btn btn-verde">
+        <i class="fa-solid fa-plus"></i>
+        Nuevo Registro
+    </button>
+
+    <button id="btnExcel" class="btn btn-amarillo">
+        <i class="fa-solid fa-file-excel"></i>
+        Exportar Excel
+    </button>
+
+    <button id="btnPDF" class="btn btn-principal">
+        <i class="fa-solid fa-file-pdf"></i>
+        Exportar PDF
+    </button>
+
+</div>
+        
+
+    </template>
+
+    <script src="../scripts/base.js"></script>
+</html>
