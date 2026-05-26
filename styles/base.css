@@ -119,6 +119,12 @@ body{
     cursor:pointer;
     transition:.3s;
 }
+.sidebar li a{
+    color:var(--white);
+    text-decoration:none;
+    align-items:center;
+    gap:12px;
+}
 
 .sidebar li:hover{
     background:rgba(255,255,255,.15);
