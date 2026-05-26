@@ -6,8 +6,8 @@
 }
 
 :root{
-    --principal:#394CAA;
-    --secundario:#010440;
+    --principal:#010440;
+    --secundario:#394CAA;
     --fondo:#B4B5B9;
     --contenedor:#CACACC;
     --texto:#0D0D0D;
@@ -42,14 +42,17 @@ body{
     height:90px;
     background:var(--principal);
     color:var(--white);
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     padding:0 25px;
-
     border-bottom:3px solid var(--secundario);
+}
+
+.logo img{
+    
+    height: 180px;
+    width: auto;
 }
 
 .logo h2{
@@ -152,49 +155,45 @@ main{
 footer{
     background: var(--principal);
     color: var(--white);
-
     border-top: 4px solid var(--secundario);
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 20px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
     width:100%;
 }
 
 .secFooterPrincipal{
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:justify;
+     border-bottom: 2px solid var(--white);
     gap:25px;
 }
 
 .logoSenaFooter{
     height:60px;
     width:auto;
-
+    border-right: 5px solid var(--white);
     padding-right:20px;
-    border-right:3px solid var(--white);
 }
 
 .logoSmaqFooter{
-    height:60px;
+    height:100px;
     width:auto;
 }
 
 .infoFooter{
+   
+    font-size: small;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    text-align:left;
     line-height:1.4;
 }
 
-.infoFooter strong{
-    font-size:20px;
-}
+
 
 .infoFooter span{
     font-size:14px;
