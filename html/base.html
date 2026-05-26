@@ -1,91 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/base.css">
-    <title>MINOVA</title>
-</head>
-<body>
+<header class="topbar">
+    <div class="logo">
+        <h2>MINOVA (SISTEMA DE MANTENIMIENTO E INVENTARIO)</h2>
+    </div>
 
-    <header class="topbar">
-        <div class="logo">
-            <h2>MINOVA (SISTEMA DE MANTENIMIENTO E INVENTARIO)</h2>
-        </div>
+    <div class="user-info">
+        <i class="fa-solid fa-bell"></i>
 
-        <div class="user-info">
-            <i class="fa-solid fa-bell"></i>
-
-            <div class="profile">
-                <img src="https://i.pravatar.cc/50" alt="">
-                <div>
-                    <h4>Juan Pérez</h4>
-                    <span>Administrador</span>
-                </div>
+        <div class="profile">
+            <img src="https://i.pravatar.cc/50" alt="">
+            <div>
+                <h4>Juan Pérez</h4>
+                <span>Administrador</span>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <div class="container">
+<div class="container">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+    <aside class="sidebar">
 
-            <ul>
-                <li class="active">
-                    <i class="fa-solid fa-house"></i>
-                    Inicio
-                </li>
+        <ul>
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-gears"></i>
-                    Equipos
-                </li>
+            <li>
+                <i class="fa-solid fa-gears"></i>
+                Equipos
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-box"></i>
-                    Inventario
-                </li>
+            <li>
+                <i class="fa-solid fa-box"></i>
+                Inventario
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    Mantenimientos
-                </li>
+            <li>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Mantenimientos
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-file-lines"></i>
-                    Hojas de vida
-                </li>
+            <li>
+                <i class="fa-solid fa-file-lines"></i>
+                Hojas de vida
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-clipboard-check"></i>
-                    Uso diario
-                </li>
+            <li>
+                <i class="fa-solid fa-clipboard-check"></i>
+                Uso diario
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-chart-column"></i>
-                    Reportes
-                </li>
+            <li>
+                <i class="fa-solid fa-chart-column"></i>
+                Reportes
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-users"></i>
-                    Usuarios
-                </li>
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Usuarios
+            </li>
 
-                <li>
-                    <i class="fa-solid fa-gear"></i>
-                    Configuración
-                </li>
-            </ul>
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Configuración
+            </li>
+        </ul>
 
-            <button class="logout">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                Cerrar sesión
-            </button>
+        <button class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Cerrar sesión</span>
+        </button>
 
-        </aside>
-            </div>
-            <main ></main>
+    </aside>
+
+    <!-- Aquí se insertará el contenido de cada página -->
+    <main id="contenido"></main>
+
+</div>
 
 <footer>
     <div class="secFooterPrincipal">
@@ -102,6 +94,3 @@
 
     </div>
 </footer>
-
-</body>
-</html>
