@@ -2,16 +2,26 @@
         flex:1;
         padding:30px;
         }
-     .section-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--secundario);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title i { color: var(--principal); font-size: 24px; }
+.welcome{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.welcome h1{
+    color:var(--texto);
+}
+
+.welcome p{
+    color:var(--texto2);
+}
+
+.date{
+    background:var(--white);
+    padding:15px 25px;
+    border-radius:12px;
+}
 
         .search-main { display: flex; gap: 8px; margin-bottom: 10px; }
 
