@@ -235,32 +235,3 @@ footer{
    RESPONSIVE
 ====================== */
 
-@media(max-width:768px){
-
-    .container{
-        flex-direction:column;
-    }
-
-    .sidebar{
-        width:100%;
-    }
-
-    footer{
-        padding:20px;
-    }
-
-    .secFooterPrincipal{
-        flex-direction:column;
-        text-align:center;
-        gap:15px;
-    }
-
-    .logoSenaFooter{
-        border-right:none;
-        padding-right:0;
-    }
-
-    .infoFooter{
-        text-align:center;
-    }
-}
