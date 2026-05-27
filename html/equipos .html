@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOVA - Equipos</title>
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/equipos.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Aquí se inyecta el layout base (igual que index.html) -->
+    <div id="base-container"></div>
+
+    <!-- Contenido de esta página -->
+    <template id="page-content">
+
+        <h2 class="section-title">
+            <i class="fa-solid fa-truck-monster"></i> Equipos
+        </h2>
+
+        <!-- BARRA DE BÚSQUEDA PRINCIPAL -->
+        <div class="search-main">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="text"
+                    id="q"
+                    placeholder="Buscar por nombre, código, número de serie, marca, ubicación…"
+                    oninput="doSearch()"
+                />
+            </div>
+            <button class="btn-filtros" id="btnFiltros" onclick="toggleFiltros()">
+                <i class="fa-solid fa-sliders"></i> Filtros
+            </button>
+            <button class="btn-buscar" onclick="doSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i> Buscar
+            </button>
+        </div>
+
+        <!-- PANEL DE FILTROS AVANZADOS -->
+        <div class="filters-panel" id="filtrosPanel">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Estado</label>
+                    <select id="f-estado" onchange="doSearch()">
+                        <option value="">Todos</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                        <option value="Fuera de servicio">Fuera de servicio</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Tipo</label>
+                    <select id="f-tipo" onchange="doSearch()">
+                        <option value="">Todos</option>
+                        <option value="Excavadora">Excavadora</option>
+                        <option value="Retroexcavadora">Retroexcavadora</option>
+                        <option value="Cargador">Cargador</option>
+                        <option value="Malacate">Malacate</option>
+                        <option value="Vagoneta">Vagoneta</option>
+                        <option value="Pulmón">Pulmón</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Marca</label>
+                    <select id="f-marca" onchange="doSearch()">
+                        <option value="">Todas</option>
+                        <option value="CAT">CAT</option>
+                        <option value="JCB">JCB</option>
+                        <option value="Komatsu">Komatsu</option>
+                        <option value="Volvo">Volvo</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Código</label>
+                    <input type="text" id="f-codigo" placeholder="EQ-001…" oninput="doSearch()" />
+                </div>
+                <div class="filter-group">
+                    <label>Número de serie</label>
+                    <input type="text" id="f-serie" placeholder="SN-…" oninput="doSearch()" />
+                </div>
+                <div class="filter-group">
+                    <label>Ubicación</label>
+                    <input type="text" id="f-ubic" placeholder="Zona, área…" oninput="doSearch()" />
+                </div>
+            </div>
+            <div class="filters-actions">
+                <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar filtros</button>
+                <button class="btn-aplicar" onclick="doSearch()">Aplicar</button>
+            </div>
+        </div>
+
+        <!-- CHIPS DE FILTROS ACTIVOS -->
+        <div class="chips-row" id="chips"></div>
+
+        <!-- META Y ORDENAMIENTO -->
+        <div class="results-meta">
+            <span>Mostrando <strong id="rcount">0</strong> equipos</span>
+            <select class="sort-sel" id="sort" onchange="doSearch()">
+                <option value="nombre">Ordenar: Nombre A-Z</option>
+                <option value="codigo">Ordenar: Código</option>
+                <option value="estado">Ordenar: Estado</option>
+                <option value="tipo">Ordenar: Tipo</option>
+                <option value="marca">Ordenar: Marca</option>
+            </select>
+        </div>
+
+        <!-- TABLA -->
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Marca</th>
+                        <th>N° Serie</th>
+                        <th>Ubicación</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+
+        <!-- PAGINACIÓN -->
+        <div class="pagination" id="paginacion"></div>
+
+        <!-- BOTONES INFERIORES -->
+        <div class="page-actions">
+            <button class="btn-volver" onclick="history.back()">
+                <i class="fa-solid fa-arrow-left"></i> Volver
+            </button>
+            <button class="btn-agregar" onclick="location.href='agregar_equipo.html'">
+                <i class="fa-solid fa-plus"></i> Agregar equipo
+            </button>
+        </div>
+
+    </template>
+
+    <script src="../scripts/base.js"></script>
+    <script src="../scripts/busqueda.js"></script>
+</body>
+</html>
