@@ -10,9 +10,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         const mapa = {
             'index.html':          'inicio',
             'equipos.html':        'equipos',
-            'inventario.html':     'inventario',
-            'mantenimientos.html': 'mantenimientos',
             'reportes.html':       'reportes',
+            'uso_diario.html':     'uso diario',
+            'usuarios.html':       'usuarios',
+            'ubicaciones.html':    'ubicaciones',
+            'maquinas.html':      'maquinas',
+            'herramientas.html':   'herramientas'
         };
         const activo = mapa[pagina];
         document.querySelectorAll('.sidebar li').forEach(li => {
