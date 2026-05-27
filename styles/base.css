@@ -39,7 +39,7 @@ body{
 ====================== */
 
 .topbar{
-    height:90px;
+    height:100px;
     background:var(--principal);
     color:var(--white);
     display:flex;
@@ -52,7 +52,7 @@ body{
 }
 
 .logo img{
-    height:70px;   /* FIX: era 180px, el header mide 90px */
+    height: 180px;   /* FIX: era 180px, el header mide 90px */
     width:auto;
 }
 
