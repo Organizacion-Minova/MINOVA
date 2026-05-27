@@ -129,12 +129,24 @@ body{
     gap:12px;
 }
 
+
 .sidebar li:hover{
     background:rgba(255,255,255,.15);
 }
 
 .sidebar .active{
     background:rgba(255,255,255,.20);
+}
+.sidebar .submenu{
+    list-style:none;
+    padding-left:20px;
+    margin-top:10px;
+    display:none;
+}
+.sidebar li:hover .submenu{
+    
+    display:block;
+    transition:.3s;
 }
 
 .logout{

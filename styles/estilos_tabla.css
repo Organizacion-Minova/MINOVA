@@ -1,0 +1,32 @@
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: var(--white); 
+    border-radius: 12px;
+}
+thead tr { 
+    background: var(--secundario); 
+}
+thead th {
+    color: var(--white); 
+    font-size: 13px; 
+    font-weight: 600;
+    padding: 13px 14px; 
+    text-align: left; 
+    white-space: nowrap;
+}
+tbody tr { 
+    border-bottom: 1px solid rgba(0,0,0,0.06); 
+    transition: background .15s; 
+}
+tbody tr:last-child { 
+    border-bottom: none; 
+}
+tbody tr:hover { 
+    background: rgba(57,76,170,0.04); 
+}
+tbody td { padding: 11px 14px; 
+    font-size: 13px; 
+    color: var(--texto); 
+    vertical-align: middle; 
+}

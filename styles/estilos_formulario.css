@@ -1,0 +1,15 @@
+table{
+    width:100%;
+    border-collapse:collapse;
+    text-align: center;
+    
+}
+
+table th{
+    padding:15px;
+    border:2px solid var(--secundario);
+}
+table td{
+    padding:15px;
+    border:2px solid var(--secundario);
+}
