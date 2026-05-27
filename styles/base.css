@@ -453,7 +453,6 @@ body{
 
 /* FIX: flex para alinear ícono + texto horizontalmente */
 .sidebar li{
-    display:flex;
     align-items:center;
     gap:12px;
     padding:15px;
@@ -490,7 +489,6 @@ body{
     display:none;
 }
 .sidebar li:hover .submenu{
-    
     display:block;
     transition:.3s;
 }
