@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MINOVA – Selección de Categoría</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+:root{
+    --principal:#394CAA;
+    --secundario:#010440;
+    --fondo:#B4B5B9;
+    --contenedor:#CACACC;
+    --texto:#0D0D0D;
+    --texto2:#404040;
+    --amarillo:#FFD800;
+    --verde:#00B333;
+    --white:#FFFFFF;
+}
+html,body{height:100%;margin:0;}
+body{
+    min-height:100vh;
+    background:var(--fondo);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.pantalla{
+    width:100%;
+    max-width:860px;
+    padding:40px 24px;
+}
+.encabezado{
+    text-align:center;
+    margin-bottom:40px;
+}
+.encabezado .logo-icon{
+    width:56px;height:56px;
+    background:var(--principal);
+    border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 16px;
+}
+.encabezado .logo-icon i{font-size:26px;color:var(--white);}
+.encabezado h1{
+    font-size:22px;
+    font-weight:700;
+    color:var(--secundario);
+    margin-bottom:6px;
+}
+.encabezado p{
+    font-size:14px;
+    color:var(--texto2);
+}
+.categorias{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.cat-card{
+    flex:1;
+    min-width:220px;
+    max-width:260px;
+    background:var(--white);
+    border-radius:16px;
+    padding:36px 24px 28px;
+    cursor:pointer;
+    border:2.5px solid transparent;
+    transition:transform .22s, border-color .22s, box-shadow .22s;
+    text-align:center;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    position:relative;
+    overflow:hidden;
+}
+.cat-card::after{
+    content:'';
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:4px;
+    background:var(--acento);
+    transform:scaleX(0);
+    transition:transform .22s;
+}
+.cat-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--acento);
+    box-shadow:0 12px 32px rgba(0,0,0,.12);
+}
+.cat-card:hover::after{transform:scaleX(1);}
+.cat-card:active{transform:translateY(-2px) scale(.98);}
+
+.cat-icono{
+    width:72px;height:72px;
+    border-radius:50%;
+    background:var(--acento-bg);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .22s;
+}
+.cat-card:hover .cat-icono{background:var(--acento);}
+.cat-icono i{
+    font-size:30px;
+    color:var(--acento);
+    transition:color .22s;
+}
+.cat-card:hover .cat-icono i{color:var(--white);}
+.cat-nombre{
+    font-size:18px;
+    font-weight:700;
+    color:var(--texto);
+}
+.cat-desc{
+    font-size:12.5px;
+    color:var(--texto2);
+    line-height:1.5;
+}
+.cat-cta{
+    margin-top:4px;
+    font-size:12px;
+    font-weight:600;
+    color:var(--acento);
+    display:flex;
+    align-items:center;
+    gap:6px;
+    opacity:0;
+    transform:translateY(4px);
+    transition:opacity .2s, transform .2s;
+}
+.cat-card:hover .cat-cta{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<div class="pantalla">
+    <div class="encabezado">
+        <div class="logo-icon">
+            <i class="fa-solid fa-mountain"></i>
+        </div>
+        <h1>Selecciona una categoría</h1>
+        <p>Haz clic para ingresar al módulo correspondiente</p>
+    </div>
+
+    <div class="categorias">
+
+        <a class="cat-card" href="maquinas.html"
+           style="--acento:#394CAA;--acento-bg:rgba(57,76,170,.1);">
+            <div class="cat-icono">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+            <div class="cat-nombre">Máquinas</div>
+            <div class="cat-desc">Bandas transportadoras, malacates, compresores y maquinaria de producción minera.</div>
+            <div class="cat-cta">
+                Ingresar <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+            </div>
+        </a>
+
+        <a class="cat-card" href="equipos.html"
+           style="--acento:#00B333;--acento-bg:rgba(0,179,51,.1);">
+            <div class="cat-icono">
+                <i class="fa-solid fa-gears"></i>
+            </div>
+            <div class="cat-nombre">Equipos</div>
+            <div class="cat-desc">Electrobombas, ventiladores, plantas eléctricas y equipos auxiliares de la mina.</div>
+            <div class="cat-cta">
+                Ingresar <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+            </div>
+        </a>
+
+        <a class="cat-card" href="herramientas.html"
+           style="--acento:#a88600;--acento-bg:rgba(255,216,0,.18);">
+            <div class="cat-icono">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div class="cat-nombre">Herramientas</div>
+            <div class="cat-desc">Herramientas manuales, eléctricas y de medición para labores de mantenimiento.</div>
+            <div class="cat-cta">
+                Ingresar <i class="fa-solid fa-arrow-right" style="font-size:11px;"></i>
+            </div>
+        </a>
+
+    </div>
+</div>
+</body>
+</html>
