@@ -38,16 +38,20 @@ button{
 button:hover{
     transform:translateY(-2px);
 }
-.btn-verde{
-    background:var(--verde);
+.btn-azul{
+    background:var(--principal);
     color:var(--white);
 }
 
-.btn-amarillo{
+.btn-azul{
     background:var(--amarillo);
     color:var(--texto);
 }
-.btn-principal{
-    background:var(--rojo);
+.btn-azul{
+    background:var(--principal);
+    color:var(--white);
+}
+.btn-azul:hover{
+    background: var(--secundario);
     color:var(--white);
 }

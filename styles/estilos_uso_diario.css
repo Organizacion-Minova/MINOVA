@@ -54,9 +54,13 @@ main,
     color:var(--white);
 }
 
-.btn-amarillo{
-    background:var(--amarillo);
-    color:var(--texto);
+.btn-azul{
+    background:var(--principal);
+    color:var(--white);
+}
+.btn-azul:hover{
+    background: var(--secundario);
+    color:var(--white);
 }
 
 .btn-principal{
