@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Marca el ítem activo según la página actual
         const pagina = window.location.pathname.split('/').pop();
         const mapa = {
-            'index.html':        'inicio',
-            'equipos.html':      'equipos',
-            'reportes.html':     'reportes',
-            'uso_diario.html':   'uso diario',
-            'usuarios.html':     'usuarios',
-            'ubicaciones.html':  'ubicaciones',
-            'maquinas.html':     'maquinas',
-            'herramientas.html': 'herramientas'
+            'index.html':          'inicio',
+            'equipos.html':        'equipos',
+            'reportes.html':       'reportes',
+            'uso_diario.html':     'uso diario',
+            'usuarios.html':       'usuarios',
+            'ubicaciones.html':    'ubicaciones',
+            'maquinas.html':      'maquinas',
+            'herramientas_c_n.html':   'herramientas_c_n',
         };
         const activo = mapa[pagina];
         document.querySelectorAll('.sidebar li').forEach(li => {

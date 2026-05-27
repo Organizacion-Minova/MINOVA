@@ -1,10 +1,8 @@
-
 main,
 .content{
     flex:1;
     padding:30px;
 }
-
 .welcome{
     display:flex;
     justify-content:space-between;
@@ -19,20 +17,13 @@ main,
 .welcome p{
     color:var(--texto2);
 }
+
 .date{
     background:var(--white);
     padding:15px 25px;
     border-radius:12px;
 }
-
-.acciones{
-    display:flex;
-    gap:15px;
-    margin-bottom:20px;
-    flex-wrap:wrap;
-}
-
-.btn{
+button{
     border:none;
     padding:12px 22px;
     border-radius:10px;
@@ -44,11 +35,9 @@ main,
     gap:10px;
     transition:.3s;
 }
-
-.btn:hover{
+button:hover{
     transform:translateY(-2px);
 }
-
 .btn-verde{
     background:var(--verde);
     color:var(--white);
@@ -58,10 +47,7 @@ main,
     background:var(--amarillo);
     color:var(--texto);
 }
-
 .btn-principal{
     background:var(--rojo);
     color:var(--white);
 }
-
-
