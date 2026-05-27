@@ -174,11 +174,18 @@
             border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
             cursor: pointer; transition: background .2s;
         }
-        .btn-agregar {
-            padding: 10px 26px; background: var(--verde); color: var(--white);
-            border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
-            cursor: pointer; transition: background .2s;
-        }
+    
+          .btn-agregar{
+    background:var(--principal);
+    color:var(--white);
+    border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
+    padding: 10px 26px;
+                  }
+        .btn-agregar:hover{
+    background: var(--secundario);
+    color:var(--white);
+                       }
+
         .btn-volver:hover  { background: var(--secundario); }
-        .btn-agregar:hover { background: #007a24; }
+     
     

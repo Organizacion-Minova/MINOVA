@@ -30,3 +30,12 @@ tbody td { padding: 11px 14px;
     color: var(--texto); 
     vertical-align: middle; 
 }
+
+.btn-azul{
+    background:var(--principal);
+    color:var(--white);
+}
+.btn-azul:hover{
+    background: var(--secundario);
+    color:var(--white);
+}
