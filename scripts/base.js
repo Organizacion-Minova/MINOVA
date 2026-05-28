@@ -60,6 +60,37 @@ function _iniciarEventos() {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') cerrarTodos();
     });
+    const overlay = document.getElementById("overlay");
+ const abrirModal = document.getElementById("abrirModal");
+const cerrarModal = document.getElementById("cerrarModal");
+const backdropModal = document.getElementById("backdropModal");
+
+if (abrirModal && overlay && backdropModal) {
+
+    abrirModal.addEventListener("click", () => {
+        overlay.classList.add("open");
+        backdropModal.classList.add("active");
+    });
+
+}
+
+if (cerrarModal && overlay && backdropModal) {
+
+    cerrarModal.addEventListener("click", () => {
+        overlay.classList.remove("open");
+        backdropModal.classList.remove("active");
+    });
+
+}
+
+if (backdropModal && overlay) {
+
+    backdropModal.addEventListener("click", () => {
+        overlay.classList.remove("open");
+        backdropModal.classList.remove("active");
+    });
+
+}
 }
 
 /* ─────────────────────────────────────────
@@ -126,3 +157,20 @@ function cerrarSesion() {
         alert('Cerrando sesión...');
     }
 }
+const overlay = document.getElementById("overlay");
+const abrirModal = document.getElementById("abrirModal");
+const cerrarModal = document.getElementById("cerrarModal");
+
+abrirModal.addEventListener("click", () => {
+    overlay.style.display = "flex";
+});
+
+cerrarModal.addEventListener("click", () => {
+        overlay.style.display = "none";
+});
+
+overlay.addEventListener("click", (e) => {
+    if(e.target === overlay){
+        overlay.style.display = "none";
+    }
+});

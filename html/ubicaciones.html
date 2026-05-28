@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/base.css ">
     <link rel="stylesheet" href="../styles/estilos_ubicaciones.css">
     <link rel="stylesheet" href="../styles/estilos_tabla.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -46,11 +47,44 @@
             </tbody>
         </table>
         <br>
-    <div class="acciones">
-        <button id="btnAgregar" class="btn btn-azul">
+        <button id="abrirModal" class="btn btn-azul">
             <i class="fa-solid fa-plus"></i>
             Nueva Ubicación
         </button>
+
+    <div class="overlay-backdrop" id="backdropModal"></div>
+    <div class="overlay-panel modal-tool" id="overlay">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-plus"></i> Agregar nueva ubicación</h3>
+            <button class="cerrar-modal" id="cerrarModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form class="form">
+            <div class="input-group">
+                <label >Nombre de la ubicación:</label>
+                <input type="text" placeholder="Ingrese el nombre de la ubicación" required>
+            </div>
+            <div class="input-group">
+                <label >Descripción:</label>
+                <textarea  rows="4" placeholder="Ingrese la descripción" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="Almacén">Almacén</option>
+                    <option value="Taller">Taller</option>
+                    <option value="Oficina">Oficina</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-azul">
+                <i class="fa-solid fa-floppy-disk"></i> Guardar
+            </button>
+        </form>
     </div>
     </template>
     <script src="../scripts/base.js"></script>
