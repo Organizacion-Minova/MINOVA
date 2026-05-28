@@ -41,17 +41,12 @@ button:hover{
 .btn-azul{
     background:var(--principal);
     color:var(--white);
+    width:fit-content;
 }
 
-.btn-azul{
-    background:var(--amarillo);
-    color:var(--texto);
-}
-.btn-azul{
-    background:var(--principal);
-    color:var(--white);
-}
+
 .btn-azul:hover{
     background: var(--secundario);
     color:var(--white);
 }
+

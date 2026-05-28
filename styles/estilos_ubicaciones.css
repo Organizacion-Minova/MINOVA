@@ -52,4 +52,5 @@ main,
 .btn-azul{
     background:var(--principal);
     color:var(--white);
+    width:fit-content;
 }

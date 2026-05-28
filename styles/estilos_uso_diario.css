@@ -49,23 +49,15 @@ main,
     transform:translateY(-2px);
 }
 
-.btn-verde{
-    background:var(--verde);
-    color:var(--white);
-}
-
 .btn-azul{
     background:var(--principal);
     color:var(--white);
+    width: fit-content;
 }
 .btn-azul:hover{
     background: var(--secundario);
     color:var(--white);
 }
 
-.btn-principal{
-    background:var(--rojo);
-    color:var(--white);
-}
 
 
