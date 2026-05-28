@@ -42,15 +42,6 @@ button:hover{
     color:var(--white);
 }
 
-.btn-azul{
-    background:var(--principal);
-    color:var(--white);
-}
-.btn-azul:hover{
-    background: var(--secundario);
-    color:var(--white);
-}
-
 .btn-principal{
     background:var(--rojo);
     color:var(--white);
@@ -72,18 +63,16 @@ button:hover{
 
 
 /*botones herramietas*/
-.btn-azul{
-    background:var(--principal);
-    color:var(--white);
-}
-
-.btn-azul{
-    background:var(--amarillo);
-    color:var(--texto);
+.btn-container{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
 }
 .btn-azul{
     background:var(--principal);
     color:var(--white);
+    width:fit-content;
 }
 .btn-azul:hover{
     background: var(--secundario);
