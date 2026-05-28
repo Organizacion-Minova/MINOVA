@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             'ubicaciones.html':    'ubicaciones',
             'maquinas.html':      'maquinas',
             'herramientas_con.html':   'herramientas_consumibles',
+            'acerca_de.html':           'acerca de',
+                'ayuda.html':              'ayuda'
         };
         const activo = mapa[pagina];
         document.querySelectorAll('.sidebar li').forEach(li => {

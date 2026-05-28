@@ -1,0 +1,294 @@
+
+main,
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* ENCABEZADO */
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.welcome h1 { color: var(--texto); }
+.welcome p  { color: var(--texto2); }
+
+.date {
+    background: var(--white);
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+/* PANEL BASE (reutiliza .panel de index) */
+.panel {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.08);
+    margin-bottom: 25px;
+}
+
+.panel-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--contenedor);
+}
+
+.panel-title h3 {
+    color: var(--texto);
+    font-size: 17px;
+}
+
+/* =============================================
+   HERO DEL SISTEMA
+============================================= */
+.about-hero {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.hero-logo img {
+    height: 90px;
+    width: auto;
+}
+
+.hero-info {
+    flex: 1;
+    min-width: 260px;
+}
+
+.hero-info h2 {
+    font-size: 28px;
+    color: var(--principal);
+    letter-spacing: 1px;
+}
+
+.hero-sub {
+    color: var(--secundario);
+    font-weight: 600;
+    margin: 4px 0 12px;
+    font-size: 15px;
+}
+
+.hero-desc {
+    color: var(--texto2);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 14px;
+}
+
+.version-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(1,4,64,.08);
+    color: var(--principal);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+/* =============================================
+   TARJETAS DE CARACTERÍSTICAS
+============================================= */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.feature-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 22px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.08);
+    transition: transform .25s, box-shadow .25s;
+}
+
+/* .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.13);
+} */
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.feature-icon.blue   { background: rgba(57,76,170,.15);  color: var(--secundario); }
+.feature-icon.green  { background: rgba(0,179,51,.15);   color: var(--verde); }
+.feature-icon.yellow { background: rgba(255,216,0,.25);  color: #8a6d00; }
+.feature-icon.red    { background: rgba(255,0,0,.12);    color: var(--rojo); }
+
+.feature-card h3 {
+    font-size: 15px;
+    color: var(--texto);
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: var(--texto2);
+    line-height: 1.5;
+}
+
+/* =============================================
+   EQUIPO DE DESARROLLO
+============================================= */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 22px 16px;
+    background: var(--fondo);
+    border-radius: 12px;
+    transition: background .2s;
+}
+
+/* .team-card:hover {
+    background: rgba(57,76,170,.12);
+} */
+
+.team-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--principal);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.team-card h4 {
+    color: var(--texto);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.team-role {
+    font-size: 12px;
+    color: var(--secundario);
+    font-weight: 600;
+    background: rgba(57,76,170,.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* =============================================
+   INSTITUCIONAL
+============================================= */
+.institution-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.institution-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    background: var(--fondo);
+    border-radius: 10px;
+}
+
+.inst-logo-sena {
+    height: 50px;
+    width: auto;
+    filter: invert(1);    
+    opacity: .85;
+    flex-shrink: 0;
+}
+
+.inst-logo-minova {
+    height: 55px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.institution-item h4 {
+    color: var(--principal);
+    margin-bottom: 4px;
+}
+
+.institution-item p {
+    color: var(--texto2);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =============================================
+   CONTACTO
+============================================= */
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--fondo);
+    border-radius: 10px;
+    color: var(--texto);
+    font-size: 14px;
+}
+
+.contact-item i {
+    color: var(--secundario);
+    font-size: 18px;
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+    .about-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .institution-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
