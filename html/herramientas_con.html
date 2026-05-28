@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOVA - HERRAMIENTAS</title>
+
+    <link rel="stylesheet" href="../styles/base.css ">
+    <link rel="stylesheet" href="../styles/estilos_tabla.css">
+    <link rel="stylesheet" href="../styles/estilos_herramientas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div id="base-container"></div>
+
+    <template id="page-content">
+        <div class="welcome">
+            <div>
+
+                <h1>HERRAMIENTAS CONSUMIBLES</h1>
+                <p>Este es el formato de las herramientas consumibles.</p>
+            </div>
+
+            <div class="date">
+                <i class="fa-regular fa-calendar"></i>
+                26 de mayo de 2029
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th><h4>hID</h4></th>
+                    <th><h4>Tipo Herramienta</h4></th>
+                    <th><h4>Descripción</h4></th>
+                    <th><h4>Acciones</h4></th>
+
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Aceites</td>
+                <td>Los aceites son consumibles usados para lubricar y proteger motores, máquinas y equipos, reduciendo el desgaste y mejorando su funcionamiento.</td>
+                <td><button class="btn btn-azul"><i class="fa-solid fa-edit"></i></button><br><button class="btn btn-azul"><i class="fa-solid fa-trash"></i></button></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <div class="btn-container">
+            <button class="btn btn-azul"><i class="fa-solid fa-plus"></i> Agregar herramienta</button>
+        </div>
+    </template>
+    <script src="../scripts/base.js"></script>
+</body>
+</html>
