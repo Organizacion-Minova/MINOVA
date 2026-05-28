@@ -22,9 +22,7 @@ tbody tr {
 tbody tr:last-child { 
     border-bottom: none; 
 }
-tbody tr:hover { 
-    background: var(--secundario); 
-}
+
 tbody td { padding: 11px 14px; 
     font-size: 13px; 
     color: var(--texto); 

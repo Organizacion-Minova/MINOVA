@@ -16,6 +16,7 @@
     --amarillo:#FFD800;
     --verde:#00B333;
     --white:#FFFFFF;
+    --Azul-difuminado:linear-gradient(135deg,var(--principal),var(--secundario));
 }
 
 /* ======================
@@ -40,7 +41,7 @@ body{
 
 .topbar{
     height:100px;
-    background:var(--principal);
+    background:var(--Azul-difuminado);
     color:var(--white);
     display:flex;
     justify-content:space-between;
@@ -143,6 +144,33 @@ body{
     gap:4px;
 }
 
+
+/*encabezado de cada sección*/
+main,
+.content{
+    flex:1;
+    padding:30px;
+}
+.welcome{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.welcome h1{
+    color:var(--texto);
+}
+
+.welcome p{
+    color:var(--texto2);
+}
+
+.date{
+    background:var(--white);
+    padding:15px 25px;
+    border-radius:12px;
+}
 /* ======================
    OVERLAY BASE
 ====================== */
@@ -538,7 +566,7 @@ main{
 ====================== */
 
 footer{
-    background:var(--principal);
+    background:var(--Azul-difuminado);
     color:var(--white);
     border-top:4px solid var(--secundario);
     display:flex;
