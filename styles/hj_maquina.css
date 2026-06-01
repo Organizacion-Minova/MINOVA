@@ -1,0 +1,78 @@
+
+/* 
+ .grid-container{
+    display: grid; 
+    gap: 10px;  
+        grid-template:
+        
+        "topbar" auto
+        "sidebar" auto
+        "seccion1" auto
+        "seccion2" auto
+        "botones" auto
+        "footer" auto;
+
+   @media (min-width: 768px) {
+    
+        grid-template:
+            
+            "topbar topbar" auto
+            "seccion1 seccion2" auto
+            "botones botones" auto
+            "footer footer" auto
+
+            / 50% auto; 
+    }
+
+        @media (min-width: 992px) {
+        grid-template:
+        
+            
+            "topbar topbar" auto
+            "seccion1 seccion2" auto
+            "botones botones" auto
+            "footer footer" auto
+
+            / auto 50%;
+    }
+} */
+
+.topbar{grid-area: topbar;}
+.sidebar{grid-area: sidebar;}
+.seccion1{grid-area: seccion1;}
+.seccion2{grid-area: seccion2;}
+.btn-container{grid-area:botones;}
+footer{grid-area: footer;}
+
+.seccion1{
+    width: 50%;
+    background: var(--white);
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+}
+
+.seccion1 img{
+    border-radius:15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+.seccion2{
+    width: 50%;
+    max-width: 60%;
+    background: var(--white);
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+}
+
+.lista-dos-columnas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 30px; /*Espaciado entre filas y columnas */
+        padding: 0;
+        list-style: none;
+    }
