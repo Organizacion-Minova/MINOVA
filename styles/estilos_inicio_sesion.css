@@ -1,18 +1,4 @@
-/* ═══════════════════════════════════════════
-   VARIABLES GLOBALES
-═══════════════════════════════════════════ */
-:root {
-  --principal:  #394CAA;
-  --secundario: #010440;
-  --fondo:      #B4B5B9;
-  --contenedor: #CACACC;
-  --texto:      #0D0D0D;
-  --texto2:     #404040;
-  --rojo:       #FF0000;
-  --amarillo:   #FFD800;
-  --verde:      #00B333;
-  --blanco:     #ffffff;
-}
+
 
 /* ═══════════════════════════════════════════
    RESET Y BASE
@@ -20,7 +6,6 @@
 *, *::before, *::after {
   margin: 0; padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
@@ -70,7 +55,7 @@ body {
 }
 
 .modal {
-  background: var(--blanco);
+  background: var(--white);
   border-radius: 20px;
   width: 100%;
   max-width: 500px;
@@ -121,7 +106,8 @@ body {
   text-align: center;
 }
 .tab-titulo {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding: 10px 0 12px;
   font-size: 15px;
   font-weight: 600;
@@ -172,7 +158,7 @@ body {
 .paso.completado .paso-circulo {
   border-color: var(--verde);
   background: var(--verde);
-  color: white;
+  color: var(--fondo);
 }
 
 .paso-label {
@@ -642,7 +628,7 @@ body {
 ═══════════════════════════════════════════ */
 .modal-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 28px;
   padding-top: 18px;
