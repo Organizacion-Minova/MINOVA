@@ -12,66 +12,14 @@
                 <span class="bell-badge" id="bellBadge">5</span>
             </button>
 
-            <!-- OVERLAY ALERTAS -->
+            
             <div class="overlay-panel" id="overlayAlertas">
                 <div class="alerts-header">
                     <h3><i class="fa-solid fa-bell"></i> Alertas del sistema</h3>
                     <button class="mark-all" onclick="marcarTodas()">Marcar todas como leídas</button>
                 </div>
 
-                <div class="alerts-list" id="alertsList">
 
-                    <!-- CRÍTICA -->
-                    <div class="alert-row prio-critica unread">
-                        <div class="alert-icon-wrap"><i class="fa-solid fa-fire"></i></div>
-                        <div class="alert-body">
-                            <div class="a-title">Fallo crítico — Compresor #7</div>
-                            <div class="a-desc">Temperatura supera límite máximo (98 °C)</div>
-                            <div class="a-time"><i class="fa-regular fa-clock"></i> Hace 5 min &nbsp;<span class="prio-pill">CRÍTICA</span></div>
-                        </div>
-                    </div>
-
-                    <!-- CRÍTICA 2 -->
-                    <div class="alert-row prio-critica unread">
-                        <div class="alert-icon-wrap"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                        <div class="alert-body">
-                            <div class="a-title">Sensor de presión fuera de rango</div>
-                            <div class="a-desc">Equipo: Prensa hidráulica B-02</div>
-                            <div class="a-time"><i class="fa-regular fa-clock"></i> Hace 18 min &nbsp;<span class="prio-pill">CRÍTICA</span></div>
-                        </div>
-                    </div>
-
-                    <!-- ALTA -->
-                    <div class="alert-row prio-alta unread">
-                        <div class="alert-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
-                        <div class="alert-body">
-                            <div class="a-title">Mantenimiento vencido</div>
-                            <div class="a-desc">Torno CNC #3 — venció hace 2 días</div>
-                            <div class="a-time"><i class="fa-regular fa-clock"></i> Hace 1 hora &nbsp;<span class="prio-pill">ALTA</span></div>
-                        </div>
-                    </div>
-
-                    <!-- MEDIA -->
-                    <div class="alert-row prio-media unread">
-                        <div class="alert-icon-wrap"><i class="fa-solid fa-box-open"></i></div>
-                        <div class="alert-body">
-                            <div class="a-title">Stock bajo — Filtros de aire</div>
-                            <div class="a-desc">Quedan 4 unidades (mínimo recomendado: 10)</div>
-                            <div class="a-time"><i class="fa-regular fa-clock"></i> Hace 3 horas &nbsp;<span class="prio-pill">MEDIA</span></div>
-                        </div>
-                    </div>
-
-                    <!-- BAJA -->
-                    <div class="alert-row prio-baja">
-                        <div class="alert-icon-wrap"><i class="fa-solid fa-circle-info"></i></div>
-                        <div class="alert-body">
-                            <div class="a-title">Backup automático completado</div>
-                            <div class="a-desc">48.3 MB guardados correctamente</div>
-                            <div class="a-time"><i class="fa-regular fa-clock"></i> Hace 6 horas &nbsp;<span class="prio-pill">BAJA</span></div>
-                        </div>
-                    </div>
-
-                </div><!-- /alerts-list -->
 
                 <div class="alerts-footer">
                     <button class="btn-ver-alertas" onclick="irAlertas()">
@@ -96,39 +44,26 @@
             <div class="overlay-panel" id="overlayPerfil">
 
                 <div class="perfil-header">
-                    <img class="perfil-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" alt="">
-                    <h3>PAPOI</h3>
-                    <span class="role-badge">
-                        <i class="fa-solid fa-shield-halved"></i> PAPOI
-                    </span>
+               
                 </div>
 
                 <div class="perfil-info">
-                    <div class="perfil-info-row">
-                        <i class="fa-regular fa-envelope"></i>
-                        PAPOI
-                    </div>
-                    <div class="perfil-info-row">
-                        <i class="fa-solid fa-id-badge"></i>
-                        PAPOI
-                    </div>
-                    <div class="perfil-info-row">
-                        <i class="fa-regular fa-clock"></i>
-                    PAPOI
-                    </div>
+
+            
                 </div>
 
                 <div class="perfil-actions">
-                    <button class="btn-perfil-action secondary" onclick="irPerfil()">
-                        <i class="fa-solid fa-user"></i> Ver mi perfil
+                    <button class="btn-perfil-action secondary">
+                    <li> <a href="perfil.html"> <i class="fa-solid fa-user"></i> Ver mi perfil </a> </li>
+                        
                     </button>
-                    <button class="btn-perfil-action primary" onclick="irSuperadmin()">
+                    <button class="btn-perfil-action primary" >
                         <i class="fa-solid fa-shield-halved"></i> Panel Superadmin
                     </button>
                 </div>
 
                 <div class="perfil-footer">
-                    <button class="btn-logout-overlay" onclick="cerrarSesion()">
+                    <button class="btn-logout-overlay">
                         <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
                     </button>
                 </div>
@@ -189,9 +124,15 @@
                 <a href="acerca_de.html">Acerca de</a>
             </li>
             <li>
+                <i class="fa-solid fa-circle-question"></i>
+                <a href="ayuda.html">Ayuda</a>
+            <li>
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <a href="Iniciar_sesion.html">iniciar sesion</a>
+                <li>
+        
         </ul>
+        
     </aside>
 
     <!-- Aquí se insertará el contenido de cada página -->

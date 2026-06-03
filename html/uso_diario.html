@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/base.css ">
     <link rel="stylesheet" href="../styles/estilos_formulario.css">
     <link rel="stylesheet" href="../styles/estilos_uso_diario.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -54,9 +55,9 @@
             </tr>
         </table>
         <br>
-    <div class="acciones">
+    <div class="btn-container">
 
-        <button id="btnAgregar" class="btn btn-azul">
+        <button id="abrirModal" class="btn btn-azul">
             <i class="fa-solid fa-plus"></i>
             Nuevo Registro
         </button>
@@ -70,9 +71,55 @@
             <i class="fa-solid fa-file-pdf"></i>
             Exportar PDF
         </button>
-
     </div>
-        
+    <div class="overlay-backdrop" id="backdropModal"></div>
+    <div class="overlay-panel modal-tool" id="overlay">
+        <div class="modal-header">
+            <h2>Agregar nuevo registro</h2>
+            <button class="cerrar-modal" id="cerrarModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form class="form" >
+            <div class="inputs-row">
+                <div class="input-group">
+                    <label for="nombreMaquina">Nombre de la máquina:</label>
+                    <input type="text" id="nombreMaquina" name="nombreMaquina" placeholder="Nombre de la maquina:" required>
+                </div>
+                <div class="input-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="estadoFuncionamiento">Verificación del estado de funcionamiento:</label>
+                <input id="estadoFuncionamiento" name="estadoFuncionamiento" rows="4" placeholder="Verificación del estado de funcionamiento:" required>
+            </div>
+            <div class="inputs-row">
+                <div class="input-group">
+                    <label for="inicioOperacion">Inicio de operación:</label>
+                    <input type="time" id="inicioOperacion" name="inicioOperacion" placeholder="Inicio de operación:" required>
+                </div>
+                <div class="input-group">
+                    <label for="finOperacion">Fin de operación:</label>
+                    <input type="time" id="finOperacion" name="finOperacion" placeholder="Fin de operación:" required> 
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="responsable">Responsable a cargo:</label>
+                <input type="text" id="responsable" name="responsable" placeholder="Responsable a cargo:" required>
+            </div>
+            <div class="input-group">
+                <label for="observaciones">Observaciones:</label>
+                <textarea id="observaciones" name="observaciones" rows="4" placeholder="Observaciones:"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-azul">
+                <i class="fa-solid fa-save"></i> Guardar
+            </button>
+        </form>
+    </div>
 
     </template>
 

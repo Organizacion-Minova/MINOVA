@@ -30,11 +30,10 @@
         <table>
             <thead>
                 <tr>
-                    <th><h4>hID</h4></th>
-                    <th><h4>Tipo Herramienta</h4></th>
-                    <th><h4>Descripción</h4></th>
-                    <th><h4>Acciones</h4></th>
-
+                    <th>ID</th>
+                    <th>Tipo Herramienta</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,15 +41,60 @@
                 <td>1</td>
                 <td>Aceites</td>
                 <td>Los aceites son consumibles usados para lubricar y proteger motores, máquinas y equipos, reduciendo el desgaste y mejorando su funcionamiento.</td>
-                <td><button class="btn btn-azul"><i class="fa-solid fa-edit"></i></button><br><button class="btn btn-azul"><i class="fa-solid fa-trash"></i></button></td>
+                <td><button class="btn btn-azul"><i class="fa-solid fa-eye"></i></button><br><button class="btn btn-azul"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
             </tbody>
         </table>
         <br>
-        <div class="btn-container">
-            <button class="btn btn-azul"><i class="fa-solid fa-plus"></i> Agregar herramienta</button>
+        <!-- BOTON -->
+            <button class="btn btn-azul" id="abrirModal">
+                <i class="fa-solid fa-plus"></i> Agregar tipo herramienta
+            </button>
+
+
+        <!-- OVERLAY -->
+        <div class="overlay-backdrop" id="backdropModal"></div>
+
+        <div class="overlay-panel modal-tool" id="overlay">
+
+            <div class="modal-header">
+                <h3>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    Nueva Herramienta
+                </h3>
+
+                <button class="cerrar-modal" id="cerrarModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form class="form">
+
+                <div class="input-group">
+                    <label>ID</label>
+                    <input type="number" placeholder="Ingrese el ID" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Tipo Herramienta</label>
+                    <input type="text" placeholder="Ingrese el tipo de herramienta" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Descripción</label>
+                    <textarea placeholder="Ingrese la descripción" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-azul">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Guardar
+                </button>
+
+            </form>
+
         </div>
     </template>
     <script src="../scripts/base.js"></script>
+
 </body>
 </html>
