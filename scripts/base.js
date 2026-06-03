@@ -37,6 +37,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // ── Asignar eventos DESPUÉS de que el HTML base esté en el DOM ──
         _iniciarEventos();
+        const btnSidebar = document.getElementById("toggleSidebar");
+const sidebar = document.querySelector(".sidebar");
+
+if(btnSidebar && sidebar){
+
+    btnSidebar.addEventListener("click", () => {
+
+        sidebar.classList.toggle("cerrado");
+
+    });
+
+}
 
     } catch (error) {
         console.error("Error cargando base:", error);
@@ -75,6 +87,15 @@ if (abrirModal && overlay && backdropModal) {
     });
 
 }
+document.querySelectorAll(".menu-titulo").forEach(menu => {
+
+    menu.addEventListener("click", function () {
+
+        this.parentElement.classList.toggle("activo");
+
+    });
+
+});
 
 if (cerrarModal && overlay && backdropModal) {
 
@@ -163,16 +184,22 @@ const overlay = document.getElementById("overlay");
 const abrirModal = document.getElementById("abrirModal");
 const cerrarModal = document.getElementById("cerrarModal");
 
-abrirModal.addEventListener("click", () => {
-    overlay.style.display = "flex";
-});
+if (abrirModal && overlay) {
+    abrirModal.addEventListener("click", () => {
+        overlay.style.display = "flex";
+    });
+}
 
-cerrarModal.addEventListener("click", () => {
+if (cerrarModal && overlay) {
+    cerrarModal.addEventListener("click", () => {
         overlay.style.display = "none";
-});
+    });
+}
 
-overlay.addEventListener("click", (e) => {
-    if(e.target === overlay){
-        overlay.style.display = "none";
-    }
-});
+if (overlay) {
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = "none";
+        }
+    });
+}

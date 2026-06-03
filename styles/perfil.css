@@ -12,7 +12,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 /* ── Encabezado de bienvenida ── */
@@ -20,16 +20,16 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 0 16px;
+  padding: 1.75rem 0 1rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 56.25rem;
 }
 
 .welcome .date {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
   color: var(--texto2);
   white-space: nowrap;
 }
@@ -37,7 +37,7 @@ main {
 /* ── Ícono en títulos de sección ── */
 .icono-titulo {
   color: var(--principal);
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 
 /* ======================
@@ -47,9 +47,9 @@ main {
 .perfil-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 0 0 32px;
-  max-width: 900px;
+  gap: 1.25rem;
+  padding: 0 0 2rem;
+  max-width: 56.25rem;
   width: 100%;
 }
 
@@ -59,9 +59,9 @@ main {
 
 .panel {
   background: var(--white);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 2px 12px rgba(1, 4, 64, .08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.125rem 0.75rem rgba(1, 4, 64, .08);
 }
 
 /* ======================
@@ -72,26 +72,26 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   text-align: center;
 }
 
 .tarjeta-avatar .perfil-nombre-rol h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /* Avatar */
-.avatar-section { margin-bottom: 4px; }
+.avatar-section { margin-bottom: 0.25rem; }
 
 .avatar-wrap {
-  width: 110px;
-  height: 110px;
+  width: 6.875rem;
+  height: 6.875rem;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
   cursor: pointer;
   position: relative;
-  border: 3px solid var(--principal);
+  border: 0.1875rem solid var(--principal);
 }
 
 .avatar-wrap img {
@@ -110,8 +110,8 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  font-size: 12px;
+  gap: 0.25rem;
+  font-size: 0.75rem;
   font-weight: 600;
   opacity: 0;
   transition: opacity .2s;
@@ -119,27 +119,27 @@ main {
 
 .avatar-wrap:hover .avatar-overlay { opacity: 1; }
 
-.avatar-overlay i { font-size: 20px; }
+.avatar-overlay i { font-size: 1.25rem; }
 
 #inputFoto { display: none; }
 
 /* Nombre y rol */
 .perfil-nombre-rol h3 {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--texto);
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem;
 }
 
 .rol-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125rem;
   background: rgba(57, 76, 170, .12);
   color: var(--principal);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1.25rem;
 }
 
 /* ======================
@@ -147,23 +147,23 @@ main {
 ====================== */
 
 .tarjeta-contacto .seccion-titulo-row {
-  margin-bottom: 16px;
-  padding-bottom: 12px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
 }
 
 .perfil-dato-lateral {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 8px;
-  font-size: 13px;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
   color: var(--texto2);
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .perfil-dato-lateral i {
   color: var(--principal);
-  width: 16px;
+  width: 1rem;
   text-align: center;
 }
 
@@ -175,20 +175,20 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #eee;
 }
 
 .seccion-titulo-row h3 {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--texto);
 }
 
 .seccion-titulo-row p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--texto2);
-  margin-top: 2px;
+  margin-top: 0.125rem;
 }
 
 /* Variante sin borde inferior (tarjeta accesos) */
@@ -205,13 +205,13 @@ main {
 .form-col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0.875rem;
 }
 
 /* Dos campos en fila con flex (sin grid) */
 .form-pair {
   display: flex;
-  gap: 14px;
+  gap: 0.875rem;
 }
 
 .form-pair .form-field { flex: 1; }
@@ -219,23 +219,23 @@ main {
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.3125rem;
 }
 
 .form-field label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--texto2);
   text-transform: uppercase;
-  letter-spacing: .4px;
+  letter-spacing: 0.025rem;
 }
 
 .form-field input,
 .form-field select {
-  padding: 10px 14px;
-  border: 1.5px solid #e0e4f0;
-  border-radius: 10px;
-  font-size: 14px;
+  padding: 0.625rem 0.875rem;
+  border: 0.09375rem solid #e0e4f0;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
   font-family: inherit;
   color: var(--texto);
   background: #f7f8ff;
@@ -264,7 +264,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
+  padding: 0.875rem 0;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -273,31 +273,31 @@ main {
 .seg-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .seg-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 0.625rem;
   background: rgba(1, 4, 64, .07);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--principal);
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .seg-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--texto);
 }
 
 .seg-desc {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--texto2);
-  margin-top: 2px;
+  margin-top: 0.125rem;
 }
 
 /* ======================
@@ -306,30 +306,30 @@ main {
 
 .tarjeta-accesos .historial-wrap {
   border-top: none;
-  padding-top: 14px;
+  padding-top: 0.875rem;
   margin-top: 0;
 }
 
 .historial-titulo {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--texto2);
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   text-transform: uppercase;
-  letter-spacing: .5px;
+  letter-spacing: 0.03125rem;
 }
 
 .historial-titulo i {
-  margin-right: 6px;
+  margin-right: 0.375rem;
   color: var(--principal);
 }
 
 .historial-item {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--texto2);
-  padding: 6px 0;
+  padding: 0.375rem 0;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -344,13 +344,13 @@ main {
 .btn-editar {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 18px;
-  border-radius: 50px;
+  gap: 0.4375rem;
+  padding: 0.5rem 1.125rem;
+  border-radius: 3.125rem;
   border: none;
   background: var(--principal);
   color: var(--white);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -359,45 +359,45 @@ main {
 
 .btn-editar:hover {
   background: var(--secundario);
-  transform: translateY(-1px);
+  transform: translateY(-0.0625rem);
 }
 
 .btn-guardar {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 10px 24px;
-  border-radius: 50px;
+  gap: 0.4375rem;
+  padding: 0.625rem 1.5rem;
+  border-radius: 3.125rem;
   border: none;
   background: var(--principal);
   color: var(--white);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
   transition: background .2s, transform .15s;
-  margin-top: 6px;
+  margin-top: 0.375rem;
 }
 
 .btn-guardar:hover {
   background: var(--secundario);
-  transform: translateY(-1px);
+  transform: translateY(-0.0625rem);
 }
 
 .btn-cambiar {
- background:var(--principal);
-    color:var(--white);
-    border:none;
-    padding:10px 24px;
-    border-radius:50px;
-    font-size:13px;
-    font-weight:700;
-    font-family:inherit;
-    cursor:pointer;
-    transition: background .2s, transform .15s;
+  background: var(--principal);
+  color: var(--white);
+  border: none;
+  padding: 0.625rem 1.5rem;
+  border-radius: 3.125rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
 }
 
-.btn-cambiar:hover{
-    background: var(--secundario);
-    color:var(--white);
+.btn-cambiar:hover {
+  background: var(--secundario);
+  color: var(--white);
 }
