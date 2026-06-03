@@ -1,9 +1,12 @@
 <header class="topbar">
+    <button id="toggleSidebar">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
     <div class="logo">
         <img src="../img/Minova - logo1.png" alt="MINOVA">
     </div>
     <h2>SISTEMA DE MANTENIMIENTO E INVENTARIO</h2>
-
     <nav class="user-info">
         <!-- ── BOTÓN CAMPANA ── -->
         <div style="position:relative;">
@@ -81,20 +84,29 @@
 <div class="container">
 
     <aside class="sidebar">
+        
         <ul>
             <li>
                 <i class="fa-solid fa-house"></i>
                 <a href="index.html">Inicio</a>
             </li>
-            <li>
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <a href="#">Herramientas</a>
-                <br>
-                <ul class="submenu">
-                    <li><a href="herramientas_con.html">Consumibles </a></li>
-                    <li><a href="herramientas_c_n.html">No consumibles</a></li>
-                </ul>
-            </li>
+        <li class="menu-desplegable">
+
+    <div class="menu-titulo">
+        <div>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Herramientas</span>
+        </div>
+
+        <i class="fa-solid fa-chevron-down flecha"></i>
+    </div>
+
+    <ul class="submenu">
+        <li><a href="herramientas_con.html">Consumibles</a></li>
+        <li><a href="herramientas_c_n.html">No consumibles</a></li>
+    </ul>
+
+</li>
             <li>
                 <i class="fa-solid fa-gears"></i>
                 <a href="equipos.html">Equipos</a>
@@ -124,12 +136,14 @@
                 <a href="acerca_de.html">Acerca de</a>
             </li>
             <li>
-                <i class="fa-solid fa-circle-question"></i>
-                <a href="ayuda.html">Ayuda</a>
+            <i class="fa-solid fa-circle-question"></i>
+            <a href="ayuda.html">Ayuda</a>
+            </li>
+
             <li>
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <a href="Iniciar_sesion.html">iniciar sesion</a>
-                <li>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="Iniciar_sesion.html">Iniciar sesión</a>
+            </li>
         
         </ul>
         
@@ -140,11 +154,13 @@
 
 </div>
 
+
+
 <footer>
     <div class="secFooterPrincipal">
         <img class="logoSenaFooter" src="../img/logo-sena-blanco.png" alt="SENA">
         <img class="logoSmaqFooter" src="../img/Minova - logo2.png" alt="MINOVA">
-        <br>Sistema de Mantenimiento y inventariado de elementos Mineros
+        <br> MINOVA - Sistema de Mantenimiento de Maquinas Mineras
         <br> Copyright © 2026. Todos los derechos reservados.
     </div>
     <div class="infoFooter">

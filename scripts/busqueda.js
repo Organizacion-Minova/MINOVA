@@ -176,5 +176,7 @@
             }
         }
 
-        doSearch();
+      if (document.getElementById('q')) {
+    doSearch();
+}
         

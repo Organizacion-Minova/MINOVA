@@ -37,6 +37,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Asignar eventos DESPUÉS de que todo el HTML esté en el DOM
         _iniciarEventos();
+        const btnSidebar = document.getElementById("toggleSidebar");
+const sidebar = document.querySelector(".sidebar");
+
+if(btnSidebar && sidebar){
+
+    btnSidebar.addEventListener("click", () => {
+
+        sidebar.classList.toggle("cerrado");
+
+    });
+
+}
 
         // Disparar evento para que otros scripts (busqueda_maquina.js, etc.)
         // sepan que el contenido ya está listo
@@ -81,12 +93,16 @@ function _iniciarEventos() {
         });
     }
 
-    if (overlay && cerrarModal) {
-        cerrarModal.addEventListener("click", () => {
-            overlay.classList.remove("open");
-            if (backdropModal) backdropModal.classList.remove("active");
-        });
-    }
+}
+document.querySelectorAll(".menu-titulo").forEach(menu => {
+
+    menu.addEventListener("click", function () {
+
+        this.parentElement.classList.toggle("activo");
+
+    });
+
+});
 
     if (overlay && backdropModal) {
         backdropModal.addEventListener("click", () => {
@@ -153,4 +169,27 @@ function cerrarSesion() {
     if (confirm('¿Deseas cerrar sesión?')) {
         alert('Cerrando sesión...');
     }
+}
+const overlay = document.getElementById("overlay");
+const abrirModal = document.getElementById("abrirModal");
+const cerrarModal = document.getElementById("cerrarModal");
+
+if (abrirModal && overlay) {
+    abrirModal.addEventListener("click", () => {
+        overlay.style.display = "flex";
+    });
+}
+
+if (cerrarModal && overlay) {
+    cerrarModal.addEventListener("click", () => {
+        overlay.style.display = "none";
+    });
+}
+
+if (overlay) {
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = "none";
+        }
+    });
 }
