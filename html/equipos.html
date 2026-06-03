@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/equipos.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -17,16 +18,15 @@
 
        <div class="welcome">
             <div>
-                <h1>Equipos</h1>
-                <p>busqueda y gestion  para  los equipos.</p>
+                <h1>EQUIPOS</h1>
+                <p>Busqueda y gestion  para  los equipos.</p>
             </div>
             <div class="date">
                 <i class="fa-regular fa-calendar"></i>
                 26 de mayo de 2029
             </div>
         </div>
-<br>
-<br>
+
         <div class="search-main">
             <div class="search-wrapper">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -137,15 +137,62 @@
         <div class="pagination" id="paginacion"></div>
 
         <!-- BOTONES INFERIORES -->
-        <div class="page-actions">
-            <button class="btn-volver" onclick="history.back()">
-                <i class="fa-solid fa-arrow-left"></i> Volver
-            </button>
-            <button   class="btn-agregar" onclick="location.href='agregar_equipo.html'">
+            <button class="btn btn-azul" id="abrirModal"> 
                 <i class="fa-solid fa-plus"></i> Agregar equipo
             </button>
-        </div>
-        <br>
+            <div class="overlay-backdrop " id="backdropModal"></div>
+            <div class="overlay-panel modal-tool" id="overlay">
+                <div class="modal-header">
+                    <h3><i class="fa-solid fa-plus"></i> Agregar nuevo equipo</h3>
+                    <button class="cerrar-modal" id="cerrarModal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <form class="form">
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label for="codigo">Código:</label>
+                            <input type="text" id="codigo" name="codigo" placeholder="Ingrese el código del equipo" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del equipo" required>
+                        </div>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label for="tipo">Tipo:</label>
+                            <input type="text" id="tipo" name="tipo" placeholder="Ingrese el tipo de equipo" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="marca">Marca:</label>
+                            <input type="text" id="marca" name="marca" placeholder="Ingrese la marca del equipo" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="serie">Número de serie:</label>
+                        <input type="text" id="serie" name="serie" placeholder="Ingrese el número de serie del equipo" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ubicacion">Ubicación:</label>
+                        <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingrese la ubicación del equipo" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required>
+                            <option value="">Seleccione un estado</option>
+                            <option value="Activo">Activo</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
+                            <option value="Fuera de servicio">Fuera de servicio</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-azul">
+                        <i class="fa-solid fa-floppy-disk"></i> Guardar
+                    </button>
+            
 
     </template>
 

@@ -242,19 +242,7 @@ main,
 
 .btn-limpiar:hover { background: rgba(0, 0, 0, 0.05); }
 
-.btn-aplicar {
-    padding: 0.4375rem 1.125rem;
-    background: var(--principal);
-    color: var(--white);
-    border: none;
-    border-radius: 0.375rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
 
-.btn-aplicar:hover { background: var(--secundario); }
 
 /* ======================
    CHIPS / ETIQUETAS ACTIVAS
