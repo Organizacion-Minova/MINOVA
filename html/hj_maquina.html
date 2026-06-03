@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de vida <span id='maquina'></span></title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/hj_maquina.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <script src="../scripts/base.js" defer></script>
+</head>
+<body class="grid-container"> 
+    <div id="base-container"></div>
+    <template id="page-content">
+
+       <div class="welcome">
+            <div>
+                <h1>Electrobomba</h1>
+                <p>Hoja de vida de la maquina</p>
+            </div>
+        </div> 
+
+        <main class="seccion1">
+          
+                <img src="/img/electrobomba.jpg" alt="ELECTROBOMBA">
+                <ul class="lista-dos-columnas">
+                    <li><strong>NOMBRE:</strong> <span id="eb_nombre">Electrobomba</span></li>
+                    <li><strong>CÓDIGO PROGRAMA:</strong> <span id="eb_codigoPrograma">PT2-EL01</span></li>
+                    <li><strong>MARCA:</strong> <span id="eb_marca">IHM</span></li>
+                    <li><strong>MODELO:</strong> <span id="eb_modelo">2015</span></li>
+                    <li><strong>GARANTIA:</strong> <span id="eb_garantia">12 meses</span></li>
+                    <li><strong>USO:</strong> <span id="eb_uso">Desagüe de la mina</span></li>
+                    <li><strong>OPERADO POR:</strong> <span id="eb_operador">Técnicos mina</span></li>
+                </ul>
+        </main>
+
+        <main class="seccion2">        
+            <ul class="lista-dos-columnas">
+                <li><strong>EMPRESA:</strong> <span id="eb_empresaPrincipal">Sena Centro Minero</span></li>
+                <li><strong>PROCESO:</strong> <span id="eb_proceso">Mantenimiento</span></li>
+                <li><strong>LUGAR DE TRABAJO:</strong> <span id="eb_lugarTrabajo">Pozo túnel 2</span></li>
+                <li><strong>UBICACIÓN:</strong> <span id="eb_ubicacionGeneral">Sena Centro Minero - Morca</span></li>
+                <li><strong>CIUDAD:</strong> <span id="eb_ciudad">Sogamoso</span></li>
+                <li><strong>FECHA:</strong> <span id="eb_fecha">05/05/2022</span></li>
+                <li><strong>EQUIPO EN OPERACIÓN:</strong> <span id="eb_equipoOperacion">Sí</span></li>
+                <li><strong>TIPO DE OPERACIÓN:</strong> <span id="eb_tipoOperacion">Desagüe</span></li>
+                <li><strong>RESPONSABLE:</strong> <span id="eb_responsable">Jefe de mina</span></li>
+                <li><strong>SERIAL:</strong> <span id="eb_serial">7239900H1</span></li>
+                <li><strong>OBSERVACIONES:</strong> <span id="eb_observaciones">Electrobomba con motor protegido de 15 HP</span></li>
+                <li><strong>MANOMETRÍA TOTAL:</strong> <span id="eb_manometria">60 m</span></li>
+                <li><strong>CAUDAL:</strong> <span id="eb_caudal">40 m³/h</span></li>
+                <li><strong>CARACTERÍSTICAS:</strong> <span id="eb_caracteristicas">Antiexplosivo, trifásico, 3600 RPM, 220/440 V, 60 Hz</span></li>
+            </ul>
+        </main>
+        <div class="page-actions">
+            <button class="btn-azul">Uso diario</button>
+            <button class="btn-azul">Pre operacional</button>
+            <button class="btn-azul">Inspeccion</button>
+        </div>
+    </template>
+</body>
+</html>

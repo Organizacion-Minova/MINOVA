@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOVA - MAQUINAS</title>
+    <link rel="stylesheet" href="../styles/base.css ">
+    <link rel="stylesheet" href="../styles/estilos_ubicaciones.css">
+    <link rel="stylesheet" href="../styles/estilos_tabla.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="base-container"></div>
+
+    <template id="page-content">
+        <div class="welcome">
+            <div>
+                <h1>MAQUINAS</h1>
+                <p>Este es el formato de las máquinas.</p>
+            </div>
+
+            <div class="date">
+                <i class="fa-regular fa-calendar"></i>
+                26 de mayo de 2029
+            </div>
+        </div>
+        <div class="search-main">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="text"
+                    id="q"
+                    placeholder="Buscar por nombre, código, número de serie, marca, ubicación…"
+                    oninput="doSearch()"
+                />
+            </div>
+            <button class="btn-filtros" id="btnFiltros" onclick="toggleFiltros()">
+                <i class="fa-solid fa-sliders"></i> Filtros
+            </button>
+            <button class="btn-buscar" onclick="doSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i> Buscar
+            </button>
+        </div>
+
+        <!-- PANEL DE FILTROS AVANZADOS -->
+        <div class="filters-panel" id="filtrosPanel">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Estado</label>
+                    <select id="f-estado" onchange="doSearch()">
+                        <option value="">Todos</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                        <option value="Fuera de servicio">Fuera de servicio</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Tipo</label>
+                    <select id="f-tipo" onchange="doSearch()">
+                        <option value="">Todos</option>
+                        <option value="Excavadora">Excavadora</option>
+                        <option value="Retroexcavadora">Retroexcavadora</option>
+                        <option value="Cargador">Cargador</option>
+                        <option value="Malacate">Malacate</option>
+                        <option value="Vagoneta">Vagoneta</option>
+                        <option value="Pulmón">Pulmón</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Marca</label>
+                    <select id="f-marca" onchange="doSearch()">
+                        <option value="">Todas</option>
+                        <option value="CAT">CAT</option>
+                        <option value="JCB">JCB</option>
+                        <option value="Komatsu">Komatsu</option>
+                        <option value="Volvo">Volvo</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Código</label>
+                    <input type="text" id="f-codigo" placeholder="EQ-001…" oninput="doSearch()" />
+                </div>
+                <div class="filter-group">
+                    <label>Número de serie</label>
+                    <input type="text" id="f-serie" placeholder="SN-…" oninput="doSearch()" />
+                </div>
+                <div class="filter-group">
+                    <label>Ubicación</label>
+                    <input type="text" id="f-ubic" placeholder="Zona, área…" oninput="doSearch()" />
+                </div>
+            </div>
+            <div class="filters-actions">
+                <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar filtros</button>
+                <button class="btn-aplicar" onclick="doSearch()">Aplicar</button>
+            </div>
+        </div>
+
+        <!-- CHIPS DE FILTROS ACTIVOS -->
+        <div class="chips-row" id="chips"></div>
+
+        <!-- META Y ORDENAMIENTO -->
+        <div class="results-meta">
+            <span>Mostrando <strong id="rcount">0</strong> equipos</span>
+            <select class="sort-sel" id="sort" onchange="doSearch()">
+                <option value="nombre">Ordenar: Nombre A-Z</option>
+                <option value="codigo">Ordenar: Código</option>
+                <option value="estado">Ordenar: Estado</option>
+                <option value="tipo">Ordenar: Tipo</option>
+                <option value="marca">Ordenar: Marca</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Código</th>
+                    <th>Número de serie</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Ubicación</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="resultsBody">
+                <!-- Aquí se insertarán los resultados de la búsqueda -->
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <div class="btn-container">
+            <button id="abrirModal" class="btn btn-azul">
+                <i class="fa-solid fa-plus"></i>
+                Nueva Máquina
+            </button>
+        </div>
+        <div class="overlay-backdrop" id="backdropModal"></div>
+        <div class="overlay-panel modal-tool" id="overlay">
+            <div class="modal-header">
+                <h2>Agregar nueva máquina</h2>
+                <button class="cerrar-modal" id="cerrarModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form class="form" >
+                <div class="input-group">
+                    <label for="nombreMaquina">Codigo:</label>
+                    <input type="text" id="nombreMaquina" name="nombreMaquina" placeholder="Codigo de la maquina:" required>
+                </div>
+                <div class="input-group">
+                    <label for="fecha">Nombre:</label>
+                    <input type="text" id="fecha" name="fecha" placeholder="Nombre de la maquina:" required>
+                </div>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="modelomaquina">Modelo:</label>
+                        <input type="text" id="modelomaquina" name="modelomaquina" placeholder="Modelo de la maquina:" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="Empresa">Empresa:</label>
+                        <input type="text" id="Empresa" name="Empresa" placeholder="Empresa de la maquina:" required>
+                    </div>
+                </div>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="numero_serie_maquina">Numero de serie:</label>
+                        <input type="text" id="numero_serie_maquina" name="numero_serie_maquina" placeholder="Numero de serie:" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="fechaadquisicion">Fecha adquisicion</label>
+                        <input type="date" id="fechaadquisicion" name="fechaadquisicion" placeholder="Fecha de adquisición:" required>
+                    </div>
+                </div>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="costo">Costo adquisición:</label>
+                        <input type="number" id="costo" name="costo" placeholder="Costo de adquisición:" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ubicacionmaquina">Garantia:</label>
+                        <input type="number" id="ubicacionmaquina" name="ubicacionmaquina" placeholder="Garantia de la maquina:" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="estadomaquina">Imagen:</label>
+                    <input type="file" id="estadomaquina" name="estadomaquina" placeholder="Imagen de la maquina:" required>
+                </div>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="ubicacionmaquina">Ubicación:</label>
+                        <input type="text" id="ubicacionmaquina" name="ubicacionmaquina" placeholder="Ubicación de la maquina:" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="categoria">Categoria:</label>
+                        <input type="text" id="categoria" name="categoria" placeholder="Categoria de la maquina:" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-azul">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar
+                </button>
+            </form>
+        </div>
+
+    </template>
+
+    <script src="../scripts/base.js"></script>
+    <script src="../scripts/busqueda.js"></script>
+</body>
+</html>

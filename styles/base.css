@@ -226,7 +226,6 @@ main,
     border:none;
     cursor:pointer;
     font-weight:600;
-    font-family:inherit;
 }
 .alerts-header .mark-all:hover{text-decoration:underline;}
 
@@ -327,7 +326,6 @@ main,
     padding:9px 22px;
     font-size:12px;
     font-weight:700;
-    font-family:inherit;
     cursor:pointer;
     transition:background .2s, transform .15s;
     text-decoration:none;
@@ -407,7 +405,6 @@ main,
     cursor:pointer;
     font-size:13px;
     font-weight:600;
-    font-family:inherit;
     transition:background .15s, transform .12s;
     width:100%;
     text-align:left;
@@ -434,7 +431,6 @@ main,
     color:var(--rojo);
     font-size:12px;
     font-weight:600;
-    font-family:inherit;
     cursor:pointer;
     transition:background .15s;
 }
@@ -536,27 +532,13 @@ main,
 
 .input-group input,
 .input-group textarea,
-.input-group select
+.input-group select,
+.input-group input[type="time"],
+.input-group input[type="date"],
+.input-group input[type="file"]
 {
     padding: .85rem 1rem;
-    border: .0625rem solid #dcdcdc;
-    border-radius: .7rem;
-    outline: none;
-    font-size: .9rem;
-    transition: .2s ease;
-}
-.input-group input[type="time"]{
-    padding: .7rem 3.6rem;
-    border: .0625rem solid #dcdcdc;
-    border-radius: .7rem;
-    outline: none;
-    font-size: .9rem;
-    transition: .2s ease;
-
-}
-.input-group input[type="date"]{
-    padding: .7rem 3.8rem;
-    border: .0625rem solid #dcdcdc;
+    border: .0625rem solid var(--texto2);
     border-radius: .7rem;
     outline: none;
     font-size: .9rem;
@@ -567,7 +549,9 @@ main,
     min-height: 7rem;
     resize: none;
 }
-
+.inputs-row .input-group{
+    flex: 1;
+}
 .input-group input:focus,
 .input-group textarea:focus{
     border-color: var(--principal);

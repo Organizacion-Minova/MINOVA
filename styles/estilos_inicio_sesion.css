@@ -1,18 +1,4 @@
-/* ═══════════════════════════════════════════
-   VARIABLES GLOBALES
-═══════════════════════════════════════════ */
-:root {
-  --principal:  #394CAA;
-  --secundario: #010440;
-  --fondo:      #B4B5B9;
-  --contenedor: #CACACC;
-  --texto:      #0D0D0D;
-  --texto2:     #404040;
-  --rojo:       #FF0000;
-  --amarillo:   #FFD800;
-  --verde:      #00B333;
-  --blanco:     #ffffff;
-}
+
 
 /* ═══════════════════════════════════════════
    RESET Y BASE
@@ -20,7 +6,6 @@
 *, *::before, *::after {
   margin: 0; padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
@@ -271,7 +256,7 @@ body {
 ═══════════════════════════════════════════ */
 .modal-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 1.75rem;
   padding-top: 1.125rem;

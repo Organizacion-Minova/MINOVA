@@ -1,0 +1,88 @@
+# Bases locales
+*.sqlite3
+*.db
+
+# Backups
+/database/backups/
+/backups/
+
+# Variables sensibles
+.env
+
+# Logs
+*.log
+
+# Variables de entorno
+.env
+
+# Dependencias Node.js (si luego agregas npm)
+node_modules/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Caché
+.cache/
+dist/
+build/
+
+# Archivos comprimidos
+*.zip
+*.rar
+
+# Archivos de sistema operativo
+desktop.ini
+
+# =========================
+# SISTEMA
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# EDITORES
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# VARIABLES SENSIBLES
+# =========================
+.env
+
+# =========================
+# NODE
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# LOGS
+# =========================
+*.log
+
+# =========================
+# TEMPORALES
+# =========================
+*.tmp
+*.temp
+.cache/
+
+# =========================
+# BASES DE DATOS
+# =========================
+*.sql.gz
+*.dump
+*.bak
+*.sqlite
+*.sqlite3
+*.db
+
+# =========================
+# EXPORTACIONES
+# =========================
+exports/
+backups/
