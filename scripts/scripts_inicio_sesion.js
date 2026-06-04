@@ -18,8 +18,8 @@
    2. TOGGLE VER / OCULTAR CONTRASEÑA
    Compartido por crear_cuenta y recuperar_contraseña
 ═══════════════════════════════════════════ */
-const SVG_VER = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
-const SVG_OC  = `<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`;
+let SVG_VER = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+let SVG_OC  = `<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`;
 
 function crearTogglePass(btnId, inputId, icoId) {
   const btn   = document.getElementById(btnId);
@@ -425,19 +425,29 @@ function calcularFuerza(pass) {
   if (volverP1) volverP1.addEventListener('click', (e) => {
     e.preventDefault();
     clearInterval(timerReenvio);
-    otpInputs.forEach(i => { i.value = ''; i.classList.remove('lleno','error'); });
-    document.getElementById('panel2').classList.remove('activo');
-    document.getElementById('paso2').classList.remove('activo','completado');
-    const circ2 = document.querySelector('#paso2 .paso-circulo');
-    if (circ2) circ2.textContent = '2';
-    const linea1 = document.getElementById('linea1');
-    if (linea1) linea1.classList.remove('completada');
+    // Limpiar campos OTP
+    otpInputs.forEach(i => { i.value = ''; i.classList.remove('lleno', 'error'); });
+    ocultarAlerta('alerta2');
+
+    // Resetear visualmente paso 2 al estado inicial (sin completado, sin activo)
+    const paso2El = document.getElementById('paso2');
+    const circ2   = document.querySelector('#paso2 .paso-circulo');
+    if (paso2El) paso2El.classList.remove('activo', 'completado');
+    if (circ2)   circ2.textContent = '2';
+
+    // Resetear línea 1
+    const linea1El = document.getElementById('linea1');
+    if (linea1El) linea1El.classList.remove('completada');
+
+    // Resetear paso 1 al estado inicial para que irAPaso(1) lo active correctamente
+    const paso1El = document.getElementById('paso1');
+    const circ1   = document.querySelector('#paso1 .paso-circulo');
+    if (paso1El) paso1El.classList.remove('completado');
+    if (circ1)   circ1.textContent = '1';
+
+    // Necesario: pasoActual apunta a 2, irAPaso quitará activo del panel2 y activará panel1
     pasoActual = 2;
     irAPaso(1);
-    document.getElementById('paso1').classList.remove('completado');
-    const circ1 = document.querySelector('#paso1 .paso-circulo');
-    if (circ1) circ1.textContent = '1';
-    pasoActual = 1;
   });
 
   /* ══════════════════════════════════════════

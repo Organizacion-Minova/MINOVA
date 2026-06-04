@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
     try {
-
-        const response = await fetch("../html/base.html");
+        // Cache-busting: fuerza descarga fresca de base.html en cada carga
+        const response = await fetch("../html/base.html?v=" + Date.now());
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const html = await response.text();
 
         document.getElementById("base-container").innerHTML = html;
@@ -54,43 +55,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         }
 
-        // ─────────────────────────────
-        // INICIAR EVENTOS
-        // ─────────────────────────────
-        iniciarEventos();
+        // Asignar eventos DESPUÉS de que todo el HTML esté en el DOM
+        _iniciarEventos();
 
-        // ─────────────────────────────
-        // BOTÓN SIDEBAR
-        // ─────────────────────────────
-        const btnSidebar = document.getElementById("toggleSidebar");
-        const sidebar = document.querySelector(".sidebar");
-
-        if (btnSidebar && sidebar) {
-
-            btnSidebar.addEventListener("click", () => {
-
-                sidebar.classList.toggle("cerrado");
-
-            });
-
-        }
-
-        // ─────────────────────────────
-        // MENÚ DESPLEGABLE
-        // ─────────────────────────────
-        document.querySelectorAll(".menu-titulo").forEach(menu => {
-
-            menu.addEventListener("click", function () {
-
-                this.parentElement.classList.toggle("activo");
-
-            });
-
-        });
-
-        // ─────────────────────────────
-        // EVENTO PERSONALIZADO
-        // ─────────────────────────────
+        // Disparar evento para que otros scripts sepan que el contenido ya está listo
         document.dispatchEvent(new Event("baseLoaded"));
 
     } catch (error) {
@@ -101,14 +69,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 });
 
-/* ─────────────────────────────────────────
-   INICIAR EVENTOS
-───────────────────────────────────────── */
-function iniciarEventos() {
 
-    // ─────────────────────────────
-    // BOTONES NOTIFICACIONES Y PERFIL
-    // ─────────────────────────────
+function _iniciarEventos() {
+
+    // ── Notificaciones y perfil ──
     const btnCampana = document.getElementById('btnCampana');
     const btnPerfil = document.getElementById('btnPerfil');
 
@@ -122,35 +86,14 @@ function iniciarEventos() {
 
     }
 
-    if (btnPerfil) {
+    // Listener ESC — función nombrada para evitar duplicados si _iniciarEventos se re-invoca
+    document.removeEventListener('keydown', _onEsc);
+    document.addEventListener('keydown', _onEsc);
 
-        btnPerfil.addEventListener('click', () => {
-
-            toggleOverlay('overlayPerfil', 'overlayAlertas');
-
-        });
-
-    }
-
-    // ─────────────────────────────
-    // CERRAR CON ESC
-    // ─────────────────────────────
-    document.addEventListener('keydown', e => {
-
-        if (e.key === 'Escape') {
-
-            cerrarTodos();
-
-        }
-
-    });
-
-    // ─────────────────────────────
-    // MODAL PRINCIPAL
-    // ─────────────────────────────
-    const overlay = document.getElementById("overlay");
-    const abrirModal = document.getElementById("abrirModal");
-    const cerrarModal = document.getElementById("cerrarModal");
+    // ── Modal genérico ──
+    const overlay       = document.getElementById("overlay");
+    const abrirModal    = document.getElementById("abrirModal");
+    const cerrarModal   = document.getElementById("cerrarModal");
     const backdropModal = document.getElementById("backdropModal");
 
     if (overlay && abrirModal) {
@@ -168,26 +111,12 @@ function iniciarEventos() {
         });
 
     }
-
     if (overlay && cerrarModal) {
-
         cerrarModal.addEventListener("click", () => {
-
             overlay.classList.remove("open");
-
-            if (backdropModal) {
-
-                backdropModal.classList.remove("active");
-
-            }
-
+            if (backdropModal) backdropModal.classList.remove("active");
         });
-
     }
-
-    // ─────────────────────────────
-    // CERRAR MODAL AL DAR CLICK FUERA
-    // ─────────────────────────────
     if (overlay && backdropModal) {
 
         backdropModal.addEventListener("click", () => {
@@ -199,11 +128,31 @@ function iniciarEventos() {
 
     }
 
+    // ── Sidebar toggle ──
+    const btnSidebar = document.getElementById("toggleSidebar");
+    const sidebar    = document.querySelector(".sidebar");
+    if (btnSidebar && sidebar) {
+        btnSidebar.addEventListener("click", () => {
+            sidebar.classList.toggle("cerrado");
+        });
+    }
+
+    // ── Menú desplegable ──
+    document.querySelectorAll(".menu-titulo").forEach(menu => {
+        menu.addEventListener("click", function () {
+            this.parentElement.classList.toggle("activo");
+        });
+    });
+
+    // ── Re-escanear iconos Font Awesome tras inyección dinámica ──
+    if (window.FontAwesome) FontAwesome.dom.i2svg();
 }
 
-/* ─────────────────────────────────────────
-   TOGGLE OVERLAYS
-───────────────────────────────────────── */
+
+function _onEsc(e) {
+    if (e.key === 'Escape') cerrarTodos();
+}
+
 function toggleOverlay(idAbrir, idCerrar) {
 
     const abrir = document.getElementById(idAbrir);
@@ -253,9 +202,6 @@ function cerrarTodos() {
 
 }
 
-/* ─────────────────────────────────────────
-   MARCAR ALERTAS COMO LEÍDAS
-───────────────────────────────────────── */
 function marcarTodas() {
 
     document.querySelectorAll('.alert-row.unread').forEach(r => {
@@ -274,26 +220,20 @@ function marcarTodas() {
 
 }
 
-/* ─────────────────────────────────────────
-   FUNCIONES DE NAVEGACIÓN
-───────────────────────────────────────── */
 function irAlertas() {
-
-    alert('Navegando a la página de Alertas...');
+    window.location.href = 'reportes.html';
     cerrarTodos();
 
 }
 
 function irPerfil() {
-
-    alert('Navegando a Mi Perfil...');
+    window.location.href = 'perfil.html';
     cerrarTodos();
 
 }
 
 function irSuperadmin() {
-
-    alert('Navegando al Panel Superadmin...');
+    window.location.href = 'superadmin.html';
     cerrarTodos();
 
 }
@@ -301,16 +241,11 @@ function irSuperadmin() {
 function cerrarSesion() {
 
     if (confirm('¿Deseas cerrar sesión?')) {
-
-        alert('Cerrando sesión...');
-
+        window.location.href = '../html/Iniciar_sesion.html';
     }
 
 }
 
-/* ─────────────────────────────────────────
-   MOSTRAR FECHA ACTUAL
-───────────────────────────────────────── */
 function mostrarFechaActual() {
 
     const fecha = new Date();
