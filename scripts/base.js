@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // ─────────────────────────────
         const pagina = window.location.pathname.split('/').pop();
 
+
         const mapa = {
             'index.html': 'inicio',
             'equipos.html': 'equipos',
