@@ -1,0 +1,121 @@
+.question{
+    background:var(--white);
+    padding:1.25rem;
+    border-radius:.625rem;
+    margin-bottom:1.25rem;
+    box-shadow:0 .125rem .625rem var(--white);
+}
+
+.question-top{
+    display:flex;
+    gap:1.25rem;
+    align-items:center;
+}
+
+.question-title{
+    flex:1;
+}
+
+.question-title input{
+    width:100%;
+    padding:.625rem;
+    border:.0625rem solid var(--texto2);
+    border-radius:.7rem;
+    outline:none;
+    font-size:.9rem;
+    transition:.2s ease;
+}
+
+.question-title input:focus{
+    border-color:var(--fondo-preguntas);
+}
+
+.question select{
+    width:13.75rem;
+    padding:.625rem;
+    border-radius:.3125rem;
+}
+
+/* ================= OPCIONES ================= */
+
+.options{
+    margin-top:1.25rem;
+}
+
+.option{
+    display:flex;
+    align-items:center;
+    gap:.625rem;
+    margin-bottom:.625rem;
+}
+
+.option input{
+    flex:1;
+    padding:.625rem;
+}
+
+.add-option{
+    margin-top:.625rem;
+    background:var(--secondary-color);
+    color:var(--fondo);
+}
+
+/* ================= OBSERVACIONES ================= */
+
+.observaciones{
+    margin-top:1.25rem;
+    border-top:.0625rem solid var(--fondo-preguntas);
+    padding-top:1.25rem;
+}
+
+.observaciones textarea{
+    width:100%;
+    padding:.75rem;
+    border:.0625rem solid var(--fondo-preguntas);
+    border-radius:.5rem;
+    resize:none;
+    margin-top:.625rem;
+}
+
+/* ================= PREVIEW ================= */
+
+.preview{
+    margin-top:2.5rem;
+}
+
+.preview-card{
+    background:var(--secondary-color);
+    padding:1.25rem;
+    border-radius:.625rem;
+    margin-bottom:1.25rem;
+}
+
+.preview-question{
+    margin-bottom:1.25rem;
+}
+
+.preview-question p{
+    margin-bottom:.625rem;
+    font-weight:bold;
+}
+
+.line{
+    width:100%;
+    border-bottom:.0625rem solid var(--fondo-preguntas);
+    margin-top:.625rem;
+}
+
+.preview-option{
+    margin-bottom:.625rem;
+}
+
+.preview-observacion{
+    margin-top:1.25rem;
+}
+
+.preview-observacion textarea{
+    width:100%;
+    padding:.75rem;
+    border-radius:.5rem;
+    border:.0625rem solid var(--fondo-preguntas);
+}

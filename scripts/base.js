@@ -252,9 +252,6 @@ function cerrarTodos() {
 
 }
 
-/* ─────────────────────────────────────────
-   MARCAR ALERTAS COMO LEÍDAS
-───────────────────────────────────────── */
 function marcarTodas() {
 
     document.querySelectorAll('.alert-row.unread').forEach(r => {
@@ -273,9 +270,6 @@ function marcarTodas() {
 
 }
 
-/* ─────────────────────────────────────────
-   FUNCIONES DE NAVEGACIÓN
-───────────────────────────────────────── */
 function irAlertas() {
 
     alert('Navegando a la página de Alertas...');
@@ -307,9 +301,6 @@ function cerrarSesion() {
 
 }
 
-/* ─────────────────────────────────────────
-   MOSTRAR FECHA ACTUAL
-───────────────────────────────────────── */
 function mostrarFechaActual() {
 
     const fecha = new Date();
