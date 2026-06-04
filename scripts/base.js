@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
+
     try {
         // Cache-busting: fuerza descarga fresca de base.html en cada carga
         const response = await fetch("../html/base.html?v=" + Date.now());
@@ -7,34 +8,50 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         document.getElementById("base-container").innerHTML = html;
 
-        // Marca el ítem activo según la página actual
+        // ─────────────────────────────
+        // MARCAR ITEM ACTIVO SIDEBAR
+        // ─────────────────────────────
         const pagina = window.location.pathname.split('/').pop();
+
         const mapa = {
-            'index.html':            'inicio',
-            'equipos.html':          'equipos',
-            'reportes.html':         'reportes',
-            'uso_diario.html':       'uso diario',
-            'usuarios.html':         'usuarios',
-            'ubicaciones.html':      'ubicaciones',
-            'maquinas.html':         'maquinas',
+            'index.html': 'inicio',
+            'equipos.html': 'equipos',
+            'reportes.html': 'reportes',
+            'uso_diario.html': 'uso diario',
+            'usuarios.html': 'usuarios',
+            'ubicaciones.html': 'ubicaciones',
+            'maquinas.html': 'maquinas',
             'herramientas_con.html': 'herramientas_consumibles',
-            'acerca_de.html':        'acerca de',
-            'ayuda.html':            'ayuda'
+            'acerca_de.html': 'acerca de',
+            'ayuda.html': 'ayuda'
         };
+
         const activo = mapa[pagina];
+
         document.querySelectorAll('.sidebar li').forEach(li => {
+
             li.classList.remove('active');
+
             if (activo && li.textContent.trim().toLowerCase().includes(activo)) {
                 li.classList.add('active');
             }
+
         });
 
-        // Insertar el contenido de la plantilla de la página
+        // ─────────────────────────────
+        // INSERTAR CONTENIDO DE PÁGINA
+        // ─────────────────────────────
         const plantilla = document.getElementById("page-content");
+
         if (plantilla) {
+
             document
                 .getElementById("contenido")
                 .appendChild(plantilla.content.cloneNode(true));
+
+            // MOSTRAR FECHA DESPUÉS DE INSERTAR HTML
+            mostrarFechaActual();
+
         }
 
         // Asignar eventos DESPUÉS de que todo el HTML esté en el DOM
@@ -44,8 +61,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.dispatchEvent(new Event("baseLoaded"));
 
     } catch (error) {
+
         console.error("Error cargando base:", error);
+
     }
+
 });
 
 
@@ -53,13 +73,16 @@ function _iniciarEventos() {
 
     // ── Notificaciones y perfil ──
     const btnCampana = document.getElementById('btnCampana');
-    const btnPerfil  = document.getElementById('btnPerfil');
+    const btnPerfil = document.getElementById('btnPerfil');
 
     if (btnCampana) {
-        btnCampana.addEventListener('click', () => toggleOverlay('overlayAlertas', 'overlayPerfil'));
-    }
-    if (btnPerfil) {
-        btnPerfil.addEventListener('click', () => toggleOverlay('overlayPerfil', 'overlayAlertas'));
+
+        btnCampana.addEventListener('click', () => {
+
+            toggleOverlay('overlayAlertas', 'overlayPerfil');
+
+        });
+
     }
 
     // Listener ESC — función nombrada para evitar duplicados si _iniciarEventos se re-invoca
@@ -73,10 +96,19 @@ function _iniciarEventos() {
     const backdropModal = document.getElementById("backdropModal");
 
     if (overlay && abrirModal) {
+
         abrirModal.addEventListener("click", () => {
+
             overlay.classList.add("open");
-            if (backdropModal) backdropModal.classList.add("active");
+
+            if (backdropModal) {
+
+                backdropModal.classList.add("active");
+
+            }
+
         });
+
     }
     if (overlay && cerrarModal) {
         cerrarModal.addEventListener("click", () => {
@@ -85,10 +117,14 @@ function _iniciarEventos() {
         });
     }
     if (overlay && backdropModal) {
+
         backdropModal.addEventListener("click", () => {
+
             overlay.classList.remove("open");
             backdropModal.classList.remove("active");
+
         });
+
     }
 
     // ── Sidebar toggle ──
@@ -117,56 +153,98 @@ function _onEsc(e) {
 }
 
 function toggleOverlay(idAbrir, idCerrar) {
-    const abrir    = document.getElementById(idAbrir);
-    const cerrar   = document.getElementById(idCerrar);
+
+    const abrir = document.getElementById(idAbrir);
+    const cerrar = document.getElementById(idCerrar);
     const backdrop = document.getElementById('backdrop');
 
     if (!abrir || !cerrar || !backdrop) return;
 
     const yaAbierto = abrir.classList.contains('open');
+
     cerrar.classList.remove('open');
 
     if (yaAbierto) {
+
         abrir.classList.remove('open');
         backdrop.classList.remove('active');
+
     } else {
+
         abrir.classList.add('open');
         backdrop.classList.add('active');
+
     }
+
 }
 
+/* ─────────────────────────────────────────
+   CERRAR TODOS LOS OVERLAYS
+───────────────────────────────────────── */
 function cerrarTodos() {
+
     const overlayAlertas = document.getElementById('overlayAlertas');
-    const overlayPerfil  = document.getElementById('overlayPerfil');
-    const backdrop       = document.getElementById('backdrop');
+    const overlayPerfil = document.getElementById('overlayPerfil');
+    const backdrop = document.getElementById('backdrop');
 
-    if (overlayAlertas) overlayAlertas.classList.remove('open');
-    if (overlayPerfil)  overlayPerfil.classList.remove('open');
-    if (backdrop)       backdrop.classList.remove('active');
+    if (overlayAlertas) {
+        overlayAlertas.classList.remove('open');
+    }
+
+    if (overlayPerfil) {
+        overlayPerfil.classList.remove('open');
+    }
+
+    if (backdrop) {
+        backdrop.classList.remove('active');
+    }
+
 }
 
+/* ─────────────────────────────────────────
+   MARCAR ALERTAS COMO LEÍDAS
+───────────────────────────────────────── */
 function marcarTodas() {
-    document.querySelectorAll('.alert-row.unread').forEach(r => r.classList.remove('unread'));
+
+    document.querySelectorAll('.alert-row.unread').forEach(r => {
+
+        r.classList.remove('unread');
+
+    });
+
     const badge = document.getElementById('bellBadge');
-    if (badge) badge.style.display = 'none';
+
+    if (badge) {
+
+        badge.style.display = 'none';
+
+    }
+
 }
 
+/* ─────────────────────────────────────────
+   FUNCIONES DE NAVEGACIÓN
+───────────────────────────────────────── */
 function irAlertas() {
     window.location.href = 'reportes.html';
     cerrarTodos();
+
 }
 
 function irPerfil() {
     window.location.href = 'perfil.html';
     cerrarTodos();
+
 }
 
 function irSuperadmin() {
     window.location.href = 'superadmin.html';
     cerrarTodos();
+
 }
 
 function cerrarSesion() {
+
     if (confirm('¿Deseas cerrar sesión?')) {
         window.location.href = '../html/Iniciar_sesion.html';
     }
