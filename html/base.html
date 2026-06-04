@@ -1,154 +1,156 @@
-<header class="topbar">
-    <div class="logo">
-        <img src="../img/Minova - logo1.png" alt="MINOVA">
-    </div>
-    <h2>SISTEMA DE MANTENIMIENTO E INVENTARIO</h2>
-
-    <nav class="user-info">
-        <!-- ── BOTÓN CAMPANA ── -->
-        <div style="position:relative;">
-            <button class="bell-btn" id="btnCampana" title="Alertas">
-                <i class="fa-solid fa-bell"></i>
-                <span class="bell-badge" id="bellBadge">5</span>
-            </button>
-
-            
-            <div class="overlay-panel" id="overlayAlertas">
-                <div class="alerts-header">
-                    <h3><i class="fa-solid fa-bell"></i> Alertas del sistema</h3>
-                    <button class="mark-all" onclick="marcarTodas()">Marcar todas como leídas</button>
-                </div>
-
-
-
-                <div class="alerts-footer">
-                    <button class="btn-ver-alertas" onclick="irAlertas()">
-                        <i class="fa-solid fa-triangle-exclamation"></i> Ver página de alertas
-                    </button>
-                </div>
-            </div><!-- /overlayAlertas -->
-
-        <!-- ── BOTÓN PERFIL ── -->
-        <div style="position:relative;">
-            <button class="profile-btn" id="btnPerfil">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" alt="">
-                <div>
-                    <h4>PAPOI</h4>
-                    <span class="role-tag">
-                        <i class="fa-solid fa-shield-halved"></i> PAPOI
-                    </span>
-                </div>
-            </button>
-
-            <!-- OVERLAY PERFIL -->
-            <div class="overlay-panel" id="overlayPerfil">
-
-                <div class="perfil-header">
-               
-                </div>
-
-                <div class="perfil-info">
-
-            
-                </div>
-
-                <div class="perfil-actions">
-                    <button class="btn-perfil-action secondary">
-                    <li> <a href="perfil.html"> <i class="fa-solid fa-user"></i> Ver mi perfil </a> </li>
-                        
-                    </button>
-                    <button class="btn-perfil-action primary" >
-                        <i class="fa-solid fa-shield-halved"></i> Panel Superadmin
-                    </button>
-                </div>
-
-                <div class="perfil-footer">
-                    <button class="btn-logout-overlay">
-                        <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
-                    </button>
-                </div>
-
-            </div><!-- /overlayPerfil -->
+<div class="grid-base">
+    <header class="topbar">
+        <div class="logo">
+            <img src="../img/Minova - logo1.png" alt="MINOVA">
         </div>
+        <h2>SISTEMA DE MANTENIMIENTO E INVENTARIO</h2>
 
-    </nav>
+        <nav class="user-info">
+            <!-- ── BOTÓN CAMPANA ── -->
+            
+                <button class="bell-btn" id="btnCampana" title="Alertas">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="bell-badge" id="bellBadge">5</span>
+                </button>
 
-    <!-- Fondo invisible para cerrar al click fuera — fuera del nav, dentro del header -->
-    <div class="overlay-backdrop" id="backdrop" onclick="cerrarTodos()"></div>
 
-</header>
+                <div class="overlay-panel" id="overlayAlertas">
+                    <div class="alerts-header">
+                        <h3><i class="fa-solid fa-bell"></i> Alertas del sistema</h3>
+                        <button class="mark-all" onclick="marcarTodas()">Marcar todas como leídas</button>
+                    </div>
 
-<div class="container">
+
+
+                    <div class="alerts-footer">
+                        <button class="btn-ver-alertas" onclick="irAlertas()">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Ver página de alertas
+                        </button>
+                    </div>
+                </div><!-- /overlayAlertas -->
+
+            <!-- ── BOTÓN PERFIL ── -->
+            <div style="position:relative;">
+                <button class="profile-btn" id="btnPerfil">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" alt="">
+                    <div>
+                        <h4>PAPOI</h4>
+                        <span class="role-tag">
+                            <i class="fa-solid fa-shield-halved"></i> PAPOI
+                        </span>
+                    </div>
+                </button>
+
+                <!-- OVERLAY PERFIL -->
+                <div class="overlay-panel" id="overlayPerfil">
+
+                    <div class="perfil-header">
+                    
+                    </div>
+
+                    <div class="perfil-info">
+
+                    
+                    </div>
+
+                    <div class="perfil-actions">
+                        <button class="btn-perfil-action secondary">
+                        <li> <a href="perfil.html"> <i class="fa-solid fa-user"></i> Ver mi perfil </a> </li>
+
+                        </button>
+                        <button class="btn-perfil-action primary" >
+                            <i class="fa-solid fa-shield-halved"></i> Panel Superadmin
+                        </button>
+                    </div>
+
+                    <div class="perfil-footer">
+                        <button class="btn-logout-overlay">
+                            <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                        </button>
+                    </div>
+
+                </div><!-- /overlayPerfil -->
+            </div>
+
+        </nav>
+
+        <!-- Fondo invisible para cerrar al click fuera — fuera del nav, dentro del header -->
+        <div class="overlay-backdrop" id="backdrop" onclick="cerrarTodos()"></div>
+
+    </header>
 
     <aside class="sidebar">
-        <ul>
-            <li>
-                <i class="fa-solid fa-house"></i>
-                <a href="index.html">Inicio</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <a href="#">Herramientas</a>
-                <br>
-                <ul class="submenu">
-                    <li><a href="herramientas_con.html">Consumibles </a></li>
-                    <li><a href="herramientas_c_n.html">No consumibles</a></li>
-                </ul>
-            </li>
-            <li>
-                <i class="fa-solid fa-gears"></i>
-                <a href="equipos.html">Equipos</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-industry"></i>
-                <a href="maquinas.html">Maquinas</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-map-marker-alt"></i>
-                <a href="ubicaciones.html">Ubicaciones</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-clipboard-check"></i>
-                <a href="uso_diario.html">Uso diario</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-users"></i>
-                <a href="usuarios.html">Usuarios</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-bell"></i>
-                <a href="reportes.html">Alertas</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-info-circle"></i>
-                <a href="acerca_de.html">Acerca de</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-circle-question"></i>
-                <a href="ayuda.html">Ayuda</a>
-            <li>
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <a href="Iniciar_sesion.html">iniciar sesion</a>
+            <ul>
                 <li>
-        
-        </ul>
-        
-    </aside>
+                    <i class="fa-solid fa-house"></i>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <a href="#">Herramientas</a>
+                    <br>
+                    <ul class="submenu">
+                        <li><a href="herramientas_con.html">Consumibles </a></li>
+                        <li><a href="herramientas_c_n.html">No consumibles</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <i class="fa-solid fa-gears"></i>
+                    <a href="equipos.html">Equipos</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-industry"></i>
+                    <a href="maquinas.html">Maquinas</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    <a href="ubicaciones.html">Ubicaciones</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <a href="uso_diario.html">Uso diario</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-users"></i>
+                    <a href="usuarios.html">Usuarios</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-bell"></i>
+                    <a href="reportes.html">Alertas</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-info-circle"></i>
+                    <a href="acerca_de.html">Acerca de</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-question"></i>
+                    <a href="ayuda.html">Ayuda</a>
+                <li>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <a href="Iniciar_sesion.html">iniciar sesion</a>
+                    <li>
+                    
+            </ul>
 
-    <!-- Aquí se insertará el contenido de cada página -->
-    <main id="contenido"></main>
+        </aside>
 
+            <main id="contenido">
+                <div class="grid-container"></div>
+            </main>
+
+    <footer>
+        <div class="secFooterPrincipal">
+            <img class="logoSenaFooter" src="../img/logo-sena-blanco.png" alt="SENA">
+            <img class="logoSmaqFooter" src="../img/Minova - logo2.png" alt="MINOVA">
+        <div class="descripcion-logos">
+            <br>Sistema de Mantenimiento y inventariado de elementos Mineros
+            <br> Copyright © 2026. Todos los derechos reservados.
+        </div>
+        </div>
+        
+        <div class="infoFooter">
+            <br><strong>CONTACTANOS</strong>
+            <br>minovaskls@gmail.com
+        </div>
+    </footer>
 </div>
-
-<footer>
-    <div class="secFooterPrincipal">
-        <img class="logoSenaFooter" src="../img/logo-sena-blanco.png" alt="SENA">
-        <img class="logoSmaqFooter" src="../img/Minova - logo2.png" alt="MINOVA">
-        <br>Sistema de Mantenimiento y inventariado de elementos Mineros
-        <br> Copyright © 2026. Todos los derechos reservados.
-    </div>
-    <div class="infoFooter">
-        <br><strong>CONTACTANOS</strong>
-        <br>minovaskls@gmail.com
-    </div>
-</footer>

@@ -1,4 +1,56 @@
+/*grid general de la pagina
+grid contenedor= grid individual de cada pagina*/
+.welcome{grid-area: bienvenida;}
+.cards{grid-area: secciones;}
+.middle{grid-area: paneles;}
+.alerts-panel{grid-area: alertas;}
 
+body{
+    background: var(--contenedor);
+}
+
+
+.grid-contenedor{
+    display:grid;
+    gap:20px;
+
+    grid-template:
+        "bienvenida"
+        "secciones"
+        "paneles"
+        "alertas";
+ 
+        /* definir ancho a diferentes dispositivos, en este caso tablet */
+@media (min-width: 768px) {
+    
+        grid-template:
+            /* crear columnas */
+            "topbar topbar" auto
+            "topbar topbar" auto
+            "img hj1" auto
+            "hj2 descripcion" auto
+            "boton-volver boton-mantenimientos" auto
+            "boton boton"auto
+            "footer footer" auto
+            / 50% auto; /* definir ancho de columnas */
+    }
+
+        @media (min-width: 992px) {
+          gap:10px;
+        /* definir ancho a diferentes dispositivos, en este caso desktop */
+        grid-template:
+        
+            /* crear columnas */
+            "topbar topbar" auto
+            "img hj1" auto
+            "hj2 descripcion" auto
+            "boton-volver boton-mantenimientos" auto
+            "boton boton"auto
+            "footer footer" auto
+
+            / auto 50%; /* definir ancho de columnas */
+    }
+}
 
 .logout{
     border:none;
@@ -9,13 +61,8 @@
     text-align:left;
 }
 
-/* CONTENIDO */
 
-main,
-.content{
-    flex:1;
-    padding:30px;
-}
+
 
 /* BIENVENIDA */
 
@@ -243,7 +290,7 @@ main,
     background:var(--rojo);
 }
 
-/* ALERTAS */
+
 
 .alerts{
     margin-top:20px;

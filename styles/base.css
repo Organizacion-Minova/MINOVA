@@ -22,17 +22,110 @@
 /* ======================
    ESTRUCTURA GENERAL
 ====================== */
+.topbar{grid-area: topbar}
+.sidebar{grid-area: sidebar;}
+#contenido{grid-area: contenido;}
+footer{grid-area: footer;}
 
-html,
-body{
-    height:100%;
+.grid-base{
+    min-height: 100vh;
+    display:grid;
+
+    
+    @media(max-width:767px){ 
+    
+    /*celular*/
+    /* grid-template:
+        "topbar topbar" auto
+        "sidebar contenido" 1fr
+        "footer footer" auto
+        / 260px 1fr; */
+         grid-template:
+        "topbar topbar" 
+        "sidebar contenido" 
+        "footer footer";
+
+    .topbar{
+         display:grid;
+
+        grid-template-columns:
+           auto 1fr auto;
+            
+
+        align-items:center;
+    }
+    /* ocultar nombre perfil
+    .profile-btn div{
+        display:none;
+    } */
+
+    .sidebar{
+        width:60px;
+        padding:10px 6px;
+    }
+    .sidebar li a{
+        display:none;
+    }
+    .sidebar li{
+        justify-content:center;
+        gap:0;
+    }
+    .topbar h2{
+        display:none;
+    }
+    /* .profile-btn h4,
+    .profile-btn .role-tag{
+        display:none;
+    }  */
+      .logo img{
+        max-width:120px;
+    }
+
+    footer{
+        display: grid;
+        grid-template-columns: auto;
+        align-items:center;
+    }
+
+   .descripcion-logos{
+    display: none;
+   }
 }
 
-body{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    background:var(--fondo);
+   
+/* @media(max-width:900px){
+    .sidebar{
+        width:200px;
+    }
+    .topbar h2{
+        font-size:14px;
+    }
+}*/
+
+
+    
+/* tableeeeeeeeeeeeeeeeeeet */
+    @media (min-width: 768px) {
+    
+        grid-template:
+        "topbar topbar" 50px
+        "topbar topbar" 50px
+        "sidebar contenido"auto 
+        "footer footer" 100px/
+         auto auto;
+
+         
+    }
+
+    @media (min-width: 992px) {
+        /* definir ancho a diferentes dispositivos, en este caso desktop */
+        grid-template:
+        /* crear columnas */
+        "topbar topbar" auto
+        "sidebar contenido" 1fr
+        "footer footer" auto
+        / 260px 1fr;
+    }
 }
 
 /* ======================
@@ -51,10 +144,13 @@ body{
     position:relative;
     z-index:100;
 }
-
+.logo{ 
+    flex-shrink:0;
+}
 .logo img{
-    height: 180px;   /* FIX: era 180px, el header mide 90px */
-    width:auto;
+     max-width:180px;
+    width:100%;
+    height:auto;
 }
 
 .logo h2{
@@ -73,7 +169,9 @@ body{
 .user-info{
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:.75rem;
+
+    flex-shrink:0;
 }
 
 /* ======================
@@ -559,6 +657,7 @@ main,
 }
 /*======================================================*/
 .container{
+    
     flex:1;
     display:flex;
 }
@@ -654,14 +753,7 @@ main,
     font-size:18px;
 }
 
-/* ======================
-   CONTENIDO PRINCIPAL
-====================== */
 
-main{
-    flex:1;
-    background:var(--contenedor);
-}
 
 /* ======================
    FOOTER
@@ -717,32 +809,3 @@ footer{
    RESPONSIVE
 ====================== */
 
-@media(max-width:900px){
-    .sidebar{
-        width:200px;
-    }
-    .topbar h2{
-        font-size:14px;
-    }
-}
-
-@media(max-width:650px){
-    .sidebar{
-        width:60px;
-        padding:10px 6px;
-    }
-    .sidebar li a{
-        display:none;
-    }
-    .sidebar li{
-        justify-content:center;
-        gap:0;
-    }
-    .topbar h2{
-        display:none;
-    }
-    .profile-btn h4,
-    .profile-btn .role-tag{
-        display:none;
-    }
-}

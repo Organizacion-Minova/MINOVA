@@ -1,22 +1,18 @@
 
-/* 
+
  .grid-container{
     display: grid; 
     gap: 10px;  
         grid-template:
-        
-        "topbar" auto
-        "sidebar" auto
         "seccion1" auto
         "seccion2" auto
-        "botones" auto
-        "footer" auto;
+        "botones" auto;
 
    @media (min-width: 768px) {
     
         grid-template:
             
-            "topbar topbar" auto
+             "topbar topbar" auto
             "seccion1 seccion2" auto
             "botones botones" auto
             "footer footer" auto
@@ -35,7 +31,7 @@
 
             / auto 50%;
     }
-} */
+}
 
 .topbar{grid-area: topbar;}
 .sidebar{grid-area: sidebar;}
