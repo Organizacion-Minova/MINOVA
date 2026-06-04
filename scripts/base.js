@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // ─────────────────────────────
         const pagina = window.location.pathname.split('/').pop();
 
+
         const mapa = {
             'index.html': 'inicio',
             'equipos.html': 'equipos',
@@ -201,9 +202,6 @@ function cerrarTodos() {
 
 }
 
-/* ─────────────────────────────────────────
-   MARCAR ALERTAS COMO LEÍDAS
-───────────────────────────────────────── */
 function marcarTodas() {
 
     document.querySelectorAll('.alert-row.unread').forEach(r => {
@@ -222,9 +220,6 @@ function marcarTodas() {
 
 }
 
-/* ─────────────────────────────────────────
-   FUNCIONES DE NAVEGACIÓN
-───────────────────────────────────────── */
 function irAlertas() {
     window.location.href = 'reportes.html';
     cerrarTodos();
@@ -248,4 +243,27 @@ function cerrarSesion() {
     if (confirm('¿Deseas cerrar sesión?')) {
         window.location.href = '../html/Iniciar_sesion.html';
     }
+
+}
+
+function mostrarFechaActual() {
+
+    const fecha = new Date();
+
+    const opciones = {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    };
+
+    const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
+
+    const elementoFecha = document.getElementById('fechaActual');
+
+    if (elementoFecha) {
+
+        elementoFecha.textContent = fechaFormateada;
+
+    }
+
 }

@@ -232,7 +232,6 @@ main {
   border: 0.09375rem solid #e0e4f0;
   border-radius: 0.625rem;
   font-size: 0.875rem;
-  font-family: inherit;
   color: var(--texto);
   background: #f7f8ff;
   outline: none;
@@ -348,7 +347,6 @@ main {
   color: var(--white);
   font-size: 0.8125rem;
   font-weight: 600;
-  font-family: inherit;
   cursor: pointer;
   transition: background .2s, transform .15s;
 }
@@ -369,7 +367,6 @@ main {
   color: var(--white);
   font-size: 0.8125rem;
   font-weight: 700;
-  font-family: inherit;
   cursor: pointer;
   transition: background .2s, transform .15s;
   margin-top: 0.375rem;
@@ -388,7 +385,6 @@ main {
   border-radius: 3.125rem;
   font-size: 0.8125rem;
   font-weight: 700;
-  font-family: inherit;
   cursor: pointer;
   transition: background .2s, transform .15s;
 }

@@ -98,5 +98,39 @@
   </div>
 
   <script src="../scripts/scripts_inicio_sesion.js"></script>
+  <!-- <script>
+
+    /* Crear usuario admin por defecto si localStorage está vacío */
+    const usuarios = JSON.parse(localStorage.getItem('minova_usuarios') || '[]');
+    if (!usuarios.length) {
+      usuarios.push({
+        id: 1, nombre: 'Administrador', apellido: 'MINOVA',
+        numDoc: 'admin', password: 'admin1234',
+        rolId: 'admin', email: 'admin@minova.com', activo: true
+      });
+      localStorage.setItem('minova_usuarios', JSON.stringify(usuarios));
+    }
+
+    btn.addEventListener('click', function () {
+      const alerta = document.getElementById('alertaSesion');
+      const numDoc = document.getElementById('numDoc').value.trim();
+      const pass   = document.getElementById('passInput').value;
+
+      if (!numDoc || !pass) {
+        alerta.textContent = 'Por favor completa todos los campos.';
+        alerta.style.display = 'block';
+        return;
+      }
+
+      const res = Auth.login(numDoc, pass);
+      if (res.ok) {
+        window.location.href = 'index.html';
+      } else {
+        alerta.textContent = res.msg || 'Credenciales incorrectas.';
+        alerta.style.display = 'block';
+      }
+    }, true);
+  })();
+  </script> -->
 </body>
 </html>

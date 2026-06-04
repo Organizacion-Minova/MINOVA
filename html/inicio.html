@@ -6,28 +6,11 @@
 <title>MINOVA - Sistema de Mantenimiento e Inventario</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="../styles/inicio.css">
+<script src="../scripts/base.js" defer></script>
 </head>
 <body>
-
-<header class="topbar">
-  <div class="logo">
-    <img src="../img/Minova - logo1.png" alt="MINOVA">
-  </div>
-
-  <h2>Sistema de Mantenimiento e Inventario</h2>
-
-  <nav>
-    <ul class="nav-pub">
-      <li><a href="../html/Iniciar_sesion.html">Iniciar Sesion</a></li>
-      <li>
-        <a href="../html/crear_cuenta.html" class="btn-login-nav">
-        <i class="fa-solid fa-user"></i> Crear cuenta
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
+  <div id="base-container"></div>
+  <template id="page-content">
 <!-- ══════════ CARRUSEL ══════════ -->
 <section class="carousel" id="carousel">
   <div class="slides" id="slides">
@@ -112,22 +95,8 @@
   <div class="slide-counter" id="counter">1 / 4</div>
 </section>
 
-<!-- ══════════ FOOTER (mismo patrón que base.html del sistema) ══════════ -->
-<footer>
-  <div class="secFooterPrincipal">
-    <img class="logoSenaFooter" src="../img/logo-sena-blanco.png" alt="SENA">
-    <img class="logoSmaqFooter" src="../img/Minova - logo2.png" alt="MINOVA">
-    <div class="footer-brand-text">
-        Sistema de Mantenimiento de Máquinas Mineras<br>
-      Copyright © 2026 - Todos los derechos reservados.
-    </div>
-  </div>
 
-  <div class="infoFooter">
-    <br><strong>CONTÁCTANOS</strong>
-    <br>minovaskls@gmail.com
-  </div>
-</footer>
+
 
 <script>
   let current = 0;
@@ -162,5 +131,6 @@
 
   resetAuto();
 </script>
+  </template>
 </body>
 </html>
