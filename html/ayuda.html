@@ -6,6 +6,7 @@
     <title>MINOVA - Ayuda</title>
 
     <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
     <link rel="stylesheet" href="../styles/estilos_ayuda.css">
 
     <link rel="stylesheet"
@@ -21,15 +22,20 @@
         <div class="ayuda-wrapper">
 
             <!-- ── ENCABEZADO ── -->
-            <div class="welcome">
+            <!-- .welcome.gradiente definido en base.css -->
+            <div class="welcome gradiente">
                 <div>
                     <h1><i class="fa-solid fa-circle-question"></i> Centro de Ayuda</h1>
-                    <p>Guía completa del sistema MINOVA </p>
+                    <p>Guía completa del sistema MINOVA</p>
                 </div>
-                
+                <div class="date">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="fecha-ayuda"></span>
+                </div>
             </div>
 
             <!-- ── BÚSQUEDA ── -->
+            <!-- .help-search definido en componentes.css -->
             <div class="help-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input
@@ -39,6 +45,7 @@
                     oninput="filtrarAyuda()"
                 />
             </div>
+
             <!-- ── MÓDULOS ── -->
             <div class="modulos-grid" id="modulos-grid">
 
@@ -46,15 +53,15 @@
                 <div class="modulo-card" data-keywords="inicio dashboard resumen tarjetas mantenimiento alertas equipos activos">
                     <div class="modulo-card-header">
                         <div class="modulo-icon azul"><i class="fa-solid fa-house"></i></div>
-                        <h3>Inicio </h3>
+                        <h3>Inicio</h3>
                     </div>
                     <p>Vista general del sistema con indicadores clave, últimos mantenimientos, estado de equipos y alertas recientes.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> Al iniciar sesión accederás directamente al panel de control.</li>
-                        <li><span class="step-num">2</span> Las 4 tarjetas superiores muestran: total máquinas, mantenimientos pendientes, equipos activos y alertas críticas.</li>
-                        <li><span class="step-num">3</span> El panel izquierdo lista los últimos mantenimientos con su estado (Completado / En proceso).</li>
-                        <li><span class="step-num">4</span> El gráfico derecho muestra la distribución de equipos por estado.</li>
-                        <li><span class="step-num">5</span> Las alertas recientes aparecen en la parte inferior con icono de advertencia.</li>
+                        <li><span class="step-num">1</span><span>Al iniciar sesión accederás directamente al panel de control.</span></li>
+                        <li><span class="step-num">2</span><span>Las 4 tarjetas superiores muestran: total máquinas, mantenimientos pendientes, equipos activos y alertas críticas.</span></li>
+                        <li><span class="step-num">3</span><span>El panel izquierdo lista los últimos mantenimientos con su estado (Completado / En proceso).</span></li>
+                        <li><span class="step-num">4</span><span>El gráfico derecho muestra la distribución de equipos por estado.</span></li>
+                        <li><span class="step-num">5</span><span>Las alertas recientes aparecen en la parte inferior con icono de advertencia.</span></li>
                     </ul>
                 </div>
 
@@ -66,12 +73,12 @@
                     </div>
                     <p>Gestión y búsqueda de todos los equipos registrados en el sistema, con filtros avanzados y ordenamiento.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> Usa la barra de búsqueda para buscar por nombre, código, número de serie, marca o ubicación.</li>
-                        <li><span class="step-num">2</span> Haz clic en <strong>Filtros</strong> para filtrar por Estado, Tipo, Marca, Código, N° Serie o Ubicación.</li>
-                        <li><span class="step-num">3</span> Los filtros activos aparecen como chips; haz clic en la <strong>✕</strong> de cada chip para quitarlo.</li>
-                        <li><span class="step-num">4</span> Cambia el ordenamiento con el selector (Nombre A-Z, Código, Estado, Tipo, Marca).</li>
-                        <li><span class="step-num">5</span> Haz clic en <strong>Agregar equipo</strong> para registrar uno nuevo.</li>
-                        <li><span class="step-num">6</span> Los estados posibles son: <strong>Activo</strong>, <strong>Mantenimiento</strong>, <strong>Fuera de servicio</strong> e <strong>Inactivo</strong>.</li>
+                        <li><span class="step-num">1</span><span>Usa la barra de búsqueda para buscar por nombre, código, número de serie, marca o ubicación.</span></li>
+                        <li><span class="step-num">2</span><span>Haz clic en <strong>Filtros</strong> para filtrar por Estado, Tipo, Marca, Código, N° Serie o Ubicación.</span></li>
+                        <li><span class="step-num">3</span><span>Los filtros activos aparecen como chips; haz clic en la <strong>✕</strong> de cada chip para quitarlo.</span></li>
+                        <li><span class="step-num">4</span><span>Cambia el ordenamiento con el selector (Nombre A-Z, Código, Estado, Tipo, Marca).</span></li>
+                        <li><span class="step-num">5</span><span>Haz clic en <strong>Agregar equipo</strong> para registrar uno nuevo.</span></li>
+                        <li><span class="step-num">6</span><span>Los estados posibles son: <strong>Activo</strong>, <strong>Mantenimiento</strong>, <strong>Fuera de servicio</strong> e <strong>Inactivo</strong>.</span></li>
                     </ul>
                     <div class="tip-box">
                         <i class="fa-solid fa-lightbulb"></i>
@@ -87,10 +94,10 @@
                     </div>
                     <p>Registro y control de herramientas e insumos que se consumen durante el uso, como aceites, filtros y repuestos.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> Cada fila muestra: ID de herramienta, tipo y descripción.</li>
-                        <li><span class="step-num">2</span> Usa el botón <strong><i class="fa-solid fa-edit"></i> Editar</strong> para modificar un registro existente.</li>
-                        <li><span class="step-num">3</span> Usa el botón <strong><i class="fa-solid fa-trash"></i> Eliminar</strong> para borrar un registro (acción irreversible).</li>
-                        <li><span class="step-num">4</span> Haz clic en <strong>Agregar herramienta</strong> para registrar un nuevo consumible.</li>
+                        <li><span class="step-num">1</span><span>Cada fila muestra: ID de herramienta, tipo y descripción.</span></li>
+                        <li><span class="step-num">2</span><span>Usa el botón <strong><i class="fa-solid fa-pen-to-square"></i> Editar</strong> para modificar un registro existente.</span></li>
+                        <li><span class="step-num">3</span><span>Usa el botón <strong><i class="fa-solid fa-trash"></i> Eliminar</strong> para borrar un registro (acción irreversible).</span></li>
+                        <li><span class="step-num">4</span><span>Haz clic en <strong>Agregar herramienta</strong> para registrar un nuevo consumible.</span></li>
                     </ul>
                 </div>
 
@@ -100,12 +107,12 @@
                         <div class="modulo-icon naranja"><i class="fa-solid fa-toolbox"></i></div>
                         <h3>Herramientas No Consumibles</h3>
                     </div>
-                    <p>Control de herramientas reutilizables que no se agotan con el uso, como llaves, taladros, medidores y equipos de medición.</p>
+                    <p>Control de herramientas reutilizables que no se agotan con el uso, como llaves, taladros y equipos de medición.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> Accede desde el menú lateral en <strong>Herramientas → No consumibles</strong>.</li>
-                        <li><span class="step-num">2</span> Cada herramienta tiene ID, tipo y descripción.</li>
-                        <li><span class="step-num">3</span> Puedes editar o eliminar cualquier registro con los botones de acción.</li>
-                        <li><span class="step-num">4</span> Haz clic en <strong>Agregar herramienta</strong> para crear un nuevo registro.</li>
+                        <li><span class="step-num">1</span><span>Accede desde el menú lateral en <strong>Herramientas → No consumibles</strong>.</span></li>
+                        <li><span class="step-num">2</span><span>Cada herramienta tiene ID, tipo y descripción.</span></li>
+                        <li><span class="step-num">3</span><span>Puedes editar o eliminar cualquier registro con los botones de acción.</span></li>
+                        <li><span class="step-num">4</span><span>Haz clic en <strong>Agregar herramienta</strong> para crear un nuevo registro.</span></li>
                     </ul>
                 </div>
 
@@ -117,10 +124,10 @@
                     </div>
                     <p>Catálogo de maquinaria minera registrada en la mina didáctica: excavadoras, retroexcavadoras, cargadores, malacates y más.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> Consulta el listado completo de máquinas con su información técnica.</li>
-                        <li><span class="step-num">2</span> Tipos disponibles: Excavadora, Retroexcavadora, Cargador, Malacate, Vagoneta, Pulmón.</li>
-                        <li><span class="step-num">3</span> Marcas registradas: CAT, JCB, Komatsu, Volvo.</li>
-                        <li><span class="step-num">4</span> Registra nuevas máquinas con código único, número de serie y ubicación asignada.</li>
+                        <li><span class="step-num">1</span><span>Consulta el listado completo de máquinas con su información técnica.</span></li>
+                        <li><span class="step-num">2</span><span>Tipos disponibles: Excavadora, Retroexcavadora, Cargador, Malacate, Vagoneta, Pulmón.</span></li>
+                        <li><span class="step-num">3</span><span>Marcas registradas: CAT, JCB, Komatsu, Volvo.</span></li>
+                        <li><span class="step-num">4</span><span>Registra nuevas máquinas con código único, número de serie y ubicación asignada.</span></li>
                     </ul>
                 </div>
 
@@ -132,11 +139,11 @@
                     </div>
                     <p>Formato de registro diario de operación de maquinaria y equipos, con control de horarios y responsables.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> Cada registro incluye: fecha, estado de funcionamiento, inicio y fin de operación, responsable a cargo y observaciones.</li>
-                        <li><span class="step-num">2</span> Haz clic en <strong>Nuevo Registro</strong> para añadir la entrada del día.</li>
-                        <li><span class="step-num">3</span> Usa <strong>Exportar Excel</strong> para descargar el registro en formato .xlsx.</li>
-                        <li><span class="step-num">4</span> Usa <strong>Exportar PDF</strong> para generar un informe imprimible.</li>
-                        <li><span class="step-num">5</span> Este formulario debe llenarse al inicio y al final de cada jornada operativa.</li>
+                        <li><span class="step-num">1</span><span>Cada registro incluye: fecha, estado de funcionamiento, inicio y fin de operación, responsable y observaciones.</span></li>
+                        <li><span class="step-num">2</span><span>Haz clic en <strong>Nuevo Registro</strong> para añadir la entrada del día.</span></li>
+                        <li><span class="step-num">3</span><span>Usa <strong>Exportar Excel</strong> para descargar el registro en formato .xlsx.</span></li>
+                        <li><span class="step-num">4</span><span>Usa <strong>Exportar PDF</strong> para generar un informe imprimible.</span></li>
+                        <li><span class="step-num">5</span><span>Este formulario debe llenarse al inicio y al final de cada jornada operativa.</span></li>
                     </ul>
                     <div class="tip-box">
                         <i class="fa-solid fa-lightbulb"></i>
@@ -152,11 +159,11 @@
                     </div>
                     <p>Administración de cuentas de usuario, roles y permisos de acceso al sistema MINOVA.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> El panel de usuarios lista todos los miembros registrados en el sistema.</li>
-                        <li><span class="step-num">2</span> Cada usuario tiene un rol asignado que define sus permisos de acceso.</li>
-                        <li><span class="step-num">3</span> El rol <strong>Superadmin</strong> tiene acceso total al sistema, incluyendo el panel de administración.</li>
-                        <li><span class="step-num">4</span> Para cambiar la contraseña ve a <strong>Mi perfil</strong> desde el menú de usuario (esquina superior derecha).</li>
-                        <li><span class="step-num">5</span> Para crear nuevas cuentas usa la página de <strong>Crear cuenta</strong>.</li>
+                        <li><span class="step-num">1</span><span>El panel de usuarios lista todos los miembros registrados en el sistema.</span></li>
+                        <li><span class="step-num">2</span><span>Cada usuario tiene un rol asignado que define sus permisos de acceso.</span></li>
+                        <li><span class="step-num">3</span><span>El rol <strong>Superadmin</strong> tiene acceso total al sistema, incluyendo el panel de administración.</span></li>
+                        <li><span class="step-num">4</span><span>Para cambiar la contraseña ve a <strong>Mi perfil</strong> desde el menú de usuario (esquina superior derecha).</span></li>
+                        <li><span class="step-num">5</span><span>Para crear nuevas cuentas usa la página de <strong>Crear cuenta</strong>.</span></li>
                     </ul>
                 </div>
 
@@ -168,10 +175,10 @@
                     </div>
                     <p>Sistema de notificaciones en tiempo real sobre fallos, mantenimientos vencidos, stock bajo y eventos del sistema.</p>
                     <ul class="modulo-steps">
-                        <li><span class="step-num">1</span> El ícono de campana <i class="fa-solid fa-bell"></i> en la barra superior muestra el número de alertas sin leer.</li>
-                        <li><span class="step-num">2</span> Haz clic en la campana para ver el panel de alertas con su descripción, tiempo y prioridad.</li>
-                        <li><span class="step-num">3</span> Haz clic en <strong>Marcar todas como leídas</strong> para limpiar el contador.</li>
-                        <li><span class="step-num">4</span> Usa <strong>Ver página de alertas</strong> para el historial completo.</li>
+                        <li><span class="step-num">1</span><span>El ícono <i class="fa-solid fa-bell"></i> en la barra superior muestra el número de alertas sin leer.</span></li>
+                        <li><span class="step-num">2</span><span>Haz clic en la campana para ver el panel con descripción, tiempo y prioridad de cada alerta.</span></li>
+                        <li><span class="step-num">3</span><span>Haz clic en <strong>Marcar todas como leídas</strong> para limpiar el contador.</span></li>
+                        <li><span class="step-num">4</span><span>Usa <strong>Ver página de alertas</strong> para el historial completo.</span></li>
                     </ul>
                 </div>
 
@@ -220,7 +227,7 @@
                         <i class="fa-solid fa-chevron-down arrow"></i>
                     </div>
                     <div class="faq-answer">
-                        Ve a <strong>Equipos</strong> en el menú lateral y haz clic en el botón <strong>"Agregar equipo"</strong> en la parte inferior de la página. Completa el formulario con el código, nombre, tipo, marca, número de serie, ubicación y estado inicial. Guarda los cambios para que quede registrado en el sistema.
+                        Ve a <strong>Equipos</strong> en el menú lateral y haz clic en el botón <strong>"Agregar equipo"</strong>. Completa el formulario con el código, nombre, tipo, marca, número de serie, ubicación y estado inicial. Guarda los cambios para que quede registrado en el sistema.
                     </div>
                 </div>
 
@@ -230,7 +237,7 @@
                         <i class="fa-solid fa-chevron-down arrow"></i>
                     </div>
                     <div class="faq-answer">
-                        En la página <strong>Uso Diario</strong> encontrarás dos botones: <strong>Exportar Excel</strong> y <strong>Exportar PDF</strong>. El primero descarga un archivo .xlsx con todos los registros del período. El segundo genera un PDF listo para imprimir. Asegúrate de que todos los registros estén completos antes de exportar.
+                        En la página <strong>Uso Diario</strong> encontrarás dos botones: <strong>Exportar Excel</strong> y <strong>Exportar PDF</strong>. El primero descarga un archivo .xlsx con todos los registros. El segundo genera un PDF listo para imprimir.
                     </div>
                 </div>
 
@@ -240,10 +247,11 @@
                         <i class="fa-solid fa-chevron-down arrow"></i>
                     </div>
                     <div class="faq-answer">
-                        <strong>Activo:</strong> el equipo está en funcionamiento normal.<br>
-                        <strong>Mantenimiento:</strong> el equipo está fuera de operación temporalmente para recibir mantenimiento preventivo o correctivo.<br>
-                        <strong>Fuera de servicio:</strong> el equipo no puede operar por avería o reparación mayor.<br>
-                        <strong>Inactivo:</strong> el equipo está fuera de uso de forma prolongada o dado de baja operativamente.
+                        <!-- Reutiliza .badge y .badge-* definidos en base.css -->
+                        <span class="badge badge-activo">Activo</span> — el equipo está en funcionamiento normal.<br><br>
+                        <span class="badge badge-mantto">Mantenimiento</span> — fuera de operación temporalmente para mantenimiento preventivo o correctivo.<br><br>
+                        <span class="badge badge-fuera">Fuera de servicio</span> — no puede operar por avería o reparación mayor.<br><br>
+                        <span class="badge badge-inactivo">Inactivo</span> — fuera de uso de forma prolongada o dado de baja operativamente.
                     </div>
                 </div>
 
@@ -253,7 +261,7 @@
                         <i class="fa-solid fa-chevron-down arrow"></i>
                     </div>
                     <div class="faq-answer">
-                        Haz clic en el ícono de campana <i class="fa-solid fa-bell"></i> en la barra superior. En el panel desplegable verás todas las alertas activas. Haz clic en <strong>"Marcar todas como leídas"</strong> para resetear el contador a cero. Las alertas críticas deben atenderse antes de descartarlas.
+                        Haz clic en el ícono <i class="fa-solid fa-bell"></i> en la barra superior. En el panel desplegable haz clic en <strong>"Marcar todas como leídas"</strong> para resetear el contador a cero. Las alertas críticas deben atenderse antes de descartarlas.
                     </div>
                 </div>
 
@@ -263,7 +271,7 @@
                         <i class="fa-solid fa-chevron-down arrow"></i>
                     </div>
                     <div class="faq-answer">
-                        Haz clic en tu foto de perfil en la esquina superior derecha. En el menú desplegable haz clic en <strong>"Cerrar sesión"</strong>. Esto te redirigirá a la pantalla de inicio de sesión. Se recomienda cerrar sesión siempre al terminar tu jornada, especialmente en equipos compartidos.
+                        Haz clic en tu foto de perfil en la esquina superior derecha. En el menú desplegable haz clic en <strong>"Cerrar sesión"</strong>. Se recomienda hacerlo siempre al terminar tu jornada, especialmente en equipos compartidos.
                     </div>
                 </div>
 
@@ -273,7 +281,7 @@
                         <i class="fa-solid fa-chevron-down arrow"></i>
                     </div>
                     <div class="faq-answer">
-                        Sí. MINOVA está diseñado con un layout responsivo que se adapta a dispositivos móviles y tabletas. Abre el navegador de tu dispositivo y accede a la misma URL del sistema. La funcionalidad es completa en dispositivos de pantalla pequeña.
+                        Sí. MINOVA está diseñado con un layout responsivo que se adapta a dispositivos móviles y tabletas. Abre el navegador de tu dispositivo y accede a la misma URL del sistema.
                     </div>
                 </div>
 
@@ -283,7 +291,7 @@
                         <i class="fa-solid fa-chevron-down arrow"></i>
                     </div>
                     <div class="faq-answer">
-                        El sistema realiza backups automáticos periódicamente. Recibirás una alerta de <strong>prioridad BAJA</strong> en el panel de notificaciones cada vez que se complete un backup correctamente, indicando el tamaño del archivo guardado. El administrador puede configurar la frecuencia desde el panel Superadmin.
+                        El sistema realiza backups automáticos periódicamente. Recibirás una alerta de <strong>prioridad BAJA</strong> en el panel de notificaciones cada vez que se complete un backup correctamente. El administrador puede configurar la frecuencia desde el panel Superadmin.
                     </div>
                 </div>
 
@@ -294,7 +302,7 @@
                 <div>
                     <h3><i class="fa-solid fa-headset"></i> ¿Necesitas más ayuda?</h3>
                     <p>Contáctanos directamente y nuestro equipo te responderá a la brevedad.</p>
-                    <p style="margin-top:8px;">
+                    <p class="contacto-email">
                         <i class="fa-regular fa-envelope"></i>&nbsp;
                         <a href="mailto:minovaskls@gmail.com">minovaskls@gmail.com</a>
                     </p>
@@ -311,8 +319,9 @@
         (function () {
             const el = document.getElementById('fecha-ayuda');
             if (el) {
-                const opts = { day: 'numeric', month: 'long', year: 'numeric' };
-                el.textContent = new Date().toLocaleDateString('es-CO', opts);
+                el.textContent = new Date().toLocaleDateString('es-CO', {
+                    day: 'numeric', month: 'long', year: 'numeric'
+                });
             }
         })();
 
@@ -324,14 +333,10 @@
         /* ── Búsqueda de ayuda ── */
         function filtrarAyuda() {
             const q = document.getElementById('help-search-input').value.toLowerCase().trim();
-            const cards = document.querySelectorAll('.modulo-card');
-            let visible = 0;
-            cards.forEach(card => {
+            document.querySelectorAll('.modulo-card').forEach(card => {
                 const keywords = (card.dataset.keywords || '').toLowerCase();
                 const text     = card.innerText.toLowerCase();
-                const match    = !q || keywords.includes(q) || text.includes(q);
-                card.style.display = match ? '' : 'none';
-                if (match) visible++;
+                card.style.display = (!q || keywords.includes(q) || text.includes(q)) ? '' : 'none';
             });
         }
     </script>

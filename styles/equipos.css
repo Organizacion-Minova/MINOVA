@@ -1,4 +1,4 @@
-/* =============================================
+/* /* /* =============================================
    EQUIPOS.CSS — MINOVA
    Todos los valores en rem (base 16px)
    Alineado al sistema de diseño de base.css
@@ -478,4 +478,4 @@ tbody td {
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
-}
+}  
