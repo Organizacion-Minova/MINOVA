@@ -134,9 +134,6 @@ function render() {
           <button class="action-btn" title="Ver detalle" onclick="verDetalle('${m.nombre}')">
             <i class="fa-solid fa-eye"></i>
           </button>
-          <button class="action-btn edit" title="Editar" onclick="editarMaquina(${index})">
-            <i class="fa-solid fa-pencil"></i>
-          </button>
           <button class="action-btn del" title="Eliminar" onclick="confirmarEliminar('${m.codigo}', '${m.nombre}')">
             <i class="fa-solid fa-trash"></i>
           </button>
@@ -202,25 +199,6 @@ function guardarMaquina(e) {
   doSearch();
 }
 
-function editarMaquina(indice) {
-  const m = maquinas[indice];
-  indiceEditando = indice;
-
-  document.getElementById('codigo').value           = m.codigo;
-  document.getElementById('nombre').value           = m.nombre;
-  document.getElementById('tipo').value             = m.tipo;
-  document.getElementById('marca').value            = m.marca;
-  document.getElementById('serie').value            = m.serie;
-  document.getElementById('ubicacion').value        = m.ubicacion;
-  document.getElementById('estado').value           = m.estado;
-  document.getElementById('fechaAdquisicion').value = m.fechaAdquisicion || '';
-  document.getElementById('costoAdquisicion').value = m.costoAdquisicion || '';
-  document.getElementById('garantia').value          = m.garantia || '';
-  document.getElementById('categoria').value         = m.categoria || '';
-
-  document.querySelector('#overlay .modal-header h2').textContent = 'Editar máquina';
-  abrirModal();
-}
 
 function eliminarMaquina(indice) {
   if (!confirm(`¿Eliminar "${maquinas[indice].nombre}"?`)) return;

@@ -569,7 +569,7 @@ footer {
    TABLA
 ====================== */
 
-.table-wrap {
+/* .table-wrap {
     border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 0.125rem 0.5rem var(--principal);
@@ -610,7 +610,7 @@ tbody td {
     vertical-align: middle;
 }
 
-/* Celdas especiales */
+
 .td-codigo {
     font-family: 'Courier New', monospace;
     font-size: 0.75rem;
@@ -626,9 +626,6 @@ tbody td {
     color: #888;
 }
 
-/* ======================
-   BADGES DE ESTADO
-====================== */
 
 .badge {
     display: inline-flex;
@@ -657,9 +654,7 @@ tbody td {
 .badge-fuera            { background: #e8eaf6; color: var(--secundario); }
 .badge-fuera::before    { background: var(--secundario); }
 
-/* ======================
-   BOTONES DE ACCIÓN (tabla)
-====================== */
+
 
 .action-btn {
     background: none;
@@ -676,9 +671,6 @@ tbody td {
 .action-btn.edit:hover { background: rgba(255, 216, 0, 0.15); color: #8a6d00; }
 .action-btn.del:hover  { background: rgba(255, 0, 0, 0.08); color: var(--rojo); }
 
-/* ======================
-   SIN RESULTADOS
-====================== */
 
 .no-results {
     text-align: center;
@@ -693,9 +685,6 @@ tbody td {
     color: #bbb;
 }
 
-/* ======================
-   PAGINACIÓN
-====================== */
 
 .pagination {
     display: flex;
@@ -732,9 +721,6 @@ tbody td {
 
 .pg-btn:disabled { opacity: 0.4; cursor: default; }
 
-/* ======================
-   ACCIONES DE PÁGINA
-====================== */
 
 .page-actions {
     display: flex;
@@ -742,7 +728,6 @@ tbody td {
     margin-top: 1.5rem;
 }
 
-/* PANEL BASE */
 .panel {
     background: var(--white);
     border-radius: 0.9375rem;
@@ -763,4 +748,4 @@ tbody td {
 .panel-title h3 {
     color: var(--texto);
     font-size: 1.0625rem;
-}
+} */
