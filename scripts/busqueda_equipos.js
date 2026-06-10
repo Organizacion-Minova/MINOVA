@@ -141,13 +141,13 @@ function render() {
                     <td>${d.ubicacion}</td>
                     <td>${badge(d.estado)}</td>
                     <td>
-                        <button class="action-btn" title="Ver detalle" onclick="verDetalle('${d.nombre}')">
+                        <button class="btn-azul" title="Ver detalle" onclick="verDetalle('${d.nombre}')">
                             <i class="fa-solid fa-eye"></i>
                         </button>
-                        <button class="action-btn edit" title="Editar" onclick="editarEquipo(${index})">
+                        <button class="btn-azul" title="Editar" onclick="editarEquipo(${index})">
                             <i class="fa-solid fa-pencil"></i>
                         </button>
-                        <button class="action-btn del" title="Eliminar" onclick="confirmarEliminar('${d.codigo}', '${d.nombre}')">
+                        <button class="btn-azul" title="Eliminar" onclick="confirmarEliminar('${d.codigo}', '${d.nombre}')">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </td>
@@ -271,9 +271,6 @@ function verDetalle(nombre) {
     alert(`Ver: ${nombre}`);
 }
 
-// ============================================================
-//  INICIALIZAR
-// ============================================================
 document.addEventListener('baseLoaded', () => {
     const btnAbrir  = document.getElementById('abrirModal');
     const btnCerrar = document.getElementById('cerrarModal');

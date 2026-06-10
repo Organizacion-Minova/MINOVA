@@ -1,580 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulario con Observaciones</title>
-
-<style>
-
-*{
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Game</title>
+    <style>
+        *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f0ebf8;
-    padding:30px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#f5f5f5;
+    font-family:Arial,sans-serif;
 }
 
-.container{
-    width:100%;
-    max-width:900px;
-    margin:auto;
-}
-
-/* ================= HEADER ================= */
-
-.form-header{
+.game{
+    width:800px;
+    height:250px;
+    border:2px solid #333;
+    position:relative;
+    overflow:hidden;
     background:white;
-    border-top:10px solid #673ab7;
-    padding:30px;
-    border-radius:10px;
-    margin-bottom:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
 
-.form-header input,
-.form-header textarea{
+.game::after{
+    content:"";
+    position:absolute;
+    bottom:0;
     width:100%;
-    border:none;
-    outline:none;
+    height:3px;
+    background:#333;
 }
 
-#titulo{
-    font-size:32px;
+#dino{
+    width:50px;
+    height:50px;
+    background:#333;
+    position:absolute;
+    bottom:0;
+    left:50px;
+}
+
+.jump{
+    animation:jump .6s linear;
+}
+
+@keyframes jump{
+    0%{bottom:0;}
+    50%{bottom:120px;}
+    100%{bottom:0;}
+}
+
+#cactus{
+    width:25px;
+    height:60px;
+    background:green;
+    position:absolute;
+    bottom:0;
+    right:-50px;
+}
+
+.move{
+    animation:move 1.5s linear infinite;
+}
+
+@keyframes move{
+    from{
+        right:-50px;
+    }
+    to{
+        right:850px;
+    }
+}
+
+#score{
+    position:absolute;
+    top:10px;
+    right:20px;
+    font-size:24px;
     font-weight:bold;
 }
 
-#descripcion{
-    margin-top:15px;
-    resize:none;
-    font-size:16px;
-}
-
-/* ================= BOTONES ================= */
-
-.top-buttons{
-    display:flex;
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.btn{
-    background:#673ab7;
-    color:white;
-    border:none;
-    padding:12px 18px;
-    border-radius:5px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.btn:hover{
-    background:#5a31a6;
-}
-
-.btn-danger{
-    background:#e53935;
-}
-
-.btn-danger:hover{
-    background:#c62828;
-}
-
-/* ================= PREGUNTAS ================= */
-
-.question{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
-}
-
-.question-top{
-    display:flex;
-    gap:20px;
-    align-items:center;
-}
-
-.question-title{
-    flex:1;
-}
-
-.question-title input{
-    width:100%;
-    padding:10px;
-    border:none;
-    border-bottom:2px solid #ddd;
-    outline:none;
-    font-size:17px;
-}
-
-.question-title input:focus{
-    border-color:#673ab7;
-}
-
-.question select{
-    width:220px;
-    padding:10px;
-    border-radius:5px;
-}
-
-/* ================= OPCIONES ================= */
-
-.options{
+#gameOver{
     margin-top:20px;
+    color:red;
 }
-
-.option{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:10px;
-}
-
-.option input{
-    flex:1;
-    padding:10px;
-}
-
-.add-option{
-    margin-top:10px;
-    background:#eee;
-    color:#333;
-}
-
-/* ================= OBSERVACIONES ================= */
-
-.observaciones{
-    margin-top:20px;
-    border-top:1px solid #ddd;
-    padding-top:20px;
-}
-
-.observaciones textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    resize:none;
-    margin-top:10px;
-}
-
-/* ================= PREVIEW ================= */
-
-.preview{
-    margin-top:40px;
-}
-
-.preview-card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-.preview-question{
-    margin-bottom:20px;
-}
-
-.preview-question p{
-    margin-bottom:10px;
-    font-weight:bold;
-}
-
-.line{
-    width:100%;
-    border-bottom:1px solid #999;
-    margin-top:10px;
-}
-
-.preview-option{
-    margin-bottom:10px;
-}
-
-.preview-observacion{
-    margin-top:20px;
-}
-
-.preview-observacion textarea{
-    width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ccc;
-}
-
-</style>
+    </style>
 </head>
 <body>
 
-<div class="container">
-
-    <!-- HEADER -->
-
-    <div class="form-header">
-
-        <input type="text"
-               id="titulo"
-               placeholder="Título del formulario">
-
-        <textarea id="descripcion"
-                  rows="3"
-                  placeholder="Descripción"></textarea>
-
+    <div class="game">
+        <div id="score">0</div>
+        <div id="dino"></div>
+        <div id="cactus"></div>
     </div>
 
-    <!-- BOTONES -->
+    <h2 id="gameOver"></h2>
 
-    <div class="top-buttons">
+    <script >const dino = document.getElementById("dino");
+const cactus = document.getElementById("cactus");
+const scoreText = document.getElementById("score");
+const gameOverText = document.getElementById("gameOver");
 
-        <button class="btn"
-                onclick="agregarPregunta()">
-            + Agregar Pregunta
-        </button>
+let score = 0;
+let gameOver = false;
 
-        <button class="btn"
-                onclick="mostrarPreview()">
-            👁 Vista previa
-        </button>
+cactus.classList.add("move");
 
-    </div>
+function jump() {
 
-    <!-- PREGUNTAS -->
+    if (dino.classList.contains("jump")) return;
 
-    <div id="preguntas"></div>
+    dino.classList.add("jump");
 
-    <!-- PREVIEW -->
-
-    <div class="preview"
-         id="preview"></div>
-
-</div>
-
-<script>
-
-function agregarPregunta(){
-
-    let div = document.createElement("div");
-
-    div.className = "question";
-
-    div.innerHTML = `
-
-        <div class="question-top">
-
-            <div class="question-title">
-
-                <input type="text"
-                       placeholder="Escribe tu pregunta">
-
-            </div>
-
-            <select onchange="cambiarTipo(this)">
-
-                <option value="texto">
-                    Respuesta corta
-                </option>
-
-                <option value="parrafo">
-                    Párrafo
-                </option>
-
-                <option value="multiple">
-                    Opción múltiple
-                </option>
-
-                <option value="checkbox">
-                    Casillas
-                </option>
-
-            </select>
-
-        </div>
-
-        <div class="contenido"></div>
-
-        <!-- ACTIVAR OBSERVACIONES -->
-
-        <div style="margin-top:20px;">
-
-            <label style="
-                display:flex;
-                align-items:center;
-                gap:10px;
-            ">
-
-                <input type="checkbox"
-                       onchange="toggleObservacion(this)">
-
-                Agregar observación
-
-            </label>
-
-        </div>
-
-        <!-- OBSERVACION -->
-
-        <div class="observaciones"
-             style="display:none;">
-
-            <textarea rows="4"
-                      placeholder="Escribe observaciones aquí..."></textarea>
-
-        </div>
-
-        <div style="margin-top:20px;">
-
-            <button class="btn btn-danger"
-                    onclick="eliminarPregunta(this)">
-                Eliminar
-            </button>
-
-        </div>
-
-    `;
-
-    document.getElementById("preguntas")
-            .appendChild(div);
-
-    cambiarTipo(div.querySelector("select"));
+    setTimeout(() => {
+        dino.classList.remove("jump");
+    }, 600);
 }
 
-function cambiarTipo(select){
+document.addEventListener("keydown", (e) => {
 
-    let contenido =
-        select.parentElement.parentElement
-              .querySelector(".contenido");
+    if (e.code === "Space" || e.code === "ArrowUp") {
 
-    let tipo = select.value;
+        if (!gameOver) {
+            jump();
+        } else {
+            location.reload();
+        }
+    }
+});
 
-    if(tipo === "texto"){
+const scoreInterval = setInterval(() => {
 
-        contenido.innerHTML = `
-            <div class="line"></div>
-        `;
+    if (!gameOver) {
+        score++;
+        scoreText.textContent = score;
     }
 
-    else if(tipo === "parrafo"){
+}, 100);
 
-        contenido.innerHTML = `
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        `;
+const collision = setInterval(() => {
+
+    const dinoBottom =
+        parseInt(window.getComputedStyle(dino).getPropertyValue("bottom"));
+
+    const cactusLeft =
+        parseInt(window.getComputedStyle(cactus).getPropertyValue("right"));
+
+    const cactusPosition = 800 - cactusLeft;
+
+    if (
+        cactusPosition > 50 &&
+        cactusPosition < 100 &&
+        dinoBottom < 50
+    ) {
+
+        gameOver = true;
+
+        cactus.style.animation = "none";
+
+        gameOverText.textContent =
+            `GAME OVER - Puntuación: ${score} (Presiona Espacio para reiniciar)`;
+
+        clearInterval(scoreInterval);
     }
 
-    else{
-
-        contenido.innerHTML = `
-
-            <div class="options">
-
-                <div class="option">
-
-                    <input type="text"
-                           placeholder="Opción 1">
-
-                </div>
-
-                <div class="option">
-
-                    <input type="text"
-                           placeholder="Opción 2">
-
-                </div>
-
-                <button class="btn add-option"
-                        type="button"
-                        onclick="agregarOpcion(this)">
-
-                    + Agregar opción
-
-                </button>
-
-            </div>
-
-        `;
-    }
-}
-
-function agregarOpcion(btn){
-
-    let options = btn.parentElement;
-
-    let cantidad =
-        options.querySelectorAll(".option").length + 1;
-
-    let option =
-        document.createElement("div");
-
-    option.className = "option";
-
-    option.innerHTML = `
-
-        <input type="text"
-               placeholder="Opción ${cantidad}">
-
-    `;
-
-    options.insertBefore(option, btn);
-}
-
-function eliminarPregunta(btn){
-
-    btn.parentElement.parentElement.remove();
-}
-
-function toggleObservacion(check){
-
-    let observacion =
-        check.parentElement.parentElement
-             .parentElement
-             .querySelector(".observaciones");
-
-    if(check.checked){
-
-        observacion.style.display = "block";
-
-    }else{
-
-        observacion.style.display = "none";
-    }
-}
-
-function mostrarPreview(){
-
-    let preview =
-        document.getElementById("preview");
-
-    preview.innerHTML = "";
-
-    let titulo =
-        document.getElementById("titulo").value;
-
-    let descripcion =
-        document.getElementById("descripcion").value;
-
-    preview.innerHTML += `
-
-        <div class="preview-card">
-
-            <h1>${titulo}</h1>
-
-            <p>${descripcion}</p>
-
-        </div>
-
-    `;
-
-    let preguntas =
-        document.querySelectorAll(".question");
-
-    preguntas.forEach(q => {
-
-        let texto =
-            q.querySelector(".question-title input").value;
-
-        let tipo =
-            q.querySelector("select").value;
-
-        let observacionBox =
-            q.querySelector(".observaciones");
-
-        let observacion = "";
-
-        if(observacionBox.style.display !== "none"){
-
-            observacion =
-                observacionBox
-                .querySelector("textarea")
-                .value;
-        }
-
-        let html = `
-
-            <div class="preview-card">
-
-                <div class="preview-question">
-
-                    <p>${texto}</p>
-
-        `;
-
-        if(tipo === "texto"){
-
-            html += `
-                <div class="line"></div>
-            `;
-        }
-
-        else if(tipo === "parrafo"){
-
-            html += `
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            `;
-        }
-
-        else{
-
-            let opciones =
-                q.querySelectorAll(".option input");
-
-            opciones.forEach(op => {
-
-                html += `
-
-                    <div class="preview-option">
-
-                        <input type="${
-                            tipo === "checkbox"
-                            ? "checkbox"
-                            : "radio"
-                        }">
-
-                        ${op.value}
-
-                    </div>
-
-                `;
-            });
-        }
-
-        if(observacion !== ""){
-
-            html += `
-
-                <div class="preview-observacion">
-
-                    <label>
-                        Observaciones
-                    </label>
-
-                    <textarea rows="4">${observacion}</textarea>
-
-                </div>
-
-            `;
-        }
-
-        html += `
-                </div>
-            </div>
-        `;
-
-        preview.innerHTML += html;
-
-    });
-}
-
-agregarPregunta();
-
-</script>
+}, 10);</script>
 
 </body>
 </html>

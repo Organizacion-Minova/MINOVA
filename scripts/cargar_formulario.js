@@ -94,7 +94,7 @@ function inputHtml(p, i) {
         p.opciones.forEach(op => {
             html += `<label class="option-inline">
                         <input type="radio" name="q${i}" value="${op}" data-i="${i}"> ${op}
-                     </label>`;
+                     </label><br>`;
         });
         return html + `</div>`;
     }
@@ -103,7 +103,7 @@ function inputHtml(p, i) {
         p.opciones.forEach(op => {
             html += `<label class="option-inline">
                         <input type="checkbox" value="${op}" data-i="${i}" data-cb="true"> ${op}
-                     </label>`;
+                     </label><br>`;
 
         });
         return html + `</div>`;
