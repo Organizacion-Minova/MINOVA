@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dino Game</title>
+    <title>Dino Chrome</title>
     <style>
         *{
     margin:0;
@@ -14,165 +14,353 @@
 body{
     height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    background:#f5f5f5;
-    font-family:Arial,sans-serif;
+    background:#f7f7f7;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 .game{
-    width:800px;
-    height:250px;
-    border:2px solid #333;
+    width:1000px;
+    height:300px;
+    border-bottom:3px solid #535353;
     position:relative;
     overflow:hidden;
-    background:white;
+    background:#fff;
 }
 
-.game::after{
-    content:"";
+.score-board{
     position:absolute;
-    bottom:0;
-    width:100%;
-    height:3px;
-    background:#333;
-}
-
-#dino{
-    width:50px;
-    height:50px;
-    background:#333;
-    position:absolute;
-    bottom:0;
-    left:50px;
-}
-
-.jump{
-    animation:jump .6s linear;
-}
-
-@keyframes jump{
-    0%{bottom:0;}
-    50%{bottom:120px;}
-    100%{bottom:0;}
-}
-
-#cactus{
-    width:25px;
-    height:60px;
-    background:green;
-    position:absolute;
-    bottom:0;
-    right:-50px;
-}
-
-.move{
-    animation:move 1.5s linear infinite;
-}
-
-@keyframes move{
-    from{
-        right:-50px;
-    }
-    to{
-        right:850px;
-    }
-}
-
-#score{
-    position:absolute;
-    top:10px;
+    top:20px;
     right:20px;
+    display:flex;
+    gap:20px;
+    color:#555;
     font-size:24px;
     font-weight:bold;
 }
 
-#gameOver{
-    margin-top:20px;
-    color:red;
+#dino{
+    width:50px;
+    height:55px;
+    position:absolute;
+    bottom:0;
+    left:60px;
+    background:#444;
+    border-radius:4px;
+}
+
+#dino::before,
+#dino::after{
+    content:"";
+    position:absolute;
+    width:10px;
+    height:20px;
+    background:#444;
+    bottom:-15px;
+}
+
+#dino::before{
+    left:8px;
+}
+
+#dino::after{
+    right:8px;
+}
+
+.jump{
+    animation:jump .65s ease-out;
+}
+
+@keyframes jump{
+
+    0%{
+        bottom:0;
+    }
+
+    50%{
+        bottom:140px;
+    }
+
+    100%{
+        bottom:0;
+    }
+
+}
+
+.cactus{
+    position:absolute;
+    bottom:0;
+    background:#2f8a2f;
+    border-radius:2px;
+}
+
+.small{
+    width:22px;
+    height:50px;
+}
+
+.large{
+    width:30px;
+    height:70px;
+}
+
+.cloud{
+    position:absolute;
+    width:60px;
+    height:25px;
+    background:#ddd;
+    border-radius:30px;
+}
+
+.cloud::before{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:30px;
+    left:8px;
+    top:-10px;
+    background:#ddd;
+    border-radius:50%;
+}
+
+.cloud::after{
+    content:"";
+    position:absolute;
+    width:35px;
+    height:35px;
+    right:8px;
+    top:-15px;
+    background:#ddd;
+    border-radius:50%;
+}
+
+#ground{
+    position:absolute;
+    bottom:0;
+    width:3000px;
+    height:4px;
+    background:repeating-linear-gradient(
+        90deg,
+        #444 0 25px,
+        transparent 25px 40px
+    );
+}
+
+#game-over{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:10px;
+    background:rgba(255,255,255,.9);
+}
+
+#game-over h2{
+    color:#333;
+}
+
+#game-over p{
+    color:#666;
 }
     </style>
 </head>
 <body>
 
     <div class="game">
-        <div id="score">0</div>
+
+        <div class="score-board">
+            <span id="record">HI 00000</span>
+            <span id="score">00000</span>
+        </div>
+
+        <div id="clouds"></div>
+
         <div id="dino"></div>
-        <div id="cactus"></div>
+
+        <div id="ground"></div>
+
+        <div id="game-over">
+            <h2>GAME OVER</h2>
+            <p>Presiona ESPACIO para reiniciar</p>
+        </div>
+
     </div>
 
-    <h2 id="gameOver"></h2>
+    <script >const game = document.querySelector(".game");
+const dino = document.getElementById("dino");
+const scoreEl = document.getElementById("score");
+const recordEl = document.getElementById("record");
+const gameOverEl = document.getElementById("game-over");
+const cloudsContainer = document.getElementById("clouds");
 
-    <script >const dino = document.getElementById("dino");
-const cactus = document.getElementById("cactus");
-const scoreText = document.getElementById("score");
-const gameOverText = document.getElementById("gameOver");
-
-let score = 0;
+let jumping = false;
 let gameOver = false;
 
-cactus.classList.add("move");
+let score = 0;
+let record = Number(localStorage.getItem("record")) || 0;
 
-function jump() {
+let speed = 7;
 
-    if (dino.classList.contains("jump")) return;
+recordEl.textContent = `HI ${record.toString().padStart(5,"0")}`;
+
+function jump(){
+
+    if(jumping || gameOver) return;
+
+    jumping = true;
 
     dino.classList.add("jump");
 
-    setTimeout(() => {
+    setTimeout(()=>{
         dino.classList.remove("jump");
-    }, 600);
+        jumping = false;
+    },650);
 }
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown",(e)=>{
 
-    if (e.code === "Space" || e.code === "ArrowUp") {
+    if(e.code==="Space" || e.code==="ArrowUp"){
 
-        if (!gameOver) {
-            jump();
-        } else {
+        if(gameOver){
             location.reload();
+            return;
         }
+
+        jump();
     }
 });
 
-const scoreInterval = setInterval(() => {
+function createObstacle(){
 
-    if (!gameOver) {
-        score++;
-        scoreText.textContent = score;
+    if(gameOver) return;
+
+    const cactus = document.createElement("div");
+
+    const large = Math.random() > 0.5;
+
+    cactus.classList.add("cactus");
+    cactus.classList.add(large ? "large" : "small");
+
+    cactus.style.left = "1000px";
+
+    game.appendChild(cactus);
+
+    let pos = 1000;
+
+    const move = setInterval(()=>{
+
+        if(gameOver){
+            clearInterval(move);
+            return;
+        }
+
+        pos -= speed;
+
+        cactus.style.left = pos + "px";
+
+        const dinoRect = dino.getBoundingClientRect();
+        const cactusRect = cactus.getBoundingClientRect();
+
+        if(
+            dinoRect.left < cactusRect.right &&
+            dinoRect.right > cactusRect.left &&
+            dinoRect.bottom > cactusRect.top &&
+            dinoRect.top < cactusRect.bottom
+        ){
+            endGame();
+        }
+
+        if(pos < -60){
+            cactus.remove();
+            clearInterval(move);
+        }
+
+    },20);
+
+    const next =
+        Math.random() * 1800 + 1000;
+
+    setTimeout(createObstacle,next);
+}
+
+function createCloud(){
+
+    if(gameOver) return;
+
+    const cloud = document.createElement("div");
+
+    cloud.className = "cloud";
+
+    cloud.style.left = "1000px";
+    cloud.style.top =
+        Math.random()*100 + 30 + "px";
+
+    cloudsContainer.appendChild(cloud);
+
+    let pos = 1000;
+
+    const move = setInterval(()=>{
+
+        pos -= 2;
+
+        cloud.style.left = pos + "px";
+
+        if(pos < -100){
+            cloud.remove();
+            clearInterval(move);
+        }
+
+    },20);
+
+    setTimeout(
+        createCloud,
+        Math.random()*4000 + 2000
+    );
+}
+
+function updateScore(){
+
+    if(gameOver) return;
+
+    score++;
+
+    scoreEl.textContent =
+        score.toString().padStart(5,"0");
+
+    if(score > record){
+
+        record = score;
+
+        localStorage.setItem(
+            "record",
+            record
+        );
+
+        recordEl.textContent =
+            `HI ${record
+                .toString()
+                .padStart(5,"0")}`;
     }
 
-}, 100);
-
-const collision = setInterval(() => {
-
-    const dinoBottom =
-        parseInt(window.getComputedStyle(dino).getPropertyValue("bottom"));
-
-    const cactusLeft =
-        parseInt(window.getComputedStyle(cactus).getPropertyValue("right"));
-
-    const cactusPosition = 800 - cactusLeft;
-
-    if (
-        cactusPosition > 50 &&
-        cactusPosition < 100 &&
-        dinoBottom < 50
-    ) {
-
-        gameOver = true;
-
-        cactus.style.animation = "none";
-
-        gameOverText.textContent =
-            `GAME OVER - Puntuación: ${score} (Presiona Espacio para reiniciar)`;
-
-        clearInterval(scoreInterval);
+    if(score % 200 === 0){
+        speed += 0.5;
     }
+}
 
-}, 10);</script>
+function endGame(){
+
+    gameOver = true;
+
+    gameOverEl.style.display = "flex";
+}
+
+setInterval(updateScore,100);
+
+createObstacle();
+createCloud();</script>
 
 </body>
 </html>
