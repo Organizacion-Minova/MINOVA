@@ -29,7 +29,7 @@
     margin-bottom: 4px;
 }
 
-.card .icon.red    { background: rgba(255, 0,   0,   0.1); color: var(--rojo);     }
+.card .icon.red    { background: rgba(255, 0,   0,   0.1); color: var(--rojo); }
 .card .icon.yellow { background: rgba(255, 216, 0,   0.15); color: #b8960a;        }
 .card .icon.green  { background: rgba(0,   179, 51,  0.1); color: var(--verde);    }
 .card .icon.blue   { background: rgba(57,  76,  170, 0.12); color: var(--secundario); }
