@@ -131,10 +131,10 @@ function render() {
         <td>${m.ubicacion}</td>
         <td>${badge(m.estado)}</td>
         <td>
-          <button class="action-btn" title="Ver detalle" onclick="verDetalle('${m.nombre}')">
+          <button class="btn-azul" title="Ver detalle" onclick="verDetalle('${m.nombre}')">
             <i class="fa-solid fa-eye"></i>
           </button>
-          <button class="action-btn del" title="Eliminar" onclick="confirmarEliminar('${m.codigo}', '${m.nombre}')">
+          <button class="btn-azul" title="Eliminar" onclick="confirmarEliminar('${m.codigo}', '${m.nombre}')">
             <i class="fa-solid fa-trash"></i>
           </button>
         </td>

@@ -13,7 +13,6 @@
     --Azul-difuminado:  linear-gradient(135deg, var(--principal), var(--secundario));
 }
 
-/* Reset — sin font-family en ::before/::after para no romper Font Awesome */
 *, *::before, *::after {  
     margin: 0;
     padding: 0;
@@ -565,7 +564,7 @@ footer {
     .profile-btn h4,
     .profile-btn .role-tag { display: none; }
 }
-/* ======================
+ /* ======================
    TABLA
 ====================== */
 
@@ -654,8 +653,6 @@ tbody td {
 .badge-fuera            { background: #e8eaf6; color: var(--secundario); }
 .badge-fuera::before    { background: var(--secundario); }
 
-
-
 .action-btn {
     background: none;
     border: none;
@@ -684,7 +681,6 @@ tbody td {
     margin-bottom: 0.625rem;
     color: #bbb;
 }
-
 
 .pagination {
     display: flex;
