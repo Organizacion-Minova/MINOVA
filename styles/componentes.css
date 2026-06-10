@@ -1,12 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   COMPONENTES.CSS — MINOVA
-   Botones reutilizables, alertas, validación, fuerza de contraseña
-   NOTA: usa --white (alias de --blanco definido en base.css)
-═══════════════════════════════════════════════════════════ */
 
-/* ======================
-   BOTONES — BASE
-====================== */
 button {
     border: none;
     padding: 12px 22px;
@@ -35,13 +27,6 @@ button:hover { transform: translateY(-2px); }
 }
 .btn:hover { transform: translateY(-2px); }
 
-/* ======================
-   VARIANTES DE COLOR
-====================== */
-.btn-verde     { background: var(--verde);    color: var(--white); }
-.btn-principal { background: var(--rojo);     color: var(--white); }
-
-/* ─── .btn-azul ─── pill style, igual a .btn-accion / .btn-login */
 .btn-azul {
     background:    var(--principal);
     color:         var(--white);
@@ -58,9 +43,12 @@ button:hover { transform: translateY(-2px); }
     transition:    background 0.2s, transform 0.15s, box-shadow 0.2s;
     box-shadow:    0 0.25rem 1.125rem rgba(57,76,170,0.35);
     letter-spacing: 0.0125rem;
-    font-family:   inherit;
     text-decoration: none;
     width:         fit-content;
+}
+.btn-azul a {
+    color: var(--white);
+    text-decoration: none;
 }
 .btn-azul:hover {
     background:  var(--secundario);
@@ -177,9 +165,7 @@ button:hover { transform: translateY(-2px); }
     flex-wrap: wrap;
 }
 
-/* ======================
-   BÚSQUEDA Y FILTROS
-====================== */
+
 .search-main    { display: flex; gap: 0.5rem; margin-bottom: 0.625rem; }
 .search-wrapper { flex: 1; position: relative; }
 .search-wrapper i {

@@ -21,7 +21,7 @@ thead th {
 }
 
 tbody tr { 
-    border-bottom: 0.0625rem solid #dcdcdc;
+    border-bottom: 0.0625rem solid var(--contenedor);
     transition: background .2s ease;
 }
 

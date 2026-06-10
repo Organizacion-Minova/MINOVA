@@ -5,7 +5,35 @@
     margin-bottom:1.25rem;
     box-shadow:0 .125rem .625rem var(--white);
 }
+.question input[type="text"],
+.question input[type="number"],
+.question input[type="email"],
+.question input[type="date"],
+.question input[type="time"],
+.question textarea {
+    width: 100%;
+    padding: .85rem 1rem;
+    border: .0625rem solid var(--texto2);
+    border-radius: .7rem;
+    outline: none;
+    font-size: .9rem;
+    transition: .2s ease;
+        }
+.question input[type="text"]:focus,
+.question input[type="number"]:focus,
+.question input[type="email"]:focus,
+.question input[type="date"]:focus,
+.question input[type="time"]:focus,
+.question textarea:focus {
+    border-color: var(--fondo-preguntas);
+}
+.question textarea {
+    resize: none;
+}
 
+.question input[type="file"] {
+    margin-top: 4px;
+}
 .question-top{
     display:flex;
     gap:1.25rem;
@@ -35,9 +63,6 @@
     padding:.625rem;
     border-radius:.3125rem;
 }
-
-/* ================= OPCIONES ================= */
-
 .options{
     margin-top:1.25rem;
 }
@@ -53,25 +78,41 @@
     flex:1;
     padding:.625rem;
 }
+.option input[type="radio"],
+.option input[type="checkbox"] {
+    flex: none;
+    width: auto;
+    padding: 0;
+}
+.options-inline{
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    align-items: center;
+    margin-top: 1.25rem;
+}
+
+.option-inline{
+    display:flex; 
+    align-items:center; 
+    gap:10px;
+}
 
 .add-option{
     margin-top:.625rem;
-    background:var(--secondary-color);
+    background:var(--secundario);
     color:var(--fondo);
 }
 
-/* ================= OBSERVACIONES ================= */
-
 .observaciones{
     margin-top:1.25rem;
-    border-top:.0625rem solid var(--fondo-preguntas);
+    border-top:.0625rem solid var(--texto2);
     padding-top:1.25rem;
 }
 
 .observaciones textarea{
     width:100%;
     padding:.75rem;
-    border:.0625rem solid var(--fondo-preguntas);
+    border:.0625rem solid var(--texto2);
     border-radius:.5rem;
     resize:none;
     margin-top:.625rem;
@@ -79,12 +120,9 @@
 
 /* ================= PREVIEW ================= */
 
-.preview{
-    margin-top:2.5rem;
-}
 
 .preview-card{
-    background:var(--secondary-color);
+    background:var(--secundario);
     padding:1.25rem;
     border-radius:.625rem;
     margin-bottom:1.25rem;
@@ -118,4 +156,46 @@
     padding:.75rem;
     border-radius:.5rem;
     border:.0625rem solid var(--fondo-preguntas);
+}
+#confirmacion {
+    display: none;
+    margin-top: 1.25rem; 
+    padding: 1.125rem 1.375rem; 
+    background: var(--secundario);
+    border: 0.0625rem solid var(--contenedor); 
+    border-radius: 0.625rem; 
+    color: var(--verde);
+    font-size: 0.9375rem; 
+}
+
+#confirmacion i {
+    margin-right: 0.5rem; 
+}
+
+#msg-vacio {
+    padding: 1.875rem; 
+    text-align: center;
+    color: var(--texto);
+    font-size: 0.9375rem; 
+}
+
+#selector-wrap {
+    margin-bottom: 1.5rem; 
+    display: flex;
+    align-items: center;
+    gap: 0.875rem; 
+    flex-wrap: wrap;
+}
+
+#selector-wrap label {
+    font-weight: 600;
+    font-size: 0.9375rem; 
+}
+
+#selector-formulario {
+    padding: 0.5rem 0.75rem; 
+    border: 0.0625rem solid var(--texto2);
+    border-radius: 0.375rem; 
+    font-size: 0.9375rem;
+    min-width: 17.5rem;
 }

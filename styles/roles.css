@@ -70,7 +70,6 @@
     .badge-inactivo { background: #f0f2f5; color: #888; font-size: 11px; padding: 3px 8px; border-radius: 12px; }
     .td-actions { display: flex; gap: 6px; }
 
-    /* Botones */
     .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px;
            font-size: 13px; cursor: pointer; border: 1px solid #dde1e7; background: #fff;
            color: #333; transition: all .12s; font-weight: 500; }
