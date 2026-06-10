@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOVA - Alertas</title>
+    <link rel="stylesheet" href="../styles/base.css ">
+    <link rel="stylesheet" href="../styles/alertas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="base-container"></div>
+
+    <template id="page-content">
+        <div class="welcome">
+            <h1>Alertas</h1>
+            <div class="date">
+                <i class="fa-regular fa-calendar"></i>
+                <span id="fechaActual"></span>
+            </div>
+        </div>
+
+
+<!-- TARJETAS RESUMEN -->
+
+      <section class="cards">
+        <div class="card">
+          <div class="icon red"><i class="fa-solid fa-circle-exclamation"></i></div>
+          <h2 id="cntGrave">3</h2>
+          <p>Alertas graves</p>
+          <a href="#" onclick="filtrar('grave');return false;">Ver detalle →</a>
+        </div>
+        <div class="card">
+          <div class="icon yellow"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h2 id="cntImportante">5</h2>
+          <p>Alertas importantes</p>
+          <a href="#" onclick="filtrar('importante');return false;">Ver detalle →</a>
+        </div>
+        <div class="card">
+          <div class="icon green"><i class="fa-solid fa-circle-check"></i></div>
+          <h2 id="cntBien">12</h2>
+          <p>Equipos sin novedad</p>
+          <a href="#" onclick="filtrar('bien');return false;">Ver detalle →</a>
+        </div>
+        <div class="card">
+          <div class="icon blue"><i class="fa-solid fa-wind"></i></div>
+          <h2>4</h2>
+          <p>Sensores de gases activos</p>
+          <a href="gases.html">Ver mediciones →</a>
+        </div>
+      </section>
+  
+    </template>
+
+    <script src="../scripts/base.js"></script>
+    <script src="../scripts/busqueda_maquina.js"></script>
+</body>
+</html>

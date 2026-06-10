@@ -134,9 +134,6 @@ function render() {
           <button class="btn-azul" title="Ver detalle" onclick="verDetalle('${m.nombre}')">
             <i class="fa-solid fa-eye"></i>
           </button>
-          <button class="btn-azul" title="Editar" onclick="editarMaquina(${index})">
-            <i class="fa-solid fa-pencil"></i>
-          </button>
           <button class="btn-azul" title="Eliminar" onclick="confirmarEliminar('${m.codigo}', '${m.nombre}')">
             <i class="fa-solid fa-trash"></i>
           </button>

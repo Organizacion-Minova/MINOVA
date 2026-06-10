@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MINOVA - EQUIPOS</title>
 
-    <link rel="stylesheet" href="../styles/base.css">
-    <!-- <link rel="stylesheet" href="../styles/equipos.css"> -->
+    <link rel="stylesheet" href="../styles/base.css ">
+    <link rel="stylesheet" href="../styles/estilos_ubicaciones.css">
+    <link rel="stylesheet" href="../styles/estilos_tabla.css">
     <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="../styles/estilos_index.css">
+    <link rel="stylesheet" href="../styles/estyilos_tablas.css">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -119,27 +122,30 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Código</th>
                         <th>Nombre</th>
+                        <th>Código</th>
+                        <th>N° Serie</th>
                         <th>Tipo</th>
                         <th>Marca</th>
-                        <th>N° Serie</th>
                         <th>Ubicación</th>
                         <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody id="tbody"></tbody>
+                <tbody id="tbody">
+                      <!-- Aquí se insertarán los resultados de la búsqueda -->
+                </tbody>
             </table>
+            <br>
+            <br>
         </div>
-
         <!-- PAGINACIÓN -->
-        <div class="pagination" id="paginacion"></div>
-
+        <div class="btn-container">
         <!-- BOTÓN AGREGAR -->
-        <button class="btn btn-azul" id="abrirModal">
-            <i class="fa-solid fa-plus"></i> Agregar equipo
-        </button>
+            <button id="abrirModal" class="btn btn-azul">
+                <i class="fa-solid fa-plus"></i>
+                Nuevo equipo 
+            </button>
 
         <!-- BACKDROP -->
         <div class="overlay-backdrop" id="backdropModal"></div>
@@ -147,7 +153,7 @@
         <!-- MODAL -->
         <div class="overlay-panel modal-tool" id="overlay">
             <div class="modal-header">
-                <h3><i class="fa-solid fa-plus"></i> Agregar nuevo equipo</h3>
+                <h2>Agregar nuevo equipo</h2>
                 <button class="cerrar-modal" id="cerrarModal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -203,7 +209,7 @@
 
     <!-- <script src="../scripts/roles.store.js"></script>
     <script src="../scripts/auth.js"></script> -->
-    <script src="../scripts/busqueda.js"></script>
+    <script src="../scripts/busqueda_equipos.js"></script>
     <script src="../scripts/base.js"></script>
     <!-- <script>Auth.proteger(['ver_equipos']);</script> -->
 

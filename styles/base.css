@@ -626,7 +626,6 @@ tbody td {
 }
 
 
-
 .badge {
     display: inline-flex;
     align-items: center;
@@ -717,7 +716,6 @@ tbody td {
 }
 
 .pg-btn:disabled { opacity: 0.4; cursor: default; }
-
 
 
 .page-actions {

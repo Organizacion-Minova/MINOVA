@@ -229,11 +229,10 @@ function marcarTodas() {
 
 }
 
-function irAlertas() {
-    window.location.href = 'reportes.html';
-    cerrarTodos();
 
-}
+
+
+
 
 function irPerfil() {
     window.location.href = 'perfil.html';
