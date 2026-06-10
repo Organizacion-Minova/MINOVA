@@ -1,19 +1,5 @@
-/* ═══════════════════════════════════════════════════════════════════
-   MINOVA — estilos_inicio_sesion.css  (versión corregida)
-   
-   PROBLEMA RAÍZ RESUELTO:
-   base.css declara:
-     .input-group { display:flex; flex-direction:column; }
-     .input-group input/select { padding:.85rem 1rem; border:...; border-radius:.7rem; }
-   
-   Esas reglas tienen especificidad (0,1,0) — igual que las de este archivo.
-   Como base.css se carga PRIMERO, este archivo las sobreescribe... pero solo
-   cuando los selectores son idénticos. La solución definitiva es prefijar las
-   reglas de auth con ".modal" para subir la especificidad a (0,2,0) y ganar
-   SIEMPRE, sin necesidad de !important.
-═══════════════════════════════════════════════════════════════════ */
 
-/* ─── BODY override para páginas de auth ─── */
+
 body {
     min-height: 100vh;
     overflow-x: hidden;
@@ -23,9 +9,6 @@ body {
     justify-content: center;
 }
 
-/* ═══════════════════════════════════════════
-   CARRUSEL DE FONDO
-═══════════════════════════════════════════ */
 .bg-carrusel {
     position: fixed;
     inset: 0;
@@ -44,9 +27,7 @@ body {
     display: block;
 }
 
-/* ═══════════════════════════════════════════
-   MODAL Y OVERLAY
-═══════════════════════════════════════════ */
+
 .modal-overlay {
     position: fixed;
     inset: 0;
