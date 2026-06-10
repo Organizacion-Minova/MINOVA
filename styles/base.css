@@ -13,7 +13,6 @@
     --Azul-difuminado:  linear-gradient(135deg, var(--principal), var(--secundario));
 }
 
-/* Reset — sin font-family en ::before/::after para no romper Font Awesome */
 *, *::before, *::after {  
     margin: 0;
     padding: 0;
@@ -324,6 +323,12 @@ main,
     padding: 14px 18px;
     border-bottom: 1px solid #eee;
 }
+.perfil-info p {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto);
+    margin-bottom: 8px;
+}
 .perfil-info-row {
     display: flex;
     align-items: center;
@@ -340,44 +345,12 @@ main,
     flex-direction: column;
     gap: 8px;
 }
-.btn-perfil-action {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 13px; font-weight: 600;
-    transition: background .15s, transform .12s;
-    width: 100%;
-    text-align: left;
-}
-.btn-perfil-action:hover         { transform: translateX(2px); }
-.btn-perfil-action.primary       { background: var(--principal); color: var(--white); }
-.btn-perfil-action.primary:hover { background: var(--secundario); }
-.btn-perfil-action.secondary       { background: #f0f2ff; color: var(--principal); }
-.btn-perfil-action.secondary:hover { background: #e0e4ff; }
 
 .perfil-footer {
     padding: 10px 18px 14px;
     border-top: 1px solid #eee;
 }
-.btn-logout-overlay {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    padding: 9px 14px;
-    border-radius: 10px;
-    border: 1px solid #ffd0d0;
-    background: #fff5f5;
-    color: var(--rojo);
-    font-size: 12px; font-weight: 600;
-    cursor: pointer;
-    transition: background .15s;
-}
-.btn-logout-overlay:hover { background: #ffecec; }
+
 
 .overlay-backdrop        { display: none; position: fixed; inset: 0; z-index: 500; }
 .overlay-backdrop.active { display: block; }
@@ -565,7 +538,7 @@ footer {
     .profile-btn h4,
     .profile-btn .role-tag { display: none; }
 }
-/* ======================
+ /* ======================
    TABLA
 ====================== */
 
@@ -654,8 +627,6 @@ tbody td {
 .badge-fuera            { background: #e8eaf6; color: var(--secundario); }
 .badge-fuera::before    { background: var(--secundario); }
 
-
-
 .action-btn {
     background: none;
     border: none;
@@ -684,7 +655,6 @@ tbody td {
     margin-bottom: 0.625rem;
     color: #bbb;
 }
-
 
 .pagination {
     display: flex;

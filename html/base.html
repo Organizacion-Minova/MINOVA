@@ -1,5 +1,4 @@
 
-
 <header class="topbar">
     <button id="toggleSidebar">
     <i class="fa-solid fa-bars"></i>
@@ -9,75 +8,143 @@
         <img src="../img/Minova - logo1.png" alt="MINOVA">
     </div>
     <h2>SISTEMA DE MANTENIMIENTO E INVENTARIO</h2>
+<nav class="user-info">
    <link rel="icon" type="image/png" href="../img/Minova - logo1.png">
     <nav class="user-info">
 
-        <!-- ── BOTÓN CAMPANA ── -->
-         
-            <button class="bell-btn" id="btnCampana" title="Alertas">
-                <i class="fa-solid fa-bell"></i>
-                <span class="bell-badge" id="bellBadge">5</span>
-            </button>
+        <button class="bell-btn" id="btnCampana" title="Alertas">
 
-            
-            <div class="overlay-panel" id="overlayAlertas">
-                <div class="alerts-header">
-                    <h3><i class="fa-solid fa-bell"></i> Alertas del sistema</h3>
-                    <button class="mark-all" onclick="marcarTodas()">Marcar todas como leídas</button>
-                </div>
+            <i class="fa-solid fa-bell"></i>
 
+            <span class="bell-badge" id="bellBadge">5</span>
 
+        </button>
 
-                <div class="alerts-footer">
-                    <button class="btn-ver-alertas" onclick="irAlertas()">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <a href="alertas.html">Ver alertas</a>
-                    </button>
-                </div>
+        <!-- OVERLAY ALERTAS -->
+        <div class="overlay-panel" id="overlayAlertas">
+
+            <div class="alerts-header">
+
+                <h3>
+                    <i class="fa-solid fa-bell"></i>
+                    Alertas del sistema
+                </h3>
+
+                <button class="mark-all" onclick="marcarTodas()">
+                    Marcar todas como leídas
+                </button>
+
             </div>
 
-            <button class="profile-btn" id="btnPerfil">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" alt="">
-                <div>
-                    <h4>PAPOI</h4>
-                    <span class="role-tag">
-                        <i class="fa-solid fa-shield-halved"></i> PAPOI
-                    </span>
-                </div>
-            </button>
+            <div class="alerts-footer">
 
-            <!-- OVERLAY PERFIL -->
-            <div class="overlay-panel" id="overlayPerfil">
+                <button class="btn-azul" >
+                    <a href="alertas.html" >
+                    <i class="fa-solid fa-triangle-exclamation"></i>
 
-                <div class="perfil-header">
-               
-                </div>
+                    Alertas</a>
 
-                <div class="perfil-info">
+                </button>
 
-            
-                </div>
+            </div>
 
-                <div class="perfil-actions">
-                    <button class="btn-perfil-action secondary">
-                    <li> <a href="perfil.html"> <i class="fa-solid fa-user"></i> Ver mi perfil </a> </li>
-                        
-                    </button>
-                    <button class="btn-perfil-action primary" >
-                        <i class="fa-solid fa-shield-halved"></i> Panel Superadmin
-                    </button>
-                </div>
+        </div>
 
-                <div class="perfil-footer">
-                    <button class="btn-logout-overlay">
-                        <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
-                    </button>
-                </div>
+        <!-- BOTÓN PERFIL -->
+        <button class="profile-btn" id="btnPerfil">
 
-            </div><!-- /overlayPerfil -->
+            <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" 
+                alt="Perfil"
+            >
+
+            <div>
+
+                <h4>PAPOI</h4>
+
+                <span class="role-tag">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    PAPOI
+
+                </span>
+
+            </div>
+
+        </button>
+
+        <!-- OVERLAY PERFIL -->
+        <div class="overlay-panel" id="overlayPerfil">
+
+            <div class="perfil-header">
+
+                <img 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" 
+                    alt="Perfil"
+                    class="perfil-avatar"
+                >
+
+                <h3>PAPOI</h3>
+
+                <span>Superadministrador</span>
+
+            </div>
+
+            <div class="perfil-info">
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    papoi@gmail.com
+                </p>
+
+            </div>
+
+            <div class="perfil-actions">
+
+                <button 
+                    class="btn-azul"
+                    onclick="irPerfil()"
+                >
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Ver mi perfil
+
+                </button>
+
+                <button 
+                    class="btn-azul"
+                    onclick="irSuperadmin()"
+                >
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Panel Superadmin
+
+                </button>
+
+            </div>
+
+            <div class="perfil-footer">
+
+                <button 
+                    class="btn-azul"
+                    onclick="cerrarSesion()"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Cerrar sesión
+
+                </button>
+
+            </div>
+
+        </div>
 
 
-    </nav>
+</nav>
 
     <!-- Fondo invisible para cerrar al click fuera — fuera del nav, dentro del header -->
     <div class="overlay-backdrop" id="backdrop" onclick="cerrarTodos()"></div>
@@ -130,10 +197,6 @@
             <li>
                 <i class="fa-solid fa-users"></i>
                 <a href="usuarios.html">Usuarios</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-bell"></i>
-                <a href="reportes.html">Alertas</a>
             </li>
             <li>
                 <i class="fa-solid fa-info-circle"></i>

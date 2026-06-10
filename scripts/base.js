@@ -84,7 +84,16 @@ function _iniciarEventos() {
 
         });
 
-    }
+   }
+   if (btnPerfil) {
+
+    btnPerfil.addEventListener('click', () => {
+
+        toggleOverlay('overlayPerfil', 'overlayAlertas');
+
+    });
+
+  }
 
     // Listener ESC — función nombrada para evitar duplicados si _iniciarEventos se re-invoca
     document.removeEventListener('keydown', _onEsc);
@@ -220,11 +229,10 @@ function marcarTodas() {
 
 }
 
-function irAlertas() {
-    window.location.href = 'reportes.html';
-    cerrarTodos();
 
-}
+
+
+
 
 function irPerfil() {
     window.location.href = 'perfil.html';
@@ -253,9 +261,10 @@ function mostrarFechaActual() {
     const opciones = {
         day: 'numeric',
         month: 'long',
-        year: 'numeric'
+        year: 'numeric',
+        weekday: 'long'
     };
-
+    
     const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
 
     const elementoFecha = document.getElementById('fechaActual');

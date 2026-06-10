@@ -7,18 +7,14 @@
 
   <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/perfil.css">
-  <link rel="stylesheet" href="../styles/estilos_index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-  <!-- Aquí se inyecta el layout base -->
   <div id="base-container"></div>
 
-  <!-- Contenido de esta página -->
   <template id="page-content">
 
-    <!-- Encabezado de bienvenida -->
     <div class="welcome">
       <div>
         <h1>Mi Perfil</h1>
@@ -31,10 +27,6 @@
     </div>
 
     <div class="perfil-wrapper">
-
-      <!-- ══════════════════════════════════════
-           TARJETA 1 · Foto y nombre
-      ══════════════════════════════════════ -->
       <div class="panel tarjeta-avatar">
         <div class="avatar-section">
           <div class="avatar-wrap" onclick="document.getElementById('inputFoto').click()">
@@ -203,10 +195,6 @@
         </div>
 
       </div>
-
-      <!-- ══════════════════════════════════════
-           TARJETA 5 · Últimos accesos
-      ══════════════════════════════════════ -->
       <div class="panel perfil-seccion tarjeta-accesos">
 
         <div class="seccion-titulo-row sin-borde">
@@ -236,14 +224,10 @@
 
       </div>
 
-    </div><!-- /perfil-wrapper -->
+    </div>
   </template>
-
-  <!-- <script src="../scripts/roles.store.js"></script>
-  <script src="../scripts/auth.js"></script> -->
+  <script src="../scripts/base.js"></script>  
   <script src="../scripts/perfil.js"></script>
-  <script src="../scripts/base.js"></script>
-  <!-- <script>Auth.proteger([]);</script> -->
-  
+
 </body>
 </html>
