@@ -35,4 +35,7 @@ tbody td {
     color: var(--texto);
     vertical-align: middle;
 }
+tbody tr:hover { 
+    background: var(--hover);
+}
 
