@@ -7,6 +7,7 @@ require __DIR__ . '/../PHPMailer/PHPMailer/src/Exception.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
 // ─────────────────────────────────────────────
 //  CONFIGURACIÓN BASE SMTP (reutilizable)
 // ─────────────────────────────────────────────
