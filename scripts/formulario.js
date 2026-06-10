@@ -196,10 +196,7 @@ function mostrarPreview() {
         preview.innerHTML += html;
     });
 }
- 
-/* =========================================================
-   GUARDAR INSPECCION EN localStorage
-========================================================= */
+
  
 function guardarInspeccion() {
  
@@ -213,7 +210,7 @@ function guardarInspeccion() {
         return;
     }
     if (preguntasNodes.length <= 1) {
-        alert("⚠️ El formulario debe tener más de una pregunta.");
+        alert("El formulario debe tener más de una pregunta.");
         return;
     }
  
@@ -253,7 +250,7 @@ function guardarInspeccion() {
     guardados.push(formulario);
     localStorage.setItem("inspeccionesGuardadas", JSON.stringify(guardados));
  
-    alert("✅ Formulario guardado correctamente.\n\nYa puedes ir a Llenar Inspección para usarlo.");
+    alert("Formulario guardado correctamente.\n\nYa puedes ir a Llenar Inspección para usarlo.");
 }
  
 /* =========================================================
