@@ -252,6 +252,21 @@ main,
     color: var(--texto);
     font-size: 0.875rem;
 }
+.team-avatar {
+    width: 150px;          /* Ajusta el tamaño que desees aquí */
+    height: 150px;         /* Debe ser igual al width para que sea un círculo perfecto */
+    border-radius: 50%;    /* Corta los bordes en forma de círculo */
+    overflow: hidden;      /* Esconde todo lo que sobresalga del círculo */
+    display: inline-block; /* O 'block', según cómo se alinee en tu diseño */
+    border: 3px solid #ccc; /* Opcional: un borde para darle estilo */
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     
+    object-position: center; 
+}
 
 .contact-item i {
     color: var(--secundario);
