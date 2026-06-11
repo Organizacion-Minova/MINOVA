@@ -10,48 +10,82 @@ body{
 }
 
 
+
+
+/* ===== DESKTOP ===== */
+
 .grid-contenedor{
+    min-height:100vh;
+
     display:grid;
-    gap:20px;
 
     grid-template:
-        "bienvenida"
+       "bienvenida"
         "secciones"
         "paneles"
-        "alertas";
- 
-        /* definir ancho a diferentes dispositivos, en este caso tablet */
-@media (min-width: 768px) {
-    
-        grid-template:
-            /* crear columnas */
-            "topbar topbar" auto
-            "topbar topbar" auto
-            "img hj1" auto
-            "hj2 descripcion" auto
-            "boton-volver boton-mantenimientos" auto
-            "boton boton"auto
-            "footer footer" auto
-            / 50% auto; /* definir ancho de columnas */
-    }
-
-        @media (min-width: 992px) {
-          gap:10px;
-        /* definir ancho a diferentes dispositivos, en este caso desktop */
-        grid-template:
-        
-            /* crear columnas */
-            "topbar topbar" auto
-            "img hj1" auto
-            "hj2 descripcion" auto
-            "boton-volver boton-mantenimientos" auto
-            "boton boton"auto
-            "footer footer" auto
-
-            / auto 50%; /* definir ancho de columnas */
-    }
+        "alertas"
+        /  1fr;
 }
 
+/* ===== TABLET ===== */
+
+@media (max-width:991px){
+
+    .grid-contenedor{
+
+        grid-template:
+            "bienvenida"
+            "secciones"
+            "paneles"
+            "alertas"
+            / 1fr;
+            .welcome{
+            flex-direction:column;
+            align-items:center;
+            text-align:center;
+            gap:1rem;
+        }
+    }
+
+     
+}
+
+/* ===== MOVIL ===== */
+
+@media (max-width:990px){
+
+    .grid-contenedor{
+        grid-template:
+            "bienvenida"
+            "secciones"
+            "paneles"
+            "alertas"
+            auto;
+        .welcome{
+            flex-direction:column;
+             align-items:center;
+             text-align:center;
+            gap:1rem;
+        }
+             
+        .cards{
+    grid-template-columns:auto
+       }
+       .middle{
+        grid-template-columns:auto
+        }
+    }
+    .card {
+        
+        text-align:center;
+             
+    }
+    .icon{
+        
+        width:auto !important;
+        height:auto;
+    }
+}
 .logout{
     border:none;
     background:none;
@@ -60,6 +94,7 @@ body{
     font-size:17px;
     text-align:left;
 }
+
 
 
 
@@ -166,11 +201,13 @@ body{
 .panel-title{
     display:flex;
     justify-content:space-between;
+    
     align-items:center;
     margin-bottom:20px;
 }
 
 .panel-title h3{
+   
     color:var(--texto);
 }
 
@@ -297,6 +334,7 @@ body{
 }
 
 .alert-item{
+    
     padding:15px;
     border-bottom:1px solid #ddd;
     color:var(--texto);

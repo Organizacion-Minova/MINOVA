@@ -2,6 +2,14 @@
    Aqui van botones osi osi osio osi osi osi osiosi osi
 ====================== */
 /*bases boton*/
+
+.btn-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
 button{
     border:none;
     padding:12px 22px;

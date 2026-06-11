@@ -22,17 +22,17 @@
 /* ======================
    ESTRUCTURA GENERAL
 ====================== */
-.topbar{grid-area: topbar}
+.topbar{grid-area: topbar;}
 .sidebar{grid-area: sidebar;}
 #contenido{grid-area: contenido;}
 footer{grid-area: footer;}
 
-.grid-base{
+/* .grid-base{
     min-height: 100vh;
     display:grid;
 
     
-    @media(max-width:767px){ 
+    @media(max-width:767px){  */
     
     /*celular*/
     /* grid-template:
@@ -40,7 +40,7 @@ footer{grid-area: footer;}
         "sidebar contenido" 1fr
         "footer footer" auto
         / 260px 1fr; */
-         grid-template:
+         /* grid-template:
         "topbar topbar" 
         "sidebar contenido" 
         "footer footer";
@@ -49,17 +49,17 @@ footer{grid-area: footer;}
          display:grid;
 
         grid-template-columns:
-           auto 1fr auto;
+           auto  auto;
             
 
         align-items:center;
-    }
+    } */
     /* ocultar nombre perfil
     .profile-btn div{
         display:none;
     } */
 
-    .sidebar{
+    /* .sidebar{
         width:60px;
         padding:10px 6px;
     }
@@ -73,10 +73,10 @@ footer{grid-area: footer;}
     .topbar h2{
         display:none;
     }
-    /* .profile-btn h4,
+    .profile-btn h4,
     .profile-btn .role-tag{
         display:none;
-    }  */
+    } 
       .logo img{
         max-width:120px;
     }
@@ -90,50 +90,126 @@ footer{grid-area: footer;}
    .descripcion-logos{
     display: none;
    }
-}
+} */
 
-   
-/* @media(max-width:900px){
-    .sidebar{
-        width:200px;
-    }
-    .topbar h2{
-        font-size:14px;
-    }
-}*/
-
-
-    
+ 
 /* tableeeeeeeeeeeeeeeeeeet */
-    @media (min-width: 768px) {
+    /* @media (min-width: 768px) {
     
         grid-template:
         "topbar topbar" 50px
         "topbar topbar" 50px
         "sidebar contenido"auto 
-        "footer footer" 100px/
-         auto auto;
+        "footer footer" auto/
+         auto auto;   
+    } */
 
-         
-    }
-
-    @media (min-width: 992px) {
+    /* @media (min-width: 992px) { */
         /* definir ancho a diferentes dispositivos, en este caso desktop */
-        grid-template:
+        /* grid-template: */
         /* crear columnas */
+        /* "topbar topbar" auto
+        "sidebar contenido" 1fr
+        "footer footer" auto
+        / auto 1fr;
+    }
+} */
+/* ===== DESKTOP ===== */
+
+.grid-base{
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template:
         "topbar topbar" auto
         "sidebar contenido" 1fr
         "footer footer" auto
-        / 260px 1fr;
+        / auto 1fr;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:991px){
+
+    .grid-base{
+
+        grid-template:
+            "topbar topbar" auto
+            "sidebar contenido" 1fr
+            "footer footer" auto
+            / auto 1fr;
+
+            
     }
 }
 
+/* ===== MOVIL ===== */
+
+@media (max-width:767px){
+
+    .grid-base{
+
+        grid-template:
+            "topbar topbar" auto
+            "sidebar contenido" 1fr
+            "footer footer" auto
+            / auto 1fr;
+
+        
+          .topbar{
+               display:grid;
+
+              grid-template-columns:
+                 auto  auto;
+
+
+              align-items:center;
+          } 
+          
+          .profile-btn div{
+              display:none;
+          } 
+      
+           .sidebar{
+              width:60px;
+              padding:10px 6px;
+          }
+          .sidebar li a{
+              display:none;
+          }
+          .sidebar li{
+              justify-content:center;
+              gap:0;
+          }
+          .topbar h2{
+              display:none;
+          }
+          .profile-btn h4,
+          .profile-btn .role-tag{
+              display:none;
+          } 
+            .logo img{
+              max-width:120px;
+          }
+      
+          footer{
+              display: grid;
+              grid-template-columns: auto;
+              align-items:center;
+          }
+      
+         .descripcion-logos{
+          display: none;
+         }
+    }
+}
 /* ======================
    HEADER / TOPBAR
 ====================== */
 
 .topbar{
-    height:100px;
+    
     background:var(--Azul-difuminado);
     color:var(--white);
     display:flex;
@@ -143,6 +219,7 @@ footer{grid-area: footer;}
     border-bottom:3px solid var(--secundario);
     position:relative;
     z-index:100;
+
 }
 .logo{ 
     flex-shrink:0;
