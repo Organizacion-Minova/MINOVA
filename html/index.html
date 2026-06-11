@@ -6,27 +6,25 @@
     <title>MINOVA - INICIO</title>
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/estilos_index.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="../scripts/base.js" defer></script>
-    <script src="../scripts/busqueda.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="icon" type="image/png" href="../img/logo-minova.png">
 </head>
 <body>
-    
-    <!-- Aquí se inyecta el layout base -->
+
     <div id="base-container"></div>
-    
-    <!-- Contenido de esta página -->
+
     <template id="page-content">
         <div class="grid-contenedor">
             <div class="welcome">
-                <div>
-                    <h1>¡Bienvenido, Juan Pérez!</h1>
-                    <p>Este es el resumen general del sistema.</p>
-                </div>
+                 <div>
+                     <h1>¡Bienvenido, Juan Pérez!</h1>
+                     <p>Este es el resumen general del sistema.</p>
+                 </div>
 
                 <div class="date">
                     <i class="fa-regular fa-calendar"></i>
-                    27 de mayo de 2026
+                    <span id="fechaActual"></span>
                 </div>
             </div>
 
@@ -165,7 +163,9 @@
             
             </section>
         </div>
+        
     </template>
-
+    <script src="../scripts/busqueda.js"></script>
+    <script src="../scripts/base.js"></script>
 </body>
 </html>

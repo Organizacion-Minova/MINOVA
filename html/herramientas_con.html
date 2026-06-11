@@ -24,7 +24,7 @@
 
             <div class="date">
                 <i class="fa-regular fa-calendar"></i>
-                26 de mayo de 2029
+                <span id="fechaActual"></span>
             </div>
         </div>
         <table>
@@ -41,13 +41,13 @@
                 <td>1</td>
                 <td>Aceites</td>
                 <td>Los aceites son consumibles usados para lubricar y proteger motores, máquinas y equipos, reduciendo el desgaste y mejorando su funcionamiento.</td>
-                <td><button class="btn btn-azul"><i class="fa-solid fa-eye"></i></button><br><button class="btn btn-azul"><i class="fa-solid fa-trash"></i></button></td>
+                <td><button class="btn-azul"><i class="fa-solid fa-eye"></i></button><button class="btn-azul"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
             </tbody>
         </table>
         <br>
         <!-- BOTON -->
-            <button class="btn btn-azul" id="abrirModal">
+            <button class="btn-azul" id="abrirModal">
                 <i class="fa-solid fa-plus"></i> Agregar tipo herramienta
             </button>
 
@@ -94,7 +94,10 @@
 
         </div>
     </template>
+    <!-- <script src="../scripts/roles.store.js"></script>
+    <script src="../scripts/auth.js"></script> -->
     <script src="../scripts/base.js"></script>
+    <!-- <script>Auth.proteger(['ver_herramientas']);</script> -->
 
 </body>
 </html>

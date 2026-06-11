@@ -21,7 +21,7 @@ thead th {
 }
 
 tbody tr { 
-    border-bottom: 0.0625rem solid #dcdcdc;
+    border-bottom: 0.0625rem solid var(--contenedor);
     transition: background .2s ease;
 }
 
@@ -34,5 +34,8 @@ tbody td {
     font-size: 0.88rem;
     color: var(--texto);
     vertical-align: middle;
+}
+tbody tr:hover { 
+    background: var(--hover);
 }
 
