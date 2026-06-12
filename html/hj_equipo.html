@@ -141,8 +141,8 @@
             vy: 0, jumping: false, ducking: false,
             legFrame: 0
         };
-        const GRAVITY = 0.8;
-        const JUMP_V = -14;
+        const GRAVITY = 0.7;
+        const JUMP_V = -15.5;
 
         // ---------- Mundo ----------
         let obstacles = [];
@@ -150,6 +150,10 @@
         let groundOffset = 0;
         let nextObstacle = 60;
         let nextCloud = 40;
+
+        // Montañas de fondo (parallax)
+        let mountainsFar = 0;
+        let mountainsNear = 0;
 
         function reset(){
             score = 0; speed = 6; frame = 0; gameOver = false; night = false;
@@ -268,6 +272,12 @@
                 // suelo
                 groundOffset -= speed;
                 if(groundOffset <= -40) groundOffset += 40;
+
+                // parallax de montañas
+                mountainsFar -= speed * 0.08;
+                if(mountainsFar <= -300) mountainsFar += 300;
+                mountainsNear -= speed * 0.25;
+                if(mountainsNear <= -400) mountainsNear += 400;
 
                 // obstáculos
                 nextObstacle -= speed;
@@ -391,12 +401,58 @@
             }
         }
 
+        function drawLandscape(){
+            // cielo
+            const sky = ctx.createLinearGradient(0,0,0,GROUND_Y);
+            if(night){
+                sky.addColorStop(0, '#0d1326');
+                sky.addColorStop(1, '#2a3a5c');
+            } else {
+                sky.addColorStop(0, '#bfe6ff');
+                sky.addColorStop(1, '#eaf7ff');
+            }
+            ctx.fillStyle = sky;
+            ctx.fillRect(0,0,W,GROUND_Y);
+
+            // sol o luna
+            ctx.fillStyle = night ? '#e8e8e8' : '#ffd95e';
+            ctx.beginPath();
+            ctx.arc(W-90, 50, 26, 0, Math.PI*2);
+            ctx.fill();
+
+            // montañas lejanas
+            ctx.fillStyle = night ? '#1c2742' : '#a9d4e8';
+            for(let i=-1;i<4;i++){
+                const baseX = mountainsFar + i*300;
+                ctx.beginPath();
+                ctx.moveTo(baseX, GROUND_Y);
+                ctx.lineTo(baseX+150, GROUND_Y-90);
+                ctx.lineTo(baseX+300, GROUND_Y);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            // montañas cercanas
+            ctx.fillStyle = night ? '#101a30' : '#7fbfa0';
+            for(let i=-1;i<3;i++){
+                const baseX = mountainsNear + i*400;
+                ctx.beginPath();
+                ctx.moveTo(baseX, GROUND_Y);
+                ctx.lineTo(baseX+120, GROUND_Y-55);
+                ctx.lineTo(baseX+240, GROUND_Y-15);
+                ctx.lineTo(baseX+400, GROUND_Y);
+                ctx.closePath();
+                ctx.fill();
+            }
+            // suelo (franja inferior)
+            ctx.fillStyle = night ? '#0a1020' : '#dff0d8';
+            ctx.fillRect(0, GROUND_Y, W, H-GROUND_Y);
+        }
+
         function draw(){
-            const bg = night ? '#1f2430' : '#ffffff';
             const fg = night ? '#e8e8e8' : '#444444';
 
-            ctx.fillStyle = bg;
-            ctx.fillRect(0,0,W,H);
+            drawLandscape();
 
             if(night){
                 ctx.fillStyle = '#e8e8e8';
