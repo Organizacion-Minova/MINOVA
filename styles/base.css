@@ -22,34 +22,215 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-html,
-body {
-    height: 100%;
-}
+/* ======================
+   ESTRUCTURA GENERAL
+====================== */
+.topbar{grid-area: topbar;}
+.sidebar{grid-area: sidebar;}
+#contenido{grid-area: contenido;}
+footer{grid-area: footer;}
 
-body {
+/* .grid-base{
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: var(--fondo);
+    display:grid;
+
+    
+    @media(max-width:767px){  */
+    
+    /*celular*/
+    /* grid-template:
+        "topbar topbar" auto
+        "sidebar contenido" 1fr
+        "footer footer" auto
+        / 260px 1fr; */
+         /* grid-template:
+        "topbar topbar" 
+        "sidebar contenido" 
+        "footer footer";
+
+    .topbar{
+         display:grid;
+
+        grid-template-columns:
+           auto  auto;
+            
+
+        align-items:center;
+    } */
+    /* ocultar nombre perfil
+    .profile-btn div{
+        display:none;
+    } */
+
+    /* .sidebar{
+        width:60px;
+        padding:10px 6px;
+    }
+    .sidebar li a{
+        display:none;
+    }
+    .sidebar li{
+        justify-content:center;
+        gap:0;
+    }
+    .topbar h2{
+        display:none;
+    }
+    .profile-btn h4,
+    .profile-btn .role-tag{
+        display:none;
+    } 
+      .logo img{
+        max-width:120px;
+    }
+
+    footer{
+        display: grid;
+        grid-template-columns: auto;
+        align-items:center;
+    }
+
+   .descripcion-logos{
+    display: none;
+   }
+} */
+
+ 
+/* tableeeeeeeeeeeeeeeeeeet */
+    /* @media (min-width: 768px) {
+    
+        grid-template:
+        "topbar topbar" 50px
+        "topbar topbar" 50px
+        "sidebar contenido"auto 
+        "footer footer" auto/
+         auto auto;   
+    } */
+
+    /* @media (min-width: 992px) { */
+        /* definir ancho a diferentes dispositivos, en este caso desktop */
+        /* grid-template: */
+        /* crear columnas */
+        /* "topbar topbar" auto
+        "sidebar contenido" 1fr
+        "footer footer" auto
+        / auto 1fr;
+    }
+} */
+/* ===== DESKTOP ===== */
+
+.grid-base{
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template:
+        "topbar topbar" auto
+        "sidebar contenido" 1fr
+        "footer footer" auto
+        / auto 1fr;
 }
 
-.topbar {
-    height: 100px;
-    background: var(--Azul-difuminado);
-    color: var(--white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
-    border-bottom: 3px solid var(--secundario);
-    position: relative;
-    z-index: 100;
+/* ===== TABLET ===== */
+
+@media (max-width:991px){
+
+    .grid-base{
+
+        grid-template:
+            "topbar topbar" auto
+            "sidebar contenido" 1fr
+            "footer footer" auto
+            / auto 1fr;
+
+            
+    }
 }
 
-.logo img {
-    height: 180px;
-    width: auto;
+/* ===== MOVIL ===== */
+
+@media (max-width:767px){
+
+    .grid-base{
+
+        grid-template:
+            "topbar topbar" auto
+            "sidebar contenido" 1fr
+            "footer footer" auto
+            / auto 1fr;
+
+        
+          .topbar{
+               display:grid;
+
+              grid-template-columns:
+                 auto  auto;
+
+
+              align-items:center;
+          } 
+          
+          .profile-btn div{
+              display:none;
+          } 
+      
+           .sidebar{
+              width:60px;
+              padding:10px 6px;
+          }
+          .sidebar li a{
+              display:none;
+          }
+          .sidebar li{
+              justify-content:center;
+              gap:0;
+          }
+          .topbar h2{
+              display:none;
+          }
+          .profile-btn h4,
+          .profile-btn .role-tag{
+              display:none;
+          } 
+            .logo img{
+              max-width:120px;
+          }
+      
+          footer{
+              display: grid;
+              grid-template-columns: auto;
+              align-items:center;
+          }
+      
+         .descripcion-logos{
+          display: none;
+         }
+    }
+}
+/* ======================
+   HEADER / TOPBAR
+====================== */
+
+.topbar{
+    
+    background:var(--Azul-difuminado);
+    color:var(--white);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 25px;
+    border-bottom:3px solid var(--secundario);
+    position:relative;
+    z-index:100;
+
+}
+.logo{ 
+    flex-shrink:0;
+}
+.logo img{
+     max-width:180px;
+    width:100%;
+    height:auto;
 }
 
 .logo h2 {
@@ -64,10 +245,12 @@ body {
     text-align: center;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+.user-info{
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+
+    flex-shrink:0;
 }
 
 .bell-btn {
@@ -530,14 +713,112 @@ footer {
     .sidebar   { width: 200px; }
     .topbar h2 { font-size: 14px; }
 }
-@media (max-width: 650px) {
+.sidebar .submenu{
+    list-style:none;
+    padding-left:20px;
+    margin-top:10px;
+    display:none;
+}
+.sidebar li:hover .submenu{
+    display:block;
+    transition:.3s;
+}
+
+/* ======================
+   BOTÓN LOGOUT SIDEBAR
+====================== */
+
+.logout{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.12);
+    color:var(--white);
+    cursor:pointer;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.logout:hover{
+    background:var(--rojo);
+    transform:translateY(-2px);
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+.logout i{
+    font-size:18px;
+}
+
+
+
+/* ======================
+   FOOTER
+====================== */
+
+footer{
+    background:var(--Azul-difuminado);
+    color:var(--white);
+    border-top:4px solid var(--secundario);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    width:100%;
+}
+
+.secFooterPrincipal{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:2px solid var(--white);
+    gap:25px;
+    padding-bottom:15px;
+    margin-bottom:10px;
+}
+
+.logoSenaFooter{
+    height:60px;
+    width:auto;
+    border-right:5px solid var(--white);
+    padding-right:20px;
+}
+
+.logoSmaqFooter{
+    height:100px;
+    width:auto;
+}
+
+.infoFooter{
+    font-size:small;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1.4;
+}
+
+.infoFooter span{
+    font-size:14px;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+/* @media (max-width: 650px) {
     .sidebar              { width: 60px; padding: 10px 6px; }
     .sidebar li a         { display: none; }
     .sidebar li           { justify-content: center; gap: 0; }
     .topbar h2            { display: none; }
     .profile-btn h4,
     .profile-btn .role-tag { display: none; }
-}
+} */
  /* ======================
    TABLA
 ====================== */

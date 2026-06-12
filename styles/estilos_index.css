@@ -1,5 +1,91 @@
+/*grid general de la pagina
+grid contenedor= grid individual de cada pagina*/
+.welcome{grid-area: bienvenida;}
+.cards{grid-area: secciones;}
+.middle{grid-area: paneles;}
+.alerts-panel{grid-area: alertas;}
+
+body{
+    background: var(--contenedor);
+}
 
 
+
+
+/* ===== DESKTOP ===== */
+
+.grid-contenedor{
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template:
+       "bienvenida"
+        "secciones"
+        "paneles"
+        "alertas"
+        /  1fr;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:991px){
+
+    .grid-contenedor{
+
+        grid-template:
+            "bienvenida"
+            "secciones"
+            "paneles"
+            "alertas"
+            / 1fr;
+            .welcome{
+            flex-direction:column;
+            align-items:center;
+            text-align:center;
+            gap:1rem;
+        }
+    }
+
+     
+}
+
+/* ===== MOVIL ===== */
+
+@media (max-width:990px){
+
+    .grid-contenedor{
+        grid-template:
+            "bienvenida"
+            "secciones"
+            "paneles"
+            "alertas"
+            auto;
+        .welcome{
+            flex-direction:column;
+             align-items:center;
+             text-align:center;
+            gap:1rem;
+        }
+             
+        .cards{
+    grid-template-columns:auto
+       }
+       .middle{
+        grid-template-columns:auto
+        }
+    }
+    .card {
+        
+        text-align:center;
+             
+    }
+    .icon{
+        
+        width:auto !important;
+        height:auto;
+    }
+}
 .logout{
     border:none;
     background:none;
@@ -9,13 +95,9 @@
     text-align:left;
 }
 
-/* CONTENIDO */
 
-main,
-.content{
-    flex:1;
-    padding:30px;
-}
+
+
 
 /* BIENVENIDA */
 
@@ -119,11 +201,13 @@ main,
 .panel-title{
     display:flex;
     justify-content:space-between;
+    
     align-items:center;
     margin-bottom:20px;
 }
 
 .panel-title h3{
+   
     color:var(--texto);
 }
 
@@ -243,13 +327,14 @@ main,
     background:var(--rojo);
 }
 
-/* ALERTAS */
+
 
 .alerts{
     margin-top:20px;
 }
 
 .alert-item{
+    
     padding:15px;
     border-bottom:1px solid #ddd;
     color:var(--texto);

@@ -1,8 +1,9 @@
-
+<div class="grid-base">
+    
 <header class="topbar">
     <button id="toggleSidebar">
-    <i class="fa-solid fa-bars"></i>
-</button>
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
     <div class="logo">
         <img src="../img/Minova - logo1.png" alt="MINOVA">
@@ -10,7 +11,6 @@
     <h2>SISTEMA DE MANTENIMIENTO E INVENTARIO</h2>
 <nav class="user-info">
    <link rel="icon" type="image/png" href="../img/Minova - logo1.png">
-    <nav class="user-info">
 
         <button class="bell-btn" id="btnCampana" title="Alertas">
 
@@ -40,16 +40,19 @@
 
                 <button class="btn-azul" >
                     <a href="alertas.html" >
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-
-                    Alertas</a>
-
+                    <i class="fa-solid fa-triangle-exclamation"></i>Alertas</a>
                 </button>
-
             </div>
-
         </div>
+        
 
+        <nav class="user-info">
+            <!-- ── BOTÓN CAMPANA ── -->
+            
+                <button class="bell-btn" id="btnCampana" title="Alertas">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="bell-badge" id="bellBadge">5</span>
+                </button>
         <!-- BOTÓN PERFIL -->
         <button class="profile-btn" id="btnPerfil">
 
@@ -146,12 +149,59 @@
 
 </nav>
 
-    <!-- Fondo invisible para cerrar al click fuera — fuera del nav, dentro del header -->
-    <div class="overlay-backdrop" id="backdrop" onclick="cerrarTodos()"></div>
 
-</header>
+         <div class="overlay-panel" id="overlayAlertas">
+             <div class="alerts-header">
+                 <h3><i class="fa-solid fa-bell"></i> Alertas del sistema</h3>
+                 <button class="mark-all" onclick="marcarTodas()">Marcar todas como leídas</button>
+             </div>
+             <div class="alerts-footer">
+                 <button class="btn-ver-alertas" onclick="irAlertas()">
+                     <i class="fa-solid fa-triangle-exclamation"></i> Ver página de alertas
+                 </button>
+             </div>
+         </div><!-- /overlayAlertas -->
 
-<div class="container">
+            <!-- ── BOTÓN PERFIL ── -->
+
+        <button class="profile-btn" id="btnPerfil">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" alt="">
+            <div>
+                <h4>PAPOI</h4>
+                <span class="role-tag">
+                    <i class="fa-solid fa-shield-halved"></i> PAPOI
+                </span>
+            </div>
+        </button>
+
+                <!-- OVERLAY PERFIL -->
+            <div class="overlay-panel" id="overlayPerfil">
+                <div class="perfil-header">
+                
+                </div>
+                <div class="perfil-info">
+                
+                </div>
+                <div class="perfil-actions">
+                    <button class="btn-perfil-action secondary">
+                    <li> <a href="perfil.html"> <i class="fa-solid fa-user"></i> Ver mi perfil </a> </li>
+                    </button>
+                    <button class="btn-perfil-action primary" >
+                        <i class="fa-solid fa-shield-halved"></i> Panel Superadmin
+                    </button>
+                </div>
+                <div class="perfil-footer">
+                    <button class="btn-logout-overlay">
+                        <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                    </button>
+                </div>
+            </div><!-- /overlayPerfil -->
+    </nav>
+
+        <!-- Fondo invisible para cerrar al click fuera — fuera del nav, dentro del header -->
+        <div class="overlay-backdrop" id="backdrop" onclick="cerrarTodos()"></div>
+
+    </header>
 
     <aside class="sidebar">
         
@@ -160,23 +210,21 @@
                 <i class="fa-solid fa-house"></i>
                 <a href="index.html">Inicio</a>
             </li>
-        <li class="menu-desplegable">
+            <li class="menu-desplegable">
 
-    <div class="menu-titulo">
-        <div>
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <span>Herramientas</span>
-        </div>
+                <div class="menu-titulo">
+                    <div>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <span>Herramientas</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down flecha"></i>
+                </div>
 
-        <i class="fa-solid fa-chevron-down flecha"></i>
-    </div>
-
-    <ul class="submenu">
-        <br><li><a href="herramientas_con.html"><i class="fa-solid fa-wrench"></i> Consumibles</a></li><br>
-        <li><a href="herramientas_c_n.html"><i class="fa-solid fa-tools"></i> No consumibles</a></li>
-    </ul>
-
-</li>
+                <ul class="submenu">
+                    <br><li><a href="herramientas_con.html"><i class="fa-solid fa-wrench"></i> Consumibles</a></li><br>
+                    <li><a href="herramientas_c_n.html"><i class="fa-solid fa-tools"></i> No consumibles</a></li>
+                </ul>
+            </li>
             <li>
                 <i class="fa-solid fa-gears"></i>
                 <a href="equipos.html">Equipos</a>
@@ -215,20 +263,24 @@
         
     </aside>
 
-    <!-- Aquí se insertará el contenido de cada página -->
-    <main id="contenido"></main>
+            <main id="contenido">
+                
+            </main>
 
+    <footer>
+        <div class="secFooterPrincipal">
+            <img class="logoSenaFooter" src="../img/logo-sena-blanco.png" alt="SENA">
+            <img class="logoSmaqFooter" src="../img/Minova - logo2.png" alt="MINOVA">
+        <div class="descripcion-logos">
+            <br>Sistema de Mantenimiento y inventariado de elementos Mineros
+            <br> Copyright © 2026. Todos los derechos reservados.
+        </div>
+        </div>
+        
+        <div class="infoFooter">
+            <br><strong>CONTACTANOS</strong>
+            <br>minovaskls@gmail.com
+        </div>
+        
+    </footer>
 </div>
-
-<footer>
-    <div class="secFooterPrincipal">
-        <img class="logoSenaFooter" src="../img/logo-sena-blanco.png" alt="SENA">
-        <img class="logoSmaqFooter" src="../img/Minova - logo2.png" alt="MINOVA">
-        <br> MINOVA - Sistema de Mantenimiento de Maquinas Mineras
-        <br> Copyright © 2026. Todos los derechos reservados.
-    </div>
-    <div class="infoFooter">
-        <br><strong>CONTACTANOS</strong>
-        <br>minovaskls@gmail.com
-    </div>
-</footer>

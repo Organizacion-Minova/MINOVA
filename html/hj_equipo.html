@@ -1,90 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dino Chrome Mejorado</title>
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            min-height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            background:#f7f7f7;
-            font-family:Arial,Helvetica,sans-serif;
-            padding:20px;
-        }
-
-        .wrapper{
-            width:100%;
-            max-width:900px;
-        }
-
-        .score-board{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            margin-bottom:8px;
-            font-size:16px;
-            font-weight:bold;
-            color:#555;
-        }
-
-        canvas{
-            width:100%;
-            display:block;
-            background:#fff;
-            border:2px solid #535353;
-            border-radius:6px;
-            touch-action:none;
-        }
-
-        .controls{
-            display:flex;
-            gap:10px;
-            margin-top:12px;
-        }
-
-        .controls button{
-            flex:1;
-            padding:12px;
-            font-size:15px;
-            font-weight:bold;
-            border:2px solid #535353;
-            border-radius:6px;
-            background:#fff;
-            color:#444;
-            cursor:pointer;
-            transition:transform .1s ease, background .15s ease;
-        }
-
-        .controls button:active{
-            transform:scale(0.97);
-            background:#eee;
-        }
-
-        .hint{
-            font-size:13px;
-            color:#888;
-            margin-top:10px;
-            text-align:center;
-        }
-    </style>
+    <title>Hoja de vida <span id='maquina'></span></title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/hj_equipo.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="../scripts/base.js" defer></script>
 </head>
-<body>
+<body> 
+    <div id="base-container"></div>
+    <template id="page-content">
+        <div class="grid-contenedor">
+            <div class="welcome">
+                <div>
+                    <h1><span id="equipo">Equipo de soldadura</span></h1>
+                    <p>Hoja de vida del equipo</p>
+                </div>
+            </div>
+    
+            
+            <div class="cont-img">
+                    <img src="../img/electrobomba.jpg" alt="Electromba imagen">
+            </div>
 
-    <div class="wrapper">
-
-        <div class="score-board">
-            <span id="hi">HI 00000</span>
-            <span id="score">00000</span>
+            <main class="ficha-tecnica">
+                    
+                <li><strong>NOMBRE:</strong> <span id="eb_nombre">Electrobomba</span></li>
+                <li><strong>CÓDIGO PROGRAMA:</strong> <span id="eb_codigoPrograma">PT2-EL01</span></li>
+                <li><strong>MARCA:</strong> <span id="eb_marca">IHM</span></li>
+                <li><strong>MODELO:</strong> <span id="eb_modelo">2015</span></li>
+                <li><strong>GARANTIA:</strong> <span id="eb_garantia">12 meses</span></li>
+                <li><strong>USO:</strong> <span id="eb_uso">Desagüe de la mina</span></li>
+                <li><strong>OPERADO POR:</strong> <span id="eb_operador">Técnicos mina</span></li>
+                 <li><strong>EMPRESA:</strong> <span id="eb_empresaPrincipal">Sena Centro Minero</span></li>
+            </main>
+           
+            <div class="btn-container">
+                <button class="btn-azul"><i class="fas fa-wind"></i> Medición gases</button>
+                <button class="btn-azul"><i class="fas fa-calendar-alt"></i> Calibración</button>
+                <button class="btn-azul"><i class="fas fa-stethoscope"></i> Diagnóstico</button>
+            </div>
         </div>
 
         <canvas id="cv" width="900" height="260"></canvas>
