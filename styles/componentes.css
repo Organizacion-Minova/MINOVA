@@ -155,9 +155,7 @@ button:hover { transform: translateY(-2px); }
 .btn-buscar:hover  { background: var(--secundario); }
 .btn-buscar:active { transform: scale(0.97); }
 
-/* ======================
-   BOTONES HERRAMIENTAS
-====================== */
+
 .btn-container {
     display: flex;
     gap: 15px;

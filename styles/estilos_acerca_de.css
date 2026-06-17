@@ -253,8 +253,8 @@ main,
     font-size: 0.875rem;
 }
 .team-avatar {
-    width: 150px;          /* Ajusta el tamaño que desees aquí */
-    height: 150px;         /* Debe ser igual al width para que sea un círculo perfecto */
+    width: 150px;          
+    height: 150px;        
     border-radius: 50%;    
     overflow: hidden;      
     display: inline-block; 

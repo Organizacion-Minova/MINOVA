@@ -23,31 +23,32 @@
 
 
 
-        
+
       <section class="cards">
         <div class="card">
           <div class="icon red"><i class="fa-solid fa-circle-exclamation"></i></div>
           <h2 id="cntGrave">3</h2>
           <p>Alertas graves</p>
-          <a href="#" onclick="filtrar('grave');return false;">Ver detalle →</a>
+
         </div>
         <div class="card">
           <div class="icon yellow"><i class="fa-solid fa-triangle-exclamation"></i></div>
           <h2 id="cntImportante">5</h2>
           <p>Alertas importantes</p>
-          <a href="#" onclick="filtrar('importante');return false;">Ver detalle →</a>
+
         </div>
         <div class="card">
           <div class="icon green"><i class="fa-solid fa-circle-check"></i></div>
           <h2 id="cntBien">12</h2>
           <p>Equipos sin novedad</p>
-          <a href="#" onclick="filtrar('bien');return false;">Ver detalle →</a>
+
         </div>
+
         <div class="card">
           <div class="icon blue"><i class="fa-solid fa-wind"></i></div>
           <h2>4</h2>
           <p>Sensores de gases activos</p>
-          <a href="gases.html">Ver mediciones →</a>
+
         </div>
       </section>
         <section class="panel" style="margin-bottom:20px;">
@@ -59,8 +60,7 @@
                     type="text"
                     id="q"
                     placeholder="Buscar por nombre, código, número de serie, marca, ubicación…"
-                    oninput="doSearch()"
-                />
+                 />
             </div>
             <button class="btn-buscar" onclick="doSearch()">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
@@ -88,7 +88,7 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 3 min &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Zona A - Frente 2</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
             <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
           </div>
         </td>
@@ -101,7 +101,7 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 12 min &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Galería 3</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
             <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
           </div>
         </td>
@@ -114,7 +114,7 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 20 min &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Sala de bombas</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
             <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
           </div>
         </td>
@@ -128,7 +128,7 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 1 h &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Zona B - Frente 1</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
             <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
           </div>
         </td>
@@ -141,7 +141,7 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 2 h &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Patio de equipos</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
             <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
           </div>
         </td>
@@ -154,7 +154,7 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 3 h &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Nivel -2</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
             <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
           </div>
         </td>
@@ -167,8 +167,8 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 5 h &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Almacén central</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
-            <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i>Escalar</button>
           </div>
         </td>
       </tr>
@@ -180,7 +180,7 @@
         <td class="alerta-meta"><i class="fa-regular fa-clock"></i> hace 6 h &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Nivel -1</td>
         <td>
           <div class="alerta-acciones">
-            <button class="btn-atender" onclick="atender(this)"><i class="fa-solid fa-check"></i> Atender</button>
+            <button class="btn-atender"><i class="fa-solid fa-check"></i> Atender</button>
             <button class="btn-escalar"><i class="fa-solid fa-arrow-up"></i> Escalar</button>
           </div>
         </td>
