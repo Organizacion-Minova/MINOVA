@@ -1,5 +1,3 @@
-/*grid general de la pagina
-grid contenedor= grid individual de cada pagina*/
 .welcome{grid-area: bienvenida;}
 .cards{grid-area: secciones;}
 .middle{grid-area: paneles;}
