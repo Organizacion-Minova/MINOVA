@@ -1,27 +1,4 @@
-main,
-.content {
-    flex: 1;
-    padding: 1.875rem;
-}
 
-/* ENCABEZADO */
-.welcome {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.875rem;
-}
-
-.welcome h1 { color: var(--texto); }
-.welcome p  { color: var(--texto2); }
-
-.date {
-    background: var(--white);
-    padding: 0.9375rem 1.5625rem;
-    border-radius: 0.75rem;
-}
-
-/* PANEL BASE */
 .panel {
     background: var(--white);
     border-radius: 0.9375rem;
@@ -43,10 +20,6 @@ main,
     color: var(--texto);
     font-size: 1.0625rem;
 }
-
-/* =============================================
-   HERO DEL SISTEMA
-============================================= */
 .about-hero {
     display: flex;
     align-items: center;
@@ -96,9 +69,6 @@ main,
     border-radius: 1.25rem;
 }
 
-/* =============================================
-   TARJETAS DE CARACTERÍSTICAS
-============================================= */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
@@ -142,9 +112,6 @@ main,
     line-height: 1.5;
 }
 
-/* =============================================
-   EQUIPO DE DESARROLLO
-============================================= */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
@@ -190,9 +157,6 @@ main,
     border-radius: 1.25rem;
 }
 
-/* =============================================
-   INSTITUCIONAL
-============================================= */
 .institution-content {
     display: flex;
     flex-direction: column;
@@ -233,9 +197,6 @@ main,
     line-height: 1.5;
 }
 
-/* =============================================
-   CONTACTO
-============================================= */
 .contact-grid {
     display: flex;
     flex-direction: column;
@@ -253,7 +214,11 @@ main,
     font-size: 0.875rem;
 }
 .team-avatar {
+<<<<<<< HEAD
     width: 150px;          
+=======
+    width: 150px;         
+>>>>>>> fd23a565bc09e082a6878851e1a66d42c78fb884
     height: 150px;        
     border-radius: 50%;    
     overflow: hidden;      
@@ -297,19 +262,8 @@ main,
         grid-template-columns: 1fr;
     }
 }       
-/* =============================================
-   ESTILOS_ACERCA_DE.CSS — MINOVA
-   Solo clases exclusivas de esta página.
-   .panel, .panel-title           → base.css
-   .feature-card, .feature-icon   → componentes.css
-   .team-card, .team-avatar,
-   .team-role                     → componentes.css
-   .contact-grid, .contact-item   → componentes.css
-   ============================================= */
 
-/* ======================
-   HERO DEL SISTEMA
-====================== */
+
 .about-hero {
     display: flex;
     align-items: center;
@@ -359,9 +313,6 @@ main,
     border-radius: 1.25rem;
 }
 
-/* ======================
-   GRIDS DE PÁGINA
-====================== */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));

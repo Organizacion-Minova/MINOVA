@@ -7,16 +7,17 @@
 
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/componentes.css">
-    <link rel="stylesheet" href="../styles/estilos_acerca_de.css">
+    <link rel="stylesheet" href="../styles/estilos_index.css">
+    <!-- <link rel="stylesheet" href="../styles/estilos_acerca_de.css"> -->
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
     <div id="base-container"></div>
 
     <template id="page-content">
+        <div class="grid-contenedor">
 
      
         <div class="welcome">
@@ -30,8 +31,8 @@
             </div>
         </div>
 
-      
-        <section class="about-hero panel">
+        <!-- HERO DEL SISTEMA -->
+        <section class="panel">
             <div class="hero-logo">
                 <img src="../img/Minova-logo.png" alt="MINOVA">
             </div>
@@ -61,7 +62,8 @@
                 <div class="feature-icon green">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                 </div>
-                <h3>Control de herramientas</h3>
+                <div class="panel-title">
+                <h3>Control de herramientas</h3></div>
                 <p>Inventario detallado de herramientas consumibles y no consumibles con trazabilidad de uso.</p>
             </div>
 
@@ -134,23 +136,7 @@
             </div>
         </section>
 
-        
-        <section class="panel">
-            <div class="panel-title">
-                <h3><i class="fa-solid fa-envelope"></i> Contacto</h3>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>minovaskls@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-regular fa-copyright"></i>
-                    <span>Copyright © 2026 - Todos los derechos reservados.</span>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </template>
 
     <script src="../scripts/base.js"></script>
