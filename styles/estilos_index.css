@@ -94,11 +94,6 @@ body{
     font-size:17px;
     text-align:left;
 }
-
-
-
-
-
 /* BIENVENIDA */
 
 .welcome{
@@ -343,4 +338,36 @@ body{
 .alert-item i{
     color:var(--rojo);
     margin-right:10px;
+}
+.modulo-steps{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.modulo-steps li{
+    display:flex;
+    align-items:flex-start;
+    gap:0.875rem;
+    padding:0.875rem 0;
+    border-bottom:0.0625rem solid #ececec;
+    font-size:0.875rem;
+    line-height:1.7;
+    color:var(--texto2);
+    min-width:0;
+}
+.step-num{
+    min-width:2rem;
+    width:2rem;
+    height:2rem;
+    border-radius:50%;
+    background:var(--secundario);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.8125rem;
+    font-weight:700;
+    flex-shrink:0;
+    margin-top:0.125rem;
 }

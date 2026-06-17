@@ -3,14 +3,7 @@
 // ============================================================
 const STORAGE_KEY = "minova_maquinas";
 const DATOS_INICIALES = [
-  { nombre: "Excavadora Alpha",     codigo: "EQ-001", serie: "SN-10021", tipo: "Excavadora",      marca: "CAT",     ubicacion: "Zona A - Nivel 1", estado: "Activo",            fechaAdquisicion: "2024-01-15", costoAdquisicion: "120000", garantia: "365", categoria: "Movilidad" },
-  { nombre: "Retroexcavadora Beta", codigo: "EQ-002", serie: "SN-10022", tipo: "Retroexcavadora", marca: "JCB",     ubicacion: "Zona B - Nivel 2", estado: "Mantenimiento", fechaAdquisicion: "2023-05-10", costoAdquisicion: "98000",  garantia: "180", categoria: "Excavación" },
-  { nombre: "Cargador Gamma",       codigo: "EQ-003", serie: "SN-10023", tipo: "Cargador",         marca: "Komatsu", ubicacion: "Zona A - Nivel 3", estado: "Activo",            fechaAdquisicion: "2022-08-20", costoAdquisicion: "150000", garantia: "365", categoria: "Carga" },
-  { nombre: "Malacate Delta",       codigo: "EQ-004", serie: "SN-10024", tipo: "Malacate",         marca: "Volvo",   ubicacion: "Zona C - Nivel 1", estado: "Fuera de servicio", fechaAdquisicion: "2021-11-05", costoAdquisicion: "72000",  garantia: "90",  categoria: "Elevación" },
-  { nombre: "Vagoneta Épsilon",     codigo: "EQ-005", serie: "SN-10025", tipo: "Vagoneta",         marca: "CAT",     ubicacion: "Zona B - Nivel 1", estado: "Inactivo",         fechaAdquisicion: "2020-03-12", costoAdquisicion: "45000",  garantia: "365", categoria: "Transporte" },
-  { nombre: "Pulmón Zeta",          codigo: "EQ-006", serie: "SN-10026", tipo: "Pulmón",           marca: "JCB",     ubicacion: "Zona D - Nivel 2", estado: "Activo",            fechaAdquisicion: "2024-02-01", costoAdquisicion: "110000", garantia: "365", categoria: "Sostenimiento" },
-  { nombre: "Excavadora Eta",       codigo: "EQ-007", serie: "SN-10027", tipo: "Excavadora",      marca: "Volvo",   ubicacion: "Zona A - Nivel 2", estado: "Mantenimiento", fechaAdquisicion: "2022-12-18", costoAdquisicion: "130000", garantia: "180", categoria: "Excavación" },
-  { nombre: "Cargador Theta",       codigo: "EQ-008", serie: "SN-10028", tipo: "Cargador",         marca: "Komatsu", ubicacion: "Zona C - Nivel 3", estado: "Activo",            fechaAdquisicion: "2023-09-01", costoAdquisicion: "142000", garantia: "365", categoria: "Carga" },
+  { nombre: "Electrobomba",     codigo: "PT2-EL01", serie: "7239900H1", tipo: "Desagüe de la mina",      marca: "IHM",     ubicacion: "Pozo túnel 2", estado: "Activo",fechaAdquisicion: "05/05/2022"},
 ];
 
 function cargarMaquinas() {
@@ -131,9 +124,9 @@ function render() {
         <td>${m.ubicacion}</td>
         <td>${badge(m.estado)}</td>
         <td>
-          <button class="btn-azul" title="Ver detalle" onclick="verDetalle('${m.nombre}')">
+          <a href="hj_maquina.html" ><button class="btn-azul" title="Ver detalle")">
             <i class="fa-solid fa-eye"></i>
-          </button>
+          </button></a>
           <button class="btn-azul" title="Eliminar" onclick="confirmarEliminar('${m.codigo}', '${m.nombre}')">
             <i class="fa-solid fa-trash"></i>
           </button>
