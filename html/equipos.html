@@ -45,7 +45,6 @@
             </button>
         </div>
 
-        <!-- PANEL DE FILTROS AVANZADOS -->
         <div class="filters-panel" id="filtrosPanel">
             <div class="filters-grid">
                 <div class="filter-group">
@@ -99,10 +98,10 @@
             </div>
         </div>
 
-        <!-- CHIPS DE FILTROS ACTIVOS -->
+
         <div class="chips-row" id="chips"></div>
 
-        <!-- META Y ORDENAMIENTO -->
+
         <div class="results-meta">
             <span>Mostrando <strong id="rcount">0</strong> equipos</span>
             <select class="sort-sel" id="sort" onchange="doSearch()">
@@ -114,7 +113,7 @@
             </select>
         </div>
 
-        <!-- TABLA -->
+   
         <div class="table-wrap">
             <table>
                 <thead>
@@ -130,24 +129,24 @@
                     </tr>
                 </thead>
                 <tbody id="tbody">
-                      <!-- Aquí se insertarán los resultados de la búsqueda -->
+                     
                 </tbody>
             </table>
             <br>
             <br>
         </div>
-        <!-- PAGINACIÓN -->
+        
         <div class="btn-container">
-        <!-- BOTÓN AGREGAR -->
+
             <button id="abrirModal" class="btn btn-azul">
                 <i class="fa-solid fa-plus"></i>
                 Nuevo equipo 
             </button>
 
-        <!-- BACKDROP -->
+              
         <div class="overlay-backdrop" id="backdropModal"></div>
 
-        <!-- MODAL -->
+   
         <div class="overlay-panel modal-tool" id="overlay">
             <div class="modal-header">
                 <h2>Agregar nuevo equipo</h2>
@@ -204,11 +203,8 @@
 
     </template>
 
-    <!-- <script src="../scripts/roles.store.js"></script>
-    <script src="../scripts/auth.js"></script> -->
+   
     <script src="../scripts/busqueda_equipos.js"></script>
     <script src="../scripts/base.js"></script>
-    <!-- <script>Auth.proteger(['ver_equipos']);</script> -->
-
 </body>
 </html>
