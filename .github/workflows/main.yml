@@ -1,0 +1,16 @@
+name: Cerrar tareas vencidas automáticamente
+
+on:
+  schedule:
+    # Se ejecuta todos los días a la medianoche (Hora UTC)
+    - cron: '0 0 * * *'
+
+jobs:
+  check_due_date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revisar y cerrar tareas
+        uses: angular/actions/close-stale-issues@main
+        with:
+          days-before-close: 0
+          stale-issue-message: 'Esta tarea ha alcanzado su tiempo estimado límite y se ha cerrado automáticamente.'
