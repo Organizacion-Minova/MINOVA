@@ -214,7 +214,11 @@
     font-size: 0.875rem;
 }
 .team-avatar {
+<<<<<<< HEAD
+    width: 150px;          
+=======
     width: 150px;         
+>>>>>>> fd23a565bc09e082a6878851e1a66d42c78fb884
     height: 150px;        
     border-radius: 50%;    
     overflow: hidden;      

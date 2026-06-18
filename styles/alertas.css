@@ -110,6 +110,7 @@
       align-items: flex-start;
       gap: 14px;
       flex: 1;
+
     }
 
     /* Badges de nivel */
@@ -142,6 +143,7 @@
     }
 
     /* Info de alerta */
+    
     .alerta-info h4 {
       font-size: 14px;
       color: var(--texto);
@@ -301,7 +303,8 @@
     margin-right: 3px;
 }
 
-/* Botones de acción */
+
+
 .alerta-acciones {
     display: flex;
     flex-direction: column;
@@ -326,28 +329,22 @@
 }
 
 .btn-atender {
-    background: rgba(0, 179, 51, .12);
-    color: var(--verde);
+color: var(--verde);
 }
 
 .btn-atender:hover {
     background: rgba(0, 179, 51, .22);
 }
 
+.btn-escalar:hover{
+  background-color: #650606;
+}
+
 .btn-escalar {
-    background: rgba(255, 0, 0, .08);
+    background: rgba(130, 0, 0, 0.681);
     color: var(--rojo);
 }
 
 .btn-escalar:hover {
-    background: rgba(255, 0, 0, .16);
-}
-
-.btn-ver-detalle {
-    background: rgba(57, 76, 170, .10);
-    color: var(--principal);
-}
-
-.btn-ver-detalle:hover {
-    background: rgba(57, 76, 170, .18);
+    background: rgba(14, 14, 14, 0.16);
 }
