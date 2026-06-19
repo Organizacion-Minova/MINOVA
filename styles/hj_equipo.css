@@ -107,8 +107,8 @@ background: var(--contenedor);
     box-shadow: 0 0.125rem 0.5rem var(--principal); */
     
     background: var(--white);
-    border-radius:15px;
-    padding:25px;
+    border-radius:0.9375rem;
+    padding:0.9375rem;
     box-shadow:0 3px 8px rgba(0,0,0,.08);
     font-size: 1.25rem;
     list-style: none;
