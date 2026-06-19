@@ -1,0 +1,98 @@
+.welcome{grid-area: bienvenida;}
+.tabla{grid-area: tabla;}
+.btn-container{grid-area: botones;}
+
+body{
+    background: var(--contenedor);
+}
+
+/* ===== DESKTOP ===== */
+
+.grid-contenedor{
+    min-height:100vh;
+    gap:10px;
+    display:grid;
+
+    grid-template:
+        "bienvenida" auto
+        "tabla" auto
+        "botones" auto 
+        
+
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:991px){
+
+    table{
+        width:100%;
+    }
+
+    thead th{
+        padding:.75rem;
+        font-size:.9rem;
+    }
+
+    tbody td{
+        padding:.75rem;
+        font-size:.85rem;
+    }
+
+    td{
+        word-break: break-word;
+    }
+}
+    
+/* ===== MOVIL ===== */
+@media (max-width:990px) {
+
+    /* ... tus estilos existentes ... */
+
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome .fecha {
+        order: 3; /* empuja la fecha al final */
+        margin-top: .75rem;
+    }
+}
+
+@media (max-width:990px){
+
+
+    .grid-contenedor{
+        
+        grid-template:
+            "bienvenida"
+            "tabla"
+            "botones"
+            auto;
+        .welcome{
+            flex-direction:column;
+             align-items:center;
+             text-align:center;
+            gap:1rem;
+        }
+             
+        .cards{
+    grid-template-columns:auto
+       }
+       .middle{
+        grid-template-columns:auto
+        }
+    }
+    .card {
+        
+        text-align:center;
+             
+    }
+    .icon{
+        
+        width:auto !important;
+        height:auto;
+    }
+}

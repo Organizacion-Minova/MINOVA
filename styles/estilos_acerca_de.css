@@ -430,3 +430,17 @@ main,
 @media (max-width: 28.125rem) {
     .features-grid { grid-template-columns: 1fr; }
 }
+.team-grid .modulo-card {
+    grid-area: unset;
+}
+
+@media (max-width:990px) {
+    .modulo-card {
+        text-align: center;
+    }
+
+    .team-avatar {
+        display: block;
+        margin: 0 auto 0.75rem;
+    }
+}
