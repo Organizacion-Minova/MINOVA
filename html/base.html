@@ -20,7 +20,7 @@
 
         </button>
 
-        <!-- OVERLAY ALERTAS -->
+      
         <div class="overlay-panel" id="overlayAlertas">
 
             <div class="alerts-header">
@@ -47,7 +47,7 @@
         
 
 
-        <!-- OVERLAY PERFIL -->
+       
         <div class="overlay-panel" id="overlayPerfil">
 
             <div class="perfil-header">
@@ -86,15 +86,11 @@
 
                 </button>
 
-                <button 
-                    class="btn-azul"
-                    onclick="irSuperadmin()"
-                >
-
-                    <i class="fa-solid fa-shield-halved"></i>
-
+                <button  class="btn-azul" >
+                 
+                    <a href="roles_admin.html"> <i class="fa-solid fa-shield-halved"> </i>
                     Panel Superadmin
-
+                    </a>
                 </button>
 
             </div>
@@ -130,9 +126,9 @@
                      <i class="fa-solid fa-triangle-exclamation"></i> Ver página de alertas
                  </button>
              </div>
-         </div><!-- /overlayAlertas -->
+         </div>
 
-            <!-- ── BOTÓN PERFIL ── -->
+          
 
         <button class="profile-btn" id="btnPerfil">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDnLesNChl-l86u_LACs0pBkjqaot3ramr_A&s" alt="">
@@ -144,7 +140,7 @@
             </div>
         </button>
 
-                <!-- OVERLAY PERFIL -->
+              
             <div class="overlay-panel" id="overlayPerfil">
                 <div class="perfil-header">
                 
@@ -165,10 +161,10 @@
                         <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
                     </button>
                 </div>
-            </div><!-- /overlayPerfil -->
+            </div>
     </nav>
 
-        <!-- Fondo invisible para cerrar al click fuera — fuera del nav, dentro del header -->
+  
         <div class="overlay-backdrop" id="backdrop" onclick="cerrarTodos()"></div>
 
     </header>

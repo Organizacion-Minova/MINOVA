@@ -59,3 +59,292 @@
     color: var(--principal);
     text-decoration: underline;
 }
+.campana-wrap {
+      position: relative;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .campana-wrap .fa-bell {
+      font-size: 22px;
+      color: white;
+    }
+    .campana-badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background: var(--rojo);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--principal);
+    }
+
+    /* Filtros */
+    .filtros-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Item de alerta */
+    .alerta-item-full {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #eee;
+      transition: opacity .3s;
+      background-color: var(--white);
+    }
+    .alerta-item-full:last-child { border-bottom: none; }
+    .alerta-item-full.atendida { opacity: .45; }
+
+    .alerta-izq {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      flex: 1;
+
+    }
+
+    /* Badges de nivel */
+    .nivel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .badge-grave {
+      background: rgba(255,0,0,.12);
+      color: var(--rojo);
+      border: 1px solid rgba(255,0,0,.25);
+    }
+    .badge-importante {
+      background: rgba(255,216,0,.20);
+      color: #a88600;
+      border: 1px solid rgba(255,216,0,.45);
+    }
+    .badge-bien {
+      background: rgba(0,179,51,.12);
+      color: var(--verde);
+      border: 1px solid rgba(0,179,51,.25);
+    }
+
+    /* Info de alerta */
+    
+    .alerta-info h4 {
+      font-size: 14px;
+      color: var(--texto);
+      margin-bottom: 4px;
+    }
+    .alerta-info p {
+      font-size: 13px;
+      color: var(--texto2);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .alerta-meta {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .alerta-meta i { margin-right: 3px; }
+
+    /* Acciones */
+    .alerta-acciones {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .btn-atender,
+    .btn-escalar,
+    .btn-ver-detalle {
+      border: none;
+      border-radius: 20px;
+      padding: 11px 14px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: .2s;
+      white-space: nowrap;
+    }
+    .btn-atender {
+      background: rgba(0,179,51,.12);
+      color: var(--verde);
+    }
+    .btn-atender:hover { background: rgba(0,179,51,.22); }
+    .btn-escalar {
+      background: rgba(255,0,0,.08);
+      color: var(--rojo);
+    }
+    .btn-escalar:hover { background: rgba(255,0,0,.16); }
+    .btn-ver-detalle {
+      background: rgba(57,76,170,.10);
+      color: var(--principal);
+    }
+    .btn-ver-detalle:hover { background: rgba(57,76,170,.18); }
+
+    /* Borde izquierdo de color según nivel */
+    .alerta-item-full.grave      { border-left: 3px solid var(--rojo);     padding-left: 12px; }
+    .alerta-item-full.importante { border-left: 3px solid var(--amarillo);  padding-left: 12px; }
+    .alerta-item-full.bien       { border-left: 3px solid var(--verde);     padding-left: 12px; }
+    /* ── TABLA DE ALERTAS ── */
+
+#tablaAlertasWrap table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.5rem rgba(1, 4, 64, 0.08);
+}
+
+#tablaAlertasWrap thead tr {
+    background: var(--secundario);
+}
+
+#tablaAlertasWrap thead th {
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.875rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#tablaAlertasWrap tbody tr {
+    border-bottom: 0.0625rem solid #eee;
+    transition: background .2s ease;
+}
+
+#tablaAlertasWrap tbody tr:last-child {
+    border-bottom: none;
+}
+
+#tablaAlertasWrap tbody td {
+    padding: 0.8125rem 1rem;
+    font-size: 0.85rem;
+    color: var(--texto);
+    vertical-align: middle;
+}
+
+#tablaAlertasWrap tbody tr:hover {
+    background: rgba(57, 76, 170, 0.04);
+}
+
+#tablaAlertasWrap tbody tr.atendida {
+    opacity: .45;
+}
+
+/* Badges de nivel */
+.nivel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.badge-grave {
+    background: rgba(255, 0, 0, .12);
+    color: var(--rojo);
+    border: 1px solid rgba(255, 0, 0, .25);
+}
+
+.badge-importante {
+    background: rgba(255, 216, 0, .20);
+    color: #a88600;
+    border: 1px solid rgba(255, 216, 0, .45);
+}
+
+.badge-bien {
+    background: rgba(0, 179, 51, .12);
+    color: var(--verde);
+    border: 1px solid rgba(0, 179, 51, .25);
+}
+
+/* Celdas */
+.alerta-equipo {
+    font-weight: 600;
+    color: var(--texto);
+    white-space: nowrap;
+}
+
+.alerta-desc {
+    color: var(--texto2);
+    line-height: 1.5;
+}
+
+.alerta-meta {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    white-space: nowrap;
+}
+
+.alerta-meta i {
+    margin-right: 3px;
+}
+
+
+
+.alerta-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.btn-atender,
+.btn-escalar,
+.btn-ver-detalle {
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: .2s;
+    white-space: nowrap;
+}
+
+.btn-atender {
+color: var(--verde);
+}
+
+.btn-atender:hover {
+    background: rgba(0, 179, 51, .22);
+}
+
+.btn-escalar:hover{
+  background-color: #650606;
+}
+
+.btn-escalar {
+    background: rgba(130, 0, 0, 0.681);
+    color: var(--rojo);
+}
+
+.btn-escalar:hover {
+    background: rgba(14, 14, 14, 0.16);
+}

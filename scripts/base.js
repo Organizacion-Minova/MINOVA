@@ -228,12 +228,6 @@ function marcarTodas() {
     }
 
 }
-
-
-
-
-
-
 function irPerfil() {
     window.location.href = 'perfil.html';
     cerrarTodos();
@@ -276,3 +270,6 @@ function mostrarFechaActual() {
     }
 
 }
+function toggleFaq(item) {
+            item.classList.toggle('open');
+        }

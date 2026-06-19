@@ -30,6 +30,7 @@ function configurarSMTP(PHPMailer $mail): void {
 // ─────────────────────────────────────────────
 //  PLANTILLA HTML BASE
 // ─────────────────────────────────────────────
+
 function htmlHeader(string $titulo): string {
     return '
     <div style="margin:0;padding:0;background-color:#f4f4f4;font-family:Arial,sans-serif;">
