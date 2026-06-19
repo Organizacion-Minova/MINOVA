@@ -1,32 +1,32 @@
 /* ── TARJETAS ALERTAS ── */
 .cards {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
     flex-wrap: wrap;
-    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
 }
 
 .card {
     flex: 1;
-    min-width: 180px;
+    min-width: 11.25rem;
     background: var(--white);
-    border-radius: 16px;
-    padding: 24px 28px;
-    box-shadow: 0 2px 12px rgba(1, 4, 64, 0.08);
+    border-radius: 1rem;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 0.125rem 0.75rem rgba(1, 4, 64, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .card .icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    margin-bottom: 4px;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .card .icon.red    { background: rgba(255, 0,   0,   0.1); color: var(--rojo); }
@@ -35,24 +35,24 @@
 .card .icon.blue   { background: rgba(57,  76,  170, 0.12); color: var(--secundario); }
 
 .card h2 {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
     margin: 0;
     color: var(--texto);
 }
 
 .card p {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--texto2);
     margin: 0;
 }
 
 .card a {
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: var(--secundario);
     text-decoration: none;
     font-weight: 500;
-    margin-top: 4px;
+    margin-top: 0.25rem;
 }
 
 .card a:hover {
@@ -61,11 +61,11 @@
 }
 .campana-wrap {
       position: relative;
-      margin-right: 20px;
+      margin-right: 1.25rem;
       cursor: pointer;
     }
     .campana-wrap .fa-bell {
-      font-size: 22px;
+      font-size: 1.375rem;
       color: white;
     }
     .campana-badge {
@@ -74,10 +74,10 @@
       right: -8px;
       background: var(--rojo);
       color: white;
-      font-size: 10px;
+      font-size: 0.625rem;
       font-weight: 700;
-      width: 18px;
-      height: 18px;
+      width: 1.125rem;
+      height: 1.125rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -117,14 +117,14 @@
     .nivel-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      font-size: 11px;
+      gap: 0.3125rem;
+      font-size: 0.6875rem;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
+      padding: 0.25rem 0.625rem;
+      border-radius: 1.25rem;
       white-space: nowrap;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 0.125rem;
     }
     .badge-grave {
       background: rgba(255,0,0,.12);
@@ -145,21 +145,21 @@
     /* Info de alerta */
     
     .alerta-info h4 {
-      font-size: 14px;
+      font-size: 0.875rem;
       color: var(--texto);
-      margin-bottom: 4px;
+      margin-bottom: 0.25rem;
     }
     .alerta-info p {
-      font-size: 13px;
+      font-size: 0.8125rem;
       color: var(--texto2);
       line-height: 1.5;
-      margin-bottom: 6px;
+      margin-bottom: 0.375rem;
     }
     .alerta-meta {
-      font-size: 11px;
+      font-size: 0.6875rem;
       color: #94a3b8;
     }
-    .alerta-meta i { margin-right: 3px; }
+    .alerta-meta i { margin-right: 0.1875rem; }
 
     /* Acciones */
     .alerta-acciones {
@@ -167,37 +167,9 @@
       flex-direction: column;
       flex-shrink: 0;
     }
-    .btn-atender,
-    .btn-escalar,
-    .btn-ver-detalle {
-      border: none;
-      border-radius: 20px;
-      padding: 11px 14px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: .2s;
-      white-space: nowrap;
-    }
-    .btn-atender {
-      background: rgba(0,179,51,.12);
-      color: var(--verde);
-    }
-    .btn-atender:hover { background: rgba(0,179,51,.22); }
-    .btn-escalar {
-      background: rgba(255,0,0,.08);
-      color: var(--rojo);
-    }
-    .btn-escalar:hover { background: rgba(255,0,0,.16); }
-    .btn-ver-detalle {
-      background: rgba(57,76,170,.10);
-      color: var(--principal);
-    }
-    .btn-ver-detalle:hover { background: rgba(57,76,170,.18); }
+
+    
+   
 
     /* Borde izquierdo de color según nivel */
     .alerta-item-full.grave      { border-left: 3px solid var(--rojo);     padding-left: 12px; }
@@ -255,11 +227,11 @@
 .nivel-badge {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    font-size: 10px;
+    gap: 0.3125rem;
+    font-size: 0.625rem;
     font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 20px;
+    padding: 0.25rem 0.625rem;
+    border-radius: 1.25rem;
     white-space: nowrap;
 }
 
@@ -300,7 +272,7 @@
 }
 
 .alerta-meta i {
-    margin-right: 3px;
+    margin-right: 0.1875rem;
 }
 
 
@@ -308,43 +280,6 @@
 .alerta-acciones {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.25rem;
 }
 
-.btn-atender,
-.btn-escalar,
-.btn-ver-detalle {
-    border: none;
-    border-radius: 20px;
-    padding: 6px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: inherit;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: .2s;
-    white-space: nowrap;
-}
-
-.btn-atender {
-color: var(--verde);
-}
-
-.btn-atender:hover {
-    background: rgba(0, 179, 51, .22);
-}
-
-.btn-escalar:hover{
-  background-color: #650606;
-}
-
-.btn-escalar {
-    background: rgba(130, 0, 0, 0.681);
-    color: var(--rojo);
-}
-
-.btn-escalar:hover {
-    background: rgba(14, 14, 14, 0.16);
-}

@@ -7,10 +7,10 @@ table{
 }
 
 table th{
-    padding:15px;
+    padding:0.9375rem ;
     border:2px solid var(--secundario);
 }
 table td{
-    padding:15px;
+    padding:0.9375rem ;
     border:2px solid var(--secundario);
 }
