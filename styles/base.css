@@ -251,7 +251,6 @@ footer{grid-area: footer;}
     display:flex;
     align-items:center;
     gap:.75rem;
-
     flex-shrink:0;
 }
 
