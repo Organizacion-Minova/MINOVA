@@ -426,7 +426,12 @@ body{
     background:var(--rojo);
 }
 
+.process{
+    background:rgba(255,216,0,.3);
+    color:var(--texto);
+}
 
+/* DONUT */
 
 .alerts{
     margin-top:20px;
@@ -444,11 +449,11 @@ body{
     margin-right:10px;
 }
 
+/* LEYENDA */
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 1.25rem;
+.legend p{
+    margin-bottom:12px;
+    color:var(--texto2);
 }
 
 .team-card {

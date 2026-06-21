@@ -10,6 +10,8 @@
     --verde:            #00B333;
     --white:            #FFFFFF;
     --blanco:           #FFFFFF;
+    --verde:            #639922;
+    --rojo:             #E24B4A;
     --Azul-difuminado:  linear-gradient(135deg, var(--principal), var(--secundario));
 }
 
@@ -249,7 +251,6 @@ footer{grid-area: footer;}
     display:flex;
     align-items:center;
     gap:.75rem;
-
     flex-shrink:0;
 }
 
