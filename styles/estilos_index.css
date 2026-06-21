@@ -163,34 +163,11 @@ body{
     font-size:24px;
 }
 
-<<<<<<< Updated upstream
-.green{
-    background:rgba(0,179,51,.15);
-    color:var(--verde);
-}
-
-.yellow{
-    background:rgba(255,216,0,.2);
-    color:#a88600;
-}
-
-=======
->>>>>>> Stashed changes
 .blue{
     background:rgba(57,76,170,.15);
     color:var(--principal);
 }
 
-<<<<<<< Updated upstream
-.red{
-    background:rgba(255,0,0,.15);
-    color:var(--rojo);
-}
-
-/* SECCIÓN MEDIA */
-
-=======
->>>>>>> Stashed changes
 .middle{
     display:grid;
     grid-template-columns:1fr 1fr;
