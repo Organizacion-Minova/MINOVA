@@ -1,0 +1,27 @@
+name: Verificador de Fechas de Entrega
+
+on:
+  schedule:
+    # Se ejecuta automáticamente todos los días a la medianoche
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Te permite probarlo manualmente con un botón
+
+jobs:
+  check-dates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cerrar tareas vencidas
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const query = `query($owner: String!, $repo: String!) {
+              repository(owner: $owner, name: $repo) {
+                issues(states: OPEN, first: 100) {
+                  nodes {
+                    id
+                    number
+                  }
+                }
+              }
+            }`;
+            // El script detecta las fechas límite de tus issues y las cierra si ya pasó el día

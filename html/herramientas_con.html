@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/base.css ">
     <link rel="stylesheet" href="../styles/estilos_tabla.css">
     <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="../styles/herramientas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
@@ -15,9 +16,10 @@
     <div id="base-container"></div>
 
     <template id="page-content">
+        <div class="grid-contenedor">
         <div class="welcome">
             <div>
-                
+
                 <h1>HERRAMIENTAS CONSUMIBLES</h1>
                 <p>Este es el formato de las herramientas consumibles.</p>
             </div>
@@ -27,7 +29,9 @@
                 <span id="fechaActual"></span>
             </div>
         </div>
-        <table>
+       
+    
+        <table class ="tabla">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -46,13 +50,16 @@
             </tbody>
         </table>
         <br>
-       
+        <!-- BOTON -->
+        <div class="btn-container">
             <button class="btn-azul" id="abrirModal">
                 <i class="fa-solid fa-plus"></i> Agregar tipo herramienta
             </button>
+        </div>
+            
+            
 
-
-    
+        <!-- OVERLAY -->
         <div class="overlay-backdrop" id="backdropModal"></div>
 
         <div class="overlay-panel modal-tool" id="overlay">
@@ -85,17 +92,22 @@
                     <textarea placeholder="Ingrese la descripción" required></textarea>
                 </div>
 
+                <div class="btn-container">
                 <button type="submit" class="btn btn-azul">
                     <i class="fa-solid fa-floppy-disk"></i>
                     Guardar
                 </button>
+                </div>
 
             </form>
 
         </div>
+        </div>
     </template>
-    
+    <!-- <script src="../scripts/roles.store.js"></script>
+    <script src="../scripts/auth.js"></script> -->
     <script src="../scripts/base.js"></script>
-    
+    <!-- <script>Auth.proteger(['ver_herramientas']);</script> -->
+
 </body>
 </html>
