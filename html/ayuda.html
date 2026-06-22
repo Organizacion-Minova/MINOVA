@@ -41,10 +41,6 @@
                         <li><span class="step-num">5</span><span>Las alertas recientes aparecen en la parte inferior con icono de advertencia.</span></li>
                     </ul>
                 </div>
-
-                <div class="modulo-card" data-keywords="equipos buscar filtrar agregar codigo serie marca ubicacion estado tipo activo mantenimiento fuera servicio inactivo">
-                    <div class="modulo-card-header">
-                        <div class="modulo-icon verde"><i class="fa-solid fa-gears"></i></div>
                 <div class="card" data-keywords="equipos buscar filtrar agregar codigo serie marca ubicacion estado tipo activo mantenimiento fuera servicio inactivo">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-gears"></i></div>
@@ -60,14 +56,9 @@
                         <li><span class="step-num">5</span><span>Haz clic en <strong>Agregar equipo</strong> para registrar uno nuevo.</span></li>
                         <li><span class="step-num">6</span><span>Los estados posibles son: <strong>Activo</strong>, <strong>Mantenimiento</strong>, <strong>Fuera de servicio</strong> e <strong>Inactivo</strong>.</span></li>
                     </ul>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        <span>Puedes combinar varios filtros al mismo tiempo para refinar tu búsqueda.</span>
-                    </div>
+
                 </div>
-                <div class="modulo-card" data-keywords="herramientas consumibles aceites filtros insumos agregar editar eliminar inventario">
-                    <div class="modulo-card-header">
-                        <div class="modulo-icon amarillo"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+
                 <div class="card" data-keywords="herramientas consumibles aceites filtros insumos agregar editar eliminar inventario">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-screwdriver-wrench"></i></div>
@@ -111,9 +102,6 @@
                         <li><span class="step-num">4</span><span>Registra nuevas máquinas con código único, número de serie y ubicación asignada.</span></li>
                     </ul>
                 </div>
-                <div class="modulo-card" data-keywords="uso diario registro diario operacion horas inicio fin responsable observaciones exportar excel pdf">
-                    <div class="modulo-card-header">
-                        <div class="modulo-icon verde"><i class="fa-solid fa-clipboard-check"></i></div>
                 <div class="card" data-keywords="uso diario registro diario operacion horas inicio fin responsable observaciones exportar excel pdf">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-clipboard-check"></i></div>
@@ -127,10 +115,6 @@
                         <li><span class="step-num">4</span><span>Usa <strong>Exportar PDF</strong> para generar un informe imprimible.</span></li>
                         <li><span class="step-num">5</span><span>Este formulario debe llenarse al inicio y al final de cada jornada operativa.</span></li>
                     </ul>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        <span>El registro diario es obligatorio para llevar trazabilidad del uso de cada máquina.</span>
-                    </div>
                 </div>
                 </section>
                 <section class="middle">          
@@ -259,32 +243,7 @@
     </template>
 
     <script src="../scripts/base.js"></script>
-    <script>
-        /* ── Fecha dinámica ── */
-        (function () {
-            const el = document.getElementById('fecha-ayuda');
-            if (el) {
-                el.textContent = new Date().toLocaleDateString('es-CO', {
-                day: 'numeric', month: 'long', year: 'numeric'
-                });
-            }
-        })();
 
-        /* ── FAQ accordion ── */
-        function toggleFaq(item) {
-            item.classList.toggle('open');
-        }
-
-        /* ── Búsqueda de ayuda ── */
-        function filtrarAyuda() {
-            const q = document.getElementById('help-search-input').value.toLowerCase().trim();
-            document.querySelectorAll('.modulo-card').forEach(card => {
-                const keywords = (card.dataset.keywords || '').toLowerCase();
-                const text     = card.innerText.toLowerCase();
-                card.style.display = (!q || keywords.includes(q) || text.includes(q)) ? '' : 'none';
-            });
-        }
-    </script>
 
 </body>
 </html>

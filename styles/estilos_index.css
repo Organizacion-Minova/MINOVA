@@ -7,9 +7,8 @@ grid contenedor= grid individual de cada pagina*/
 .alerts-panel{grid-area: alertas;}
 
 body{
-    background: var(--contenedor);
+    background: var(--contenedor)
 }
-
 
 /* ===== DESKTOP ===== */
 
