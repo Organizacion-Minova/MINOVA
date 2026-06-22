@@ -15,206 +15,211 @@
   <div id="base-container"></div>
 
   <template id="page-content">
-    <div class="grid-contenedor">
 
-      <div class="welcome">
-        <div>
-          <h1>Mi Perfil</h1>
-          <p>Información personal y configuración de la cuenta.</p>
-        </div>
-        <div class="date">
+    <div class="welcome">
+      <div>
+        <h1>Mi Perfil</h1>
+        <p>Información personal y configuración de la cuenta.</p>
+      </div>
+  <div class="date">
           <i class="fa-regular fa-calendar"></i>
           <span id="fechaActual"></span>
         </div>
+    </div>
+
+    <div class="perfil-wrapper">
+      <div class="panel tarjeta-avatar">
+        <div class="avatar-section">
+          <div class="avatar-wrap" onclick="document.getElementById('inputFoto').click()">
+            <img id="avatarImg" src="https://ui-avatars.com/api/?name=Usuario&background=01044080&color=fff&size=110" alt="Avatar">
+            <div class="avatar-overlay">
+              <i class="fa-solid fa-camera"></i>
+              <span>Cambiar foto</span>
+            </div>
+          </div>
+          <input type="file" id="inputFoto" accept="image/*">
+        </div>
+        <div class="perfil-nombre-rol">
+          <h3 id="nombreCompleto">Nombre Apellido</h3>
+          <span class="rol-badge">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span id="rolUsuario">Rol</span>
+          </span>
+        </div>
       </div>
 
-      <div class="perfil-wrapper">
+      
 
-        <div class="panel tarjeta-avatar">
-          <div class="avatar-section">
-            <div class="avatar-wrap" onclick="document.getElementById('inputFoto').click()">
-              <img id="avatarImg" src="https://ui-avatars.com/api/?name=Usuario&background=01044080&color=fff&size=110" alt="Avatar">
-              <div class="avatar-overlay">
-                <i class="fa-solid fa-camera"></i>
-                <span>Cambiar foto</span>
-              </div>
-            </div>
-            <input type="file" id="inputFoto" accept="image/*">
-          </div>
-          <div class="perfil-nombre-rol">
-            <h3 id="nombreCompleto">Nombre Apellido</h3>
-            <span class="rol-badge">
-              <i class="fa-solid fa-shield-halved"></i>
-              <span id="rolUsuario">Rol</span>
-            </span>
+        <div class="seccion-titulo-row">
+          <div>
+            <h3>
+              <i class="fa-solid fa-address-card icono-titulo"></i>
+              Información de contacto
+            </h3>
+            <p>Datos registrados en el sistema.</p>
           </div>
         </div>
 
-        <div class="panel tarjeta-contacto">
-          <div class="seccion-titulo-row">
-            <div>
-              <h3>
-                <i class="fa-solid fa-address-card icono-titulo"></i>
-                Información de contacto
-              </h3>
-              <p>Datos registrados en el sistema.</p>
-            </div>
-          </div>
-
-          <div class="perfil-dato-lateral">
-            <i class="fa-solid fa-id-card"></i>
-            <span>CC ___________</span>
-          </div>
-          <div class="perfil-dato-lateral">
-            <i class="fa-regular fa-envelope"></i>
-            <span>correo@ejemplo.co</span>
-          </div>
-          <div class="perfil-dato-lateral">
-            <i class="fa-solid fa-phone"></i>
-            <span>300 000 0000</span>
-          </div>
-          <div class="perfil-dato-lateral">
-            <i class="fa-regular fa-calendar-check"></i>
-            <span>Miembro desde ___</span>
-          </div>
+        <div class="perfil-dato-lateral">
+          <i class="fa-solid fa-id-card"></i>
+          <span>CC ___________</span>
+        </div>
+        <div class="perfil-dato-lateral">
+          <i class="fa-regular fa-envelope"></i>
+          <span>correo@ejemplo.co</span>
+        </div>
+        <div class="perfil-dato-lateral">
+          <i class="fa-solid fa-phone"></i>
+          <span>300 000 0000</span>
+        </div>
+        <div class="perfil-dato-lateral">
+          <i class="fa-regular fa-calendar-check"></i>
+          <span>Miembro desde ___</span>
         </div>
 
-        <div class="panel perfil-seccion">
-          <div class="seccion-titulo-row">
-            <div>
-              <h3>
-                <i class="fa-solid fa-user icono-titulo"></i>
-                Datos personales
-              </h3>
-              <p>Edita tu información personal.</p>
-            </div>
-            <button class="btn-editar" id="btnEditarDatos">
-              <i class="fa-solid fa-pen-to-square"></i> Editar
-            </button>
+      </div>
+
+   
+      <div class="panel perfil-seccion">
+
+        <div class="seccion-titulo-row">
+          <div>
+            <h3>
+              <i class="fa-solid fa-user icono-titulo"></i>
+              Datos personales
+            </h3>
+            <p>Edita tu información personal.</p>
           </div>
+          <button class="btn-editar" id="btnEditarDatos">
+            <i class="fa-solid fa-pen-to-square"></i> Editar
+          </button>
+        </div>
 
-          <div class="form-col" id="formDatos">
-            <div class="form-pair">
-              <div class="form-field">
-                <label for="inputNombre">Nombre</label>
-                <input type="text" id="inputNombre" placeholder="Nombre" disabled>
-              </div>
-              <div class="form-field">
-                <label for="inputApellido">Apellido</label>
-                <input type="text" id="inputApellido" placeholder="Apellido" disabled>
-              </div>
-            </div>
+        <div class="form-col" id="formDatos">
 
-            <div class="form-pair">
-              <div class="form-field">
-                <label for="inputTipoDoc">Tipo de documento</label>
-                <select id="inputTipoDoc" disabled>
-                  <option value="">Selecciona…</option>
-                  <option value="CC">Cédula de ciudadanía</option>
-                  <option value="CE">Cédula de extranjería</option>
-                  <option value="PP">Pasaporte</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="inputDoc">Número de documento</label>
-                <input type="text" id="inputDoc" placeholder="Número de documento" disabled>
-              </div>
-            </div>
-
-            <div class="form-pair">
-              <div class="form-field">
-                <label for="inputCorreo">Correo electrónico</label>
-                <input type="email" id="inputCorreo" placeholder="correo@ejemplo.co" disabled>
-              </div>
-              <div class="form-field">
-                <label for="inputTelefono">Teléfono</label>
-                <input type="tel" id="inputTelefono" placeholder="300 000 0000" disabled>
-              </div>
-            </div>
-
+          <div class="form-pair">
             <div class="form-field">
-              <label for="inputDireccion">Dirección</label>
-              <input type="text" id="inputDireccion" placeholder="Calle, ciudad" disabled>
+              <label for="inputNombre">Nombre</label>
+              <input type="text" id="inputNombre" placeholder="Nombre" disabled>
             </div>
-
-            <div id="areaGuardar" class="hidden">
-              <button class="btn-guardar" id="btnGuardar">
-                <i class="fa-solid fa-floppy-disk"></i> Guardar cambios
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel perfil-seccion">
-          <div class="seccion-titulo-row">
-            <div>
-              <h3>
-                <i class="fa-solid fa-lock icono-titulo"></i>
-                Seguridad
-              </h3>
-              <p>Contraseña y acceso a la cuenta.</p>
+            <div class="form-field">
+              <label for="inputApellido">Apellido</label>
+              <input type="text" id="inputApellido" placeholder="Apellido" disabled>
             </div>
           </div>
 
-          <div class="seguridad-item">
-            <div class="seg-info">
-              <div class="seg-icon"><i class="fa-solid fa-key"></i></div>
-              <div>
-                <div class="seg-label">Contraseña</div>
-                <div class="seg-desc">Última actualización: —</div>
-              </div>
+          <div class="form-pair">
+            <div class="form-field">
+              <label for="inputTipoDoc">Tipo de documento</label>
+              <select id="inputTipoDoc" disabled>
+                <option value="">Selecciona…</option>
+                <option value="CC">Cédula de ciudadanía</option>
+                <option value="CE">Cédula de extranjería</option>
+                <option value="PP">Pasaporte</option>
+              </select>
             </div>
-            <button class="btn-cambiar">
-              <i class="fa-solid fa-rotate-right"></i> Cambiar
+            <div class="form-field">
+              <label for="inputDoc">Número de documento</label>
+              <input type="text" id="inputDoc" placeholder="Número de documento" disabled>
+            </div>
+          </div>
+
+          <div class="form-pair">
+            <div class="form-field">
+              <label for="inputCorreo">Correo electrónico</label>
+              <input type="email" id="inputCorreo" placeholder="correo@ejemplo.co" disabled>
+            </div>
+            <div class="form-field">
+              <label for="inputTelefono">Teléfono</label>
+              <input type="tel" id="inputTelefono" placeholder="300 000 0000" disabled>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="inputDireccion">Dirección</label>
+            <input type="text" id="inputDireccion" placeholder="Calle, ciudad" disabled>
+          </div>
+
+          <div id="areaGuardar" class="hidden">
+            <button class="btn-guardar" id="btnGuardar">
+              <i class="fa-solid fa-floppy-disk"></i> Guardar cambios
             </button>
           </div>
 
-          <div class="seguridad-item">
-            <div class="seg-info">
-              <div class="seg-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-              <div>
-                <div class="seg-label">Autenticación en dos pasos</div>
-                <div class="seg-desc">No configurada</div>
-              </div>
-            </div>
-            <button class="btn-cambiar">
-              <i class="fa-solid fa-plus"></i> Activar
-            </button>
+        </div>
+      </div>
+
+      <div class="panel perfil-seccion">
+
+        <div class="seccion-titulo-row">
+          <div>
+            <h3>
+              <i class="fa-solid fa-lock icono-titulo"></i>
+              Seguridad
+            </h3>
+            <p>Contraseña y acceso a la cuenta.</p>
           </div>
         </div>
 
-        <div class="panel perfil-seccion tarjeta-accesos">
-          <div class="seccion-titulo-row sin-borde">
+        <div class="seguridad-item">
+          <div class="seg-info">
+            <div class="seg-icon"><i class="fa-solid fa-key"></i></div>
             <div>
-              <h3>
-                <i class="fa-solid fa-clock-rotate-left icono-titulo"></i>
-                Últimos accesos
-              </h3>
-              <p>Historial reciente de sesiones.</p>
+              <div class="seg-label">Contraseña</div>
+              <div class="seg-desc">Última actualización: —</div>
             </div>
           </div>
+          <button class="btn-cambiar">
+            <i class="fa-solid fa-rotate-right"></i> Cambiar
+          </button>
+        </div>
 
-          <div class="historial-wrap">
-            <div class="historial-item">
-              <span class="historial-fecha">—</span>
-              <span class="historial-dispositivo">— · —</span>
+        <div class="seguridad-item">
+          <div class="seg-info">
+            <div class="seg-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div>
+              <div class="seg-label">Autenticación en dos pasos</div>
+              <div class="seg-desc">No configurada</div>
             </div>
-            <div class="historial-item">
-              <span class="historial-fecha">—</span>
-              <span class="historial-dispositivo">— · —</span>
-            </div>
-            <div class="historial-item">
-              <span class="historial-fecha">—</span>
-              <span class="historial-dispositivo">— · —</span>
-            </div>
+          </div>
+          <button class="btn-cambiar">
+            <i class="fa-solid fa-plus"></i> Activar
+          </button>
+        </div>
+
+      </div>
+      <div class="panel perfil-seccion tarjeta-accesos">
+
+        <div class="seccion-titulo-row sin-borde">
+          <div>
+            <h3>
+              <i class="fa-solid fa-clock-rotate-left icono-titulo"></i>
+              Últimos accesos
+            </h3>
+            <p>Historial reciente de sesiones.</p>
+          </div>
+        </div>
+
+        <div class="historial-wrap">
+          <div class="historial-item">
+            <span class="historial-fecha">—</span>
+            <span class="historial-dispositivo">— · —</span>
+          </div>
+          <div class="historial-item">
+            <span class="historial-fecha">—</span>
+            <span class="historial-dispositivo">— · —</span>
+          </div>
+          <div class="historial-item">
+            <span class="historial-fecha">—</span>
+            <span class="historial-dispositivo">— · —</span>
           </div>
         </div>
 
       </div>
+
     </div>
   </template>
-
-  <script src="../scripts/base.js"></script>
+  <script src="../scripts/base.js"></script>  
   <script src="../scripts/perfil.js"></script>
 
 </body>

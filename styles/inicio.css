@@ -149,7 +149,7 @@ body {
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 5px;
-  background: var(--);
+  background: var(--amarillo);
 }
 
 .slide-content { max-width: 540px; }
@@ -340,19 +340,4 @@ footer {
 @media (max-width: 480px) {
   .topbar { padding: 0 16px; }
   .logo img { height: 52px; }
-}
-/* El contenido de esta página no necesita padding */
-#contenido {
-    padding: 0 !important;
-    display: flex;
-    flex-direction: column;
-}
-
-.carousel {
-    position: relative;
-    overflow: hidden;
-    flex: 1;
-    min-height: 0;        /* ← permite que se encoja */
-    max-height: none;     /* ← quita el límite de 74vh */
-    height: 100%;
 }
