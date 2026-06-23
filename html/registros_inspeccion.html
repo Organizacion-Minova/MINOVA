@@ -12,21 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
-        #page-actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
         #titulo-formulario {
             margin-bottom: 8px;
             font-size: 1.2rem;
         }
-        .registro-separador {
-            height: 16px;
-            
-        }
+
     </style>
 </head>
 <body>
@@ -46,7 +36,7 @@
         <div id="tabla-registros-wrap"></div>
         <br>
         <br>
-        <div id="page-actions">
+        <div id="page-actions" class="btn-container">
             <button class="btn-azul" type="button" onclick="window.history.back();">
                 <i class="fa-solid fa-arrow-left"></i>
                 Volver a selección
