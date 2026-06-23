@@ -132,17 +132,19 @@ function _iniciarEventos() {
 
             overlay.classList.remove("open");
             backdropModal.classList.remove("active");
-
         });
 
     }
 
     // ── Sidebar toggle ──
     const btnSidebar = document.getElementById("toggleSidebar");
-    const sidebar    = document.querySelector(".sidebar");
+    const sidebar = document.getElementById("sidebar");
+    const main = document.getElementById("contenido");
     if (btnSidebar && sidebar) {
         btnSidebar.addEventListener("click", () => {
             sidebar.classList.toggle("cerrado");
+            btnSidebar.classList.toggle("cerrado");
+            main.classList.toggle("cerrado");
         });
     }
 

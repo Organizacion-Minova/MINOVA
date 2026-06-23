@@ -3,14 +3,14 @@
     .nivel-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      font-size: 11px;
+      gap: 0.3125rem;
+      font-size: 0.6875rem;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
+      padding: 0.25rem 0.625rem;
+      border-radius: 1.25rem;
       white-space: nowrap;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 0.125rem;
     }
     .badge-grave {
       background: rgba(255,0,0,.12);
