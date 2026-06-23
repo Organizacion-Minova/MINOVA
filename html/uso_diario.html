@@ -18,108 +18,112 @@
     <div id="base-container"></div>
 
     <template id="page-content">
-        <div class="welcome">
-            <div>
-                <h1>USO DIARIO</h1>
-                <p>Este es el formato que se debe llenar diariamente.</p>
+        <div class="grid-contenedor">
+
+            <div class="welcome">
+                <div>
+                    <h1>USO DIARIO</h1>
+                    <p>Este es el formato que se debe llenar diariamente.</p>
+                </div>
+                <div class="date">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="fechaActual"></span>
+                </div>
             </div>
 
-            <div class="date">
-                <i class="fa-regular fa-calendar"></i>
-                <span id="fechaActual"></span>
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th colSpan="6">REGISTRO DIARIO DE USO DE MAQUINARIA Y EQUIPOS MINA DIDACTICA</th>
+                    </tr>
+                    <tr>
+                        <th colSpan="2">NOMBRE MAQUINA:</th>
+                        <td colSpan="4"></td>
+                    </tr>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Verificacion de estado de <br> funcionamiento de la máquina</th>
+                        <th>Inicio de operacion</th>
+                        <th>Fin de operacion</th>
+                        <th>Responsable a cargo</th>
+                        <th>Observaciones</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
             </div>
-        </div>
-        <table>
-            <tr>
-                <th colSpan="6">REGISTRO DIARIO DE USO DE MAQUINARIA Y EQUIPOS MINA DIDACTICA</th>
-            </tr>
-            <tr>
-                <th colSpan="2">NOMBRE MAQUINA:</th>
-                <td colSpan="4"></td>
-            </tr>
-            <tr>
-                <th>Fecha</th>
-                <th>Verificacion de estado de <br> funcionamiento de la máquina</th>
-                <th>Inicio de operacion</th>
-                <th>Fin de operacion</th>
-                <th>Responsable a cargo</th>
-                <th>Observaciones</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br>
-    <div class="btn-container">
+            <br>
 
-        <button id="abrirModal" class="btn btn-azul">
-            <i class="fa-solid fa-plus"></i>
-            Nuevo Registro
-        </button>
+            <div class="btn-container">
+                <button id="abrirModal" class="btn btn-azul">
+                    <i class="fa-solid fa-plus"></i>
+                    Nuevo Registro
+                </button>
+                <button id="btnExcel" class="btn btn-azul">
+                    <i class="fa-solid fa-file-excel"></i>
+                    Exportar Excel
+                </button>
+                <button id="btnPDF" class="btn btn-azul">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    Exportar PDF
+                </button>
+            </div>
 
-        <button id="btnExcel" class="btn btn-azul">
-            <i class="fa-solid fa-file-excel"></i>
-            Exportar Excel
-        </button>
-
-        <button id="btnPDF" class="btn btn-azul">
-            <i class="fa-solid fa-file-pdf"></i>
-            Exportar PDF
-        </button>
-    </div>
-    <div class="overlay-backdrop" id="backdropModal"></div>
-    <div class="overlay-panel modal-tool" id="overlay">
-        <div class="modal-header">
-            <h2>Agregar nuevo registro</h2>
-            <button class="cerrar-modal" id="cerrarModal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
         </div>
 
-        <form class="form" >
-            <div class="inputs-row">
-                <div class="input-group">
-                    <label for="nombreMaquina">Nombre de la máquina:</label>
-                    <input type="text" id="nombreMaquina" name="nombreMaquina" placeholder="Nombre de la maquina:" required>
-                </div>
-                <div class="input-group">
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                </div>
-            </div>
-            <div class="input-group">
-                <label for="estadoFuncionamiento">Verificación del estado de funcionamiento:</label>
-                <input id="estadoFuncionamiento" name="estadoFuncionamiento" rows="4" placeholder="Verificación del estado de funcionamiento:" required>
-            </div>
-            <div class="inputs-row">
-                <div class="input-group">
-                    <label for="inicioOperacion">Inicio de operación:</label>
-                    <input type="time" id="inicioOperacion" name="inicioOperacion" placeholder="Inicio de operación:" required>
-                </div>
-                <div class="input-group">
-                    <label for="finOperacion">Fin de operación:</label>
-                    <input type="time" id="finOperacion" name="finOperacion" placeholder="Fin de operación:" required> 
-                </div>
-            </div>
-            <div class="input-group">
-                <label for="responsable">Responsable a cargo:</label>
-                <input type="text" id="responsable" name="responsable" placeholder="Responsable a cargo:" required>
-            </div>
-            <div class="input-group">
-                <label for="observaciones">Observaciones:</label>
-                <textarea id="observaciones" name="observaciones" rows="4" placeholder="Observaciones:"></textarea>
+        <div class="overlay-backdrop" id="backdropModal"></div>
+        <div class="overlay-panel modal-tool" id="overlay">
+            <div class="modal-header">
+                <h2>Agregar nuevo registro</h2>
+                <button class="cerrar-modal" id="cerrarModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
 
-            <button type="submit" class="btn-azul">
-                <i class="fa-solid fa-save"></i> Guardar
-            </button>
-        </form>
-    </div>
+            <form class="form">
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="nombreMaquina">Nombre de la máquina:</label>
+                        <input type="text" id="nombreMaquina" name="nombreMaquina" placeholder="Nombre de la maquina:" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="estadoFuncionamiento">Verificación del estado de funcionamiento:</label>
+                    <input id="estadoFuncionamiento" name="estadoFuncionamiento" rows="4" placeholder="Verificación del estado de funcionamiento:" required>
+                </div>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="inicioOperacion">Inicio de operación:</label>
+                        <input type="time" id="inicioOperacion" name="inicioOperacion" placeholder="Inicio de operación:" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="finOperacion">Fin de operación:</label>
+                        <input type="time" id="finOperacion" name="finOperacion" placeholder="Fin de operación:" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="responsable">Responsable a cargo:</label>
+                    <input type="text" id="responsable" name="responsable" placeholder="Responsable a cargo:" required>
+                </div>
+                <div class="input-group">
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" name="observaciones" rows="4" placeholder="Observaciones:"></textarea>
+                </div>
+                <button type="submit" class="btn-azul">
+                    <i class="fa-solid fa-save"></i> Guardar
+                </button>
+            </form>
+        </div>
 
     </template>
     <script src="../scripts/base.js"></script>
