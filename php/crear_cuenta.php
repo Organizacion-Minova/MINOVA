@@ -194,9 +194,12 @@
 
       </form>
 
-      <div class="links-footer">
-        ¿Ya tienes cuenta? <a href="Iniciar_sesion.html">Iniciar sesión</a>
+       <div class="links-footer">
+        <span>¿No recuerdas tu contraseña? <a href="olvido_contraseña.html">Restablecer</a></span>
+        <span>¿Ya tienes cuenta? <a href="Iniciar_sesion.html">Iniciar sesión</a></span>
+        <a href="index.html">Ir al inicio</a>
       </div>
+
 
     </div>
 

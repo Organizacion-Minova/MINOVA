@@ -108,12 +108,12 @@
         <svg class="btn-texto" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
 
-      <a href="Iniciar_sesion.html" class="volver-link">
-        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Volver al inicio de sesión
-      </a>
-
-    </div><!-- /panel1 -->
+     <div class="links-footer">
+        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.html"> Iniciar Sesion</a></span>
+        <span>¿No tienes una cuenta? <a href="crear_cuenta.html">Registrarme</a></span>
+        <a href="index.html">Ir al inicio</a>
+      </div>
+    </div> 
 
     <!-- ── PANEL 2: Código OTP ── -->
     <div class="panel" id="panel2">
@@ -152,7 +152,11 @@
         <svg viewBox="0 0 24 24" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         Cambiar número de documento
       </a>
-
+     <div class="links-footer">
+        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.html"> Iniciar Sesion</a></span>
+        <span>¿No tienes una cuenta? <a href="crear_cuenta.html">Registrarme</a></span>
+        <a href="index.html">Ir al inicio</a>
+      </div>
     </div><!-- /panel2 -->
 
     <!-- ── PANEL 3: Nueva contraseña ── -->
@@ -206,6 +210,12 @@
         <span class="btn-texto">Guardar contraseña</span>
         <svg class="btn-texto" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
+
+       <div class="links-footer">
+        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.html"> Iniciar Sesion</a></span>
+        <span>¿No tienes una cuenta? <a href="crear_cuenta.html">Registrarme</a></span>
+        <a href="index.html">Ir al inicio</a>
+      </div>
 
     </div><!-- /panel3 -->
 
