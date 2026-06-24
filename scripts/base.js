@@ -148,6 +148,7 @@ function _iniciarEventos() {
         });
     }
 
+
     // ── Menú desplegable ──
     document.querySelectorAll(".menu-titulo").forEach(menu => {
         menu.addEventListener("click", function () {
