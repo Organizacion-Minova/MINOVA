@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/estilos_uso_diario.css">
     <link rel="stylesheet" href="../styles/componentes.css">
     <link rel="stylesheet" href="../styles/preguntas.css">
+    <link rel="icon" type="image/png" href="../img/logo-minova.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -38,7 +39,7 @@
                     <i class="fa-regular fa-save"></i>
                     Guardar formulario
                 </button>
-                <a href="tablas_inspeccion.html" class="btn btn-azul">
+                <a href="tablas_inspeccion.php" class="btn btn-azul">
                     <i class="fa-solid fa-list"></i>
                     Formularios guardados
                 </a>
