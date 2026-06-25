@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/componentes.css">
     <link rel="stylesheet" href="../styles/estilos_index.css">
+    <link rel="icon" type="image/png" href="../img/logo-minova.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -102,9 +103,6 @@
                         <li><span class="step-num">4</span><span>Registra nuevas máquinas con código único, número de serie y ubicación asignada.</span></li>
                     </ul>
                 </div>
-                <div class="modulo-card" data-keywords="uso diario registro diario operacion horas inicio fin responsable observaciones exportar excel pdf">
-                    <div class="modulo-card-header">
-                        <div class="modulo-icon verde"><i class="fa-solid fa-clipboard-check"></i></div>
 
                 <div class="card" data-keywords="uso diario registro diario operacion horas inicio fin responsable observaciones exportar excel pdf">
                     <div class="card-title">
@@ -155,15 +153,6 @@
                 </section>
                 <br>
 
-            <div class="card">
-                    <div class="card-title">
-                        <div class="icon blue"><i class="fa-solid fa-circle-question"></i></div>
-                        <h3>Preguntas frecuentes</h3>
-                    </div>
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">¿Cómo recupero mi contraseña si la olvidé?<i class="fa-solid fa-chevron-down arrow"></i></div>
-                    <div class="faq-answer">En la pantalla de inicio de sesión haz clic en <strong>"¿Olvidaste tu contraseña?"</strong>. Ingresa tu correo electrónico registrado y recibirás un enlace para restablecerla. Si no recibes el correo, revisa la carpeta de spam o contacta al administrador del sistema.</div>
-                </div>
 
             <div class="card">
                     <div class="card-title">

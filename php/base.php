@@ -36,7 +36,7 @@
                 </div>
                 <div class="alerts-footer">
                     <button class="btn-azul" >
-                        <a href="alertas.html" >
+                        <a href="alertas.php" >
                         <i class="fa-solid fa-triangle-exclamation"></i> Alertas</a>
                     </button>
                 </div>
@@ -59,29 +59,40 @@
                     </p>
                 </div>
                 <div class="perfil-actions">
-                    <button 
+                    <!-- <button 
                         class="btn-azul"
-                        onclick="irPerfil()"
-                    >
-                        <i class="fa-solid fa-user"></i>
-                        Ver mi perfil
-                    </button>
-                    <button 
+                         onclick="irPerfil()" -->
+                         <a href="perfil.php" class="btn-azul">
+                         <i class="fa-solid fa-user"></i>
+                         Ver mi perfil
+                         </a>
+                    <!-- <button 
                         class="btn-azul"
                         onclick="irSuperadmin()"
                     >
                         <i class="fa-solid fa-shield-halved"></i>
                         Panel Superadmin
-                    </button>
+                    </button> -->
+
+                   <a href="roles_admin.php" class="btn-azul">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    panel Superadmin
+                   </a>
+
                 </div>
                 <div class="perfil-footer">
-                    <button 
+                    <!-- <button 
                         class="btn-azul"
                         onclick="cerrarSesion()"
-                    >
+                    
                         <i class="fa-solid fa-right-from-bracket"></i>
                         Cerrar sesión
-                    </button>
+                    </button> -->
+                    <a href="iniciar_sesion.php" class="btn-azul">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar Sesion
+                    </a>
+
                 </div>
             </div>
               <div class="overlay-panel" id="overlayAlertas">
@@ -136,11 +147,12 @@
             <!-- <nav> -->
                 <ul>
                     <li>
-                        <a href="index.html"></ahref>
+                        <a href="index.php">
                             <i class="fa-solid fa-house"></i>
                             <span>Inicio</span>
                         </a>
                     </li>
+
                     <li class="menu-desplegable">
                         <div class="menu-titulo">
                             <div>

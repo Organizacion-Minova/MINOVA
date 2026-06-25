@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../styles/base.css">
 <link rel="stylesheet" href="../styles/componentes.css">
 <link rel="stylesheet" href="../styles/estilos_inicio_sesion.css">
+<link rel="icon" type="image/png" href="../img/logo-minova.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -109,9 +110,9 @@
       </button>
 
      <div class="links-footer">
-        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.html"> Iniciar Sesion</a></span>
-        <span>¿No tienes una cuenta? <a href="crear_cuenta.html">Registrarme</a></span>
-        <a href="index.html">Ir al inicio</a>
+        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.php"> Iniciar Sesion</a></span>
+        <span>¿No tienes una cuenta? <a href="crear_cuenta.php">Registrarme</a></span>
+        <a href="index.php">Ir al inicio</a>
       </div>
     </div> 
 
@@ -153,9 +154,9 @@
         Cambiar número de documento
       </a>
      <div class="links-footer">
-        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.html"> Iniciar Sesion</a></span>
-        <span>¿No tienes una cuenta? <a href="crear_cuenta.html">Registrarme</a></span>
-        <a href="index.html">Ir al inicio</a>
+        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.php"> Iniciar Sesion</a></span>
+        <span>¿No tienes una cuenta? <a href="crear_cuenta.php">Registrarme</a></span>
+        <a href="index.php">Ir al inicio</a>
       </div>
     </div><!-- /panel2 -->
 
@@ -212,9 +213,9 @@
       </button>
 
        <div class="links-footer">
-        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.html"> Iniciar Sesion</a></span>
-        <span>¿No tienes una cuenta? <a href="crear_cuenta.html">Registrarme</a></span>
-        <a href="index.html">Ir al inicio</a>
+        <span>¿Recordaste tu contraseña?<a href="Iniciar_sesion.php"> Iniciar Sesion</a></span>
+        <span>¿No tienes una cuenta? <a href="crear_cuenta.php">Registrarme</a></span>
+        <a href="index.php">Ir al inicio</a>
       </div>
 
     </div><!-- /panel3 -->
@@ -229,7 +230,7 @@
         <p>Tu contraseña fue actualizada correctamente. Ya puedes iniciar sesión con tus nuevas credenciales.</p>
       </div>
 
-      <a href="Iniciar_sesion.html" class="btn-accion" style="margin-top:24px; text-decoration:none;">
+      <a href="Iniciar_sesion.php" class="btn-accion" style="margin-top:24px; text-decoration:none;">
         <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" width="16" height="16"><path d="M3 12h18M3 12l7-7M3 12l7 7"/></svg>
         <span>Ir al inicio de sesión</span>
       </a>
@@ -238,7 +239,7 @@
     <!-- Footer -->
     <div class="modal-bottom">
       <span class="copy-text">© 2026 MINOVA. Todos los derechos reservados.</span>
-      <a href="ayuda.html" class="btn-ayuda">
+      <a href="ayuda.php" class="btn-ayuda">
         <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
         Ayudas y manuales
       </a>
