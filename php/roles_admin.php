@@ -6,7 +6,7 @@
   <title>MINOVA — Panel de administración</title>
   <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/componentes.css">
-
+  <link rel="icon" type="image/png" href="../img/logo-minova.png">
   <link rel="stylesheet" href="../styles/roles.css">
   <link rel="stylesheet" href="../styles/estilos_tabla.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -148,7 +148,7 @@
 if (!Auth.proteger()) { /* redirige automáticamente */ }
 document.addEventListener('minova:baseLoaded', () => {
   if (!Auth.esAdmin()) {
-    window.location.href = 'index.html';
+    window.location.href = 'index.php';
   }
 });
 

@@ -37,7 +37,7 @@
               <div class="slide-tag"><i class="fa-solid fa-boxes-stacked"></i> Inventario</div>
               <h2>Control Total del Inventario de Repuestos</h2>
               <p>Monitoree stock en tiempo real, anticipe necesidades y reduzca tiempos de inactividad con alertas automáticas.</p>
-              <a href="../html/Iniciar_sesion.html" class="btn-cta">
+              <a href="../php/Iniciar_sesion.php" class="btn-cta">
                 <i class="fa-solid fa-arrow-right-to-bracket"></i> Ingresar al sistema
               </a>
             </div>
@@ -51,7 +51,7 @@
               <div class="slide-tag"><i class="fa-solid fa-chart-line"></i> Análisis</div>
               <h2>Reportes y Análisis en Tiempo Real</h2>
               <p>Tome decisiones basadas en datos con dashboards avanzados, gráficas de estado y reportes automatizados.</p>
-              <a href="../html/Iniciar_sesion.html" class="btn-cta">
+              <a href="../php/Iniciar_sesion.php" class="btn-cta">
                 <i class="fa-solid fa-arrow-right-to-bracket"></i> Ingresar al sistema
               </a>
             </div>
@@ -65,7 +65,7 @@
               <div class="slide-tag"><i class="fa-solid fa-industry"></i> Sector Minero</div>
               <h2>Plataforma Diseñada para el Sector Minero</h2>
               <p>Soluciones adaptadas a los requerimientos operativos de la industria extractiva colombiana, respaldadas por el SENA.</p>
-              <a href="../html/Iniciar_sesion.html" class="btn-cta">
+              <a href="../php/Iniciar_sesion.php" class="btn-cta">
                 <i class="fa-solid fa-arrow-right-to-bracket"></i> Ingresar al sistema
               </a>
             </div>
