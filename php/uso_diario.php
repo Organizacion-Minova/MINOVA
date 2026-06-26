@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../styles/estilos_formulario.css">
     <link rel="stylesheet" href="../styles/estilos_uso_diario.css">
     <link rel="stylesheet" href="../styles/componentes.css">
-    <link rel="icon" type="image/png" href="../img/logo-minova.png">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -31,16 +30,16 @@
                 </div>
             </div>
 
-            <div class="table-wrap">
+            <div class="table-wrap1">
                 <table>
                     <tr>
                         <th colSpan="6">REGISTRO DIARIO DE USO DE MAQUINARIA Y EQUIPOS MINA DIDACTICA</th>
                     </tr>
                     <tr>
                         <th colSpan="2">NOMBRE MAQUINA:</th>
-                        <td colSpan="4"></td>
+                        <td colSpan="4" data-label="Nombre máquina"></td>
                     </tr>
-                    <tr>
+                    <tr class="fila-encabezado">
                         <th>Fecha</th>
                         <th>Verificacion de estado de <br> funcionamiento de la máquina</th>
                         <th>Inicio de operacion</th>
@@ -48,13 +47,13 @@
                         <th>Responsable a cargo</th>
                         <th>Observaciones</th>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr class="fila-datos">
+                        <td data-label="Fecha"></td>
+                        <td data-label="Verificación de estado"></td>
+                        <td data-label="Inicio de operación"></td>
+                        <td data-label="Fin de operación"></td>
+                        <td data-label="Responsable a cargo"></td>
+                        <td data-label="Observaciones"></td>
                     </tr>
                 </table>
             </div>
