@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../styles/base.css ">
     <link rel="stylesheet" href="../styles/estilos_formulario.css">
-    <link rel="stylesheet" href="../styles/estilos_uso_diario.css">
+    <link rel="stylesheet" href="../styles/estilos_index.css">
     <link rel="stylesheet" href="../styles/componentes.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -17,7 +17,7 @@
     <div id="base-container"></div>
 
     <template id="page-content">
-        <div class="grid-contenedor">
+        <div class="grid-contenedor-5">
 
             <div class="welcome">
                 <div>
@@ -29,8 +29,23 @@
                     <span id="fechaActual"></span>
                 </div>
             </div>
-
-            <div class="table-wrap1">
+            <div class="cards">
+                <div class="search-main">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input
+                            type="text"
+                            id="q"
+                            placeholder="Buscar por nombre de maquina, fecha, responsable, observaciones"
+                            oninput="doSearch()"
+                        />
+                    </div>
+                    <button class="btn-buscar" onclick="doSearch()">
+                        <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                    </button>
+                </div>
+            </div>
+            <div class="cards2">
                 <table>
                     <tr>
                         <th colSpan="6">REGISTRO DIARIO DE USO DE MAQUINARIA Y EQUIPOS MINA DIDACTICA</th>
@@ -57,7 +72,6 @@
                     </tr>
                 </table>
             </div>
-            <br>
 
             <div class="btn-container">
                 <button id="abrirModal" class="btn btn-azul">
