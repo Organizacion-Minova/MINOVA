@@ -1,56 +1,78 @@
-.welcome       { grid-area: bienvenida; }
+/* --- Estructura del Grid --- */
+.welcome { grid-area: bienvenida; }
+.table-wrap1 { grid-area: tabla; }
 .btn-container { grid-area: botones; }
-.table-wrap    { grid-area: tabla; }
 
-/* ===== DESKTOP ===== */
+/* Contenedor principal */
 .grid-contenedor {
-    padding: 30px;
     display: grid;
+    min-height: 100vh;
     gap: 20px;
-    grid-template:
-        "bienvenida" auto
-        "tabla"      auto
-        "botones"    auto
-        / 1fr;
+    padding: 20px;
+    grid-template-areas:
+        "bienvenida"
+        "tabla"
+        "botones";
+    grid-template-columns: 1fr;
 }
 
-.table-wrap {
+/* --- Estilos Generales --- */
+body {
+    background: var(--contenedor);
+    margin: 0;
+    font-family: sans-serif; /* Asegúrate de tener tu fuente definida */
+}
+
+table {
     width: 100%;
-    overflow-x: auto;
+    border-collapse: collapse;
 }
 
-.table-wrap table {
-    width: 100%;
-    min-width: 700px;
-}
+/* --- Adaptación a Tablets y Móviles --- */
+@media (max-width: 991px) {
+    .grid-contenedor {
+        gap: 15px;
+        padding: 15px;
+    }
 
-/* ===== MOVIL ===== */
-@media (max-width: 767px) {
+    /* Mejora de legibilidad en tablas pequeñas */
+    table, thead, tbody, th, td, tr {
+        display: block; 
+    }
+    
+    .fila-encabezado { display: none; } /* Ocultamos encabezado en móvil */
+    
+    .fila-datos td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Usamos el atributo data-label para mostrar qué dato es */
+    .fila-datos td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+
     .welcome {
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 1rem;
     }
 }
-/* ===== TABLET ===== */
-@media (max-width: 991px) {
 
-    .grid-contenedor {
-        padding: 20px;
+/* --- Ajuste de Botones para Móvil --- */
+@media (max-width: 600px) {
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .table-wrap table {
-        min-width: 600px;
-    }
-
-    .table-wrap th,
-    .table-wrap td {
-        padding: .75rem;
-        font-size: .85rem;
-    }
-
-    .welcome h1 {
-        font-size: 1.4rem;
+    
+    .btn-container .btn {
+        width: 100%;
     }
 }

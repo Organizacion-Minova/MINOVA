@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         // Cache-busting: fuerza descarga fresca de base.html en cada carga
-        const response = await fetch("../html/base.html?v=" + Date.now());
+        const response = await fetch("../php/base.php?v=" + Date.now());
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const html = await response.text();
 
@@ -132,19 +132,22 @@ function _iniciarEventos() {
 
             overlay.classList.remove("open");
             backdropModal.classList.remove("active");
-
         });
 
     }
 
     // ── Sidebar toggle ──
     const btnSidebar = document.getElementById("toggleSidebar");
-    const sidebar    = document.querySelector(".sidebar");
+    const sidebar = document.getElementById("sidebar");
+    const main = document.getElementById("contenido");
     if (btnSidebar && sidebar) {
         btnSidebar.addEventListener("click", () => {
             sidebar.classList.toggle("cerrado");
+            btnSidebar.classList.toggle("cerrado");
+            main.classList.toggle("cerrado");
         });
     }
+
 
     // ── Menú desplegable ──
     document.querySelectorAll(".menu-titulo").forEach(menu => {
@@ -229,13 +232,13 @@ function marcarTodas() {
 
 }
 function irPerfil() {
-    window.location.href = 'perfil.html';
+    window.location.href = 'perfil.php';
     cerrarTodos();
 
 }
 
 function irSuperadmin() {
-    window.location.href = 'superadmin.html';
+    window.location.href = 'superadmin.php';
     cerrarTodos();
 
 }
@@ -243,7 +246,7 @@ function irSuperadmin() {
 function cerrarSesion() {
 
     if (confirm('¿Deseas cerrar sesión?')) {
-        window.location.href = '../html/Iniciar_sesion.html';
+        window.location.href = '../php/Iniciar_sesion.php';
     }
 
 }

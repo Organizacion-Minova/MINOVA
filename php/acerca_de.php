@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/componentes.css">
-    <link rel="stylesheet" href="../styles/estilos_acerca_de.css">
     <link rel="stylesheet" href="../styles/estilos_index.css">
+    <link rel="icon" type="image/png" href="../img/logo-minova.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -16,8 +16,9 @@
     <div id="base-container"></div>
 
     <template id="page-content">
+        <div class="grid-contenedor">
 
-        <!-- ENCABEZADO -->
+     
         <div class="welcome">
             <div>
                 <h1>Acerca de</h1>
@@ -30,10 +31,7 @@
         </div>
 
         <!-- HERO DEL SISTEMA -->
-        <section class="about-hero panel">
-            <div class="hero-logo">
-                <img src="../img/Minova-logo.png" alt="MINOVA">
-            </div>
+        <section class="panel">
             <div class="hero-info">
                 <h2>MINOVA</h2>
                 <p class="hero-sub">Sistema de Mantenimiento de Máquinas Mineras</p>
@@ -45,8 +43,8 @@
             </div>
         </section>
 
-        <!-- TARJETAS DE CARACTERÍSTICAS -->
-        <section class="features-grid">
+        
+        <section class="cards">
 
             <div class="card">
                 <div class="icon blue">
@@ -57,7 +55,7 @@
             </div>
 
             <div class="card">
-                <div class="icon green">
+                <div class="icon blue">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                 </div>
                 <h3>Control de herramientas</h3>
@@ -65,7 +63,7 @@
             </div>
 
             <div class="card">
-                <div class="icon yellow">
+                <div class="icon blue">
                     <i class="fa-solid fa-bell"></i>
                 </div>
                 <h3>Alertas en tiempo real</h3>
@@ -73,7 +71,7 @@
             </div>
 
             <div class="card">
-                <div class="icon red">
+                <div class="icon blue">
                     <i class="fa-solid fa-clipboard-check"></i>
                 </div>
                 <h3>Registro de uso diario</h3>
@@ -81,16 +79,13 @@
             </div>
 
             <div class="card">
-                <div class="icon green">
+                <div class="icon blue">
                     <i class="fa-solid fa-users"></i>
                 </div>
                 <h3>Administración de usuarios</h3>
                 <p>Control de acceso con roles diferenciados: administrador, técnico y operario.</p>
             </div>
-
         </section>
-
-        <!-- EQUIPO DESARROLLADOR -->
         <section class="panel">
             <div class="panel-title">
                 <h3><i class="fa-solid fa-users"></i> Equipo de desarrollo</h3>
@@ -98,7 +93,7 @@
 
             <div class="team-grid">
 
-                <div class="modulo-card">
+                <div class="team-card">
                     <div class="team-avatar">
                         <img src="../img/santiago2.png" alt="Avatar de Dilan">
                     </div>
@@ -106,7 +101,7 @@
                     <span class="team-role">Frontend Developer</span>
                 </div>
 
-                <div class="modulo-card">
+                <div class="team-card">
                     <div class="team-avatar">
                         <img src="../img/kev.jpeg" alt="Avatar de Kevin"> 
                     </div>
@@ -114,7 +109,7 @@
                     <span class="team-role">Backend Developer</span>
                 </div>
 
-                <div class="modulo-card">
+                <div class="team-card">
                     <div class="team-avatar">
                         <img src="../img/leox.jpeg" alt="Avatar de Leox">
                     </div>
@@ -122,7 +117,7 @@
                     <span class="team-role">Diseño</span>
                 </div>
 
-                <div class="modulo-card">
+                <div class="team-card">
                     <div class="team-avatar">
                         <img src="../img/seba.jpeg" alt="Avatar de Alvaro">
                     </div>
@@ -133,23 +128,7 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
-        <section class="panel">
-            <div class="card">
-                <h3><i class="fa-solid fa-envelope"></i> Contacto</h3>
-            </div>
-            <div class="contact-grid">
-                <div class="co">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>minovaskls@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-regular fa-copyright"></i>
-                    <span>Copyright © 2026 - Todos los derechos reservados.</span>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </template>
 
     <script src="../scripts/base.js"></script>

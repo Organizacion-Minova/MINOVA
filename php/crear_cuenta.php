@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../styles/base.css">
 <link rel="stylesheet" href="../styles/componentes.css">
 <link rel="stylesheet" href="../styles/estilos_inicio_sesion.css">
+<link rel="icon" type="image/png" href="../img/logo-minova.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -194,9 +195,12 @@
 
       </form>
 
-      <div class="links-footer">
-        ¿Ya tienes cuenta? <a href="Iniciar_sesion.html">Iniciar sesión</a>
+       <div class="links-footer">
+        <span>¿No recuerdas tu contraseña? <a href="olvido_contraseña.php">Restablecer</a></span>
+        <span>¿Ya tienes cuenta? <a href="Iniciar_sesion.php">Iniciar sesión</a></span>
+        <a href="index.php">Ir al inicio</a>
       </div>
+
 
     </div>
 
@@ -208,7 +212,7 @@
         </div>
         <h2>¡Cuenta creada!</h2>
         <p>Tu cuenta ha sido registrada exitosamente.<br>Ya puedes iniciar sesión.</p>
-        <button class="btn-azul" onclick="window.location.href='Iniciar_sesion.html'">
+        <button class="btn-azul" onclick="window.location.href='Iniciar_sesion.php'">
           Ir a iniciar sesión
         </button>
       </div>
@@ -217,7 +221,7 @@
   
     <div class="modal-bottom">
       <span class="copy-text">© 2026 MINOVA. Todos los derechos reservados.</span>
-      <a href="ayuda.html" class="btn-ayuda">
+      <a href="ayuda.php"class="btn-ayuda">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
         Ayudas y manuales
       </a>

@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MINOVA - EQUIPOS</title>
-
+    <title>MINOVA - MAQUINAS</title>
     <link rel="stylesheet" href="../styles/base.css ">
+    <link rel="stylesheet" href="../styles/estilos_index.css">
     <link rel="stylesheet" href="../styles/estilos_tabla.css">
     <link rel="stylesheet" href="../styles/componentes.css">
-    <link rel="stylesheet" href="../styles/estilos_index.css">
+    <link rel="icon" type="image/png" href="../img/logo-minova.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div id="base-container"></div>
+
     <template id="page-content">
         <div class="grid-contenedor-5">
-
         <div class="welcome">
             <div>
-                <h1>EQUIPOS</h1>
-                <p>Busqueda y gestion para los equipos.</p>
+                <h1>MAQUINAS</h1>
+                <p>Este es el formato de las máquinas.</p>
+
             </div>
             <div class="date">
                 <i class="fa-regular fa-calendar"></i>
@@ -27,7 +28,6 @@
             </div>
         </div>
         <section class="cards">
-
         <div class="search-main">
             <div class="search-wrapper">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -44,92 +44,116 @@
             </button>
         </div>
         </section>
-       <section class="cards2">
-            <table >
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Código</th>
-                        <th>N° Serie</th>
-                        <th>Tipo</th>
-                        <th>Marca</th>
-                        <th>Ubicación</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                     
-                </tbody>
-            </table>
-        </section>
-        
+        <section class="cards2">
+   
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Código</th>
+                    <th>Número de serie</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Ubicación</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </section>
 
-
+        <div class="btn-container">
             <button id="abrirModal" class="btn btn-azul">
                 <i class="fa-solid fa-plus"></i>
-                Nuevo equipo 
+                Nueva Máquina
             </button>
+        </div>
         <div class="overlay-backdrop" id="backdropModal"></div>
         <div class="overlay-panel modal-tool" id="overlay">
             <div class="modal-header">
-                <h2>Agregar nuevo equipo</h2>
+                <h2>Agregar nueva máquina</h2>
                 <button class="cerrar-modal" id="cerrarModal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <form class="form">
+            <form class="form" >
                 <div class="inputs-row">
                     <div class="input-group">
                         <label for="codigo">Código:</label>
-                        <input type="text" id="codigo" name="codigo" placeholder="Ingrese el código del equipo" required>
+                        <input type="text" id="codigo" name="codigo" placeholder="Código de la máquina" required>
                     </div>
                     <div class="input-group">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del equipo" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre de la máquina" required>
                     </div>
                 </div>
                 <div class="inputs-row">
                     <div class="input-group">
                         <label for="tipo">Tipo:</label>
-                        <input type="text" id="tipo" name="tipo" placeholder="Ingrese el tipo de equipo" required>
+                        <input type="text" id="tipo" name="tipo" placeholder="Tipo de la máquina" required>
                     </div>
                     <div class="input-group">
                         <label for="marca">Marca:</label>
-                        <input type="text" id="marca" name="marca" placeholder="Ingrese la marca del equipo" required>
+                        <input type="text" id="marca" name="marca" placeholder="Marca de la máquina" required>
                     </div>
                 </div>
                 <div class="input-group">
                     <label for="serie">Número de serie:</label>
-                    <input type="text" id="serie" name="serie" placeholder="Ingrese el número de serie del equipo" required>
+                    <input type="text" id="serie" name="serie" placeholder="Número de serie" required>
                 </div>
                 <div class="input-group">
                     <label for="ubicacion">Ubicación:</label>
-                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingrese la ubicación del equipo" required>
+                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ubicación de la máquina" required>
                 </div>
                 <div class="input-group">
                     <label for="estado">Estado:</label>
                     <select id="estado" name="estado" required>
-                        <option value="">Seleccione un estado</option>
                         <option value="Activo">Activo</option>
                         <option value="Mantenimiento">Mantenimiento</option>
                         <option value="Fuera de servicio">Fuera de servicio</option>
                         <option value="Inactivo">Inactivo</option>
                     </select>
                 </div>
-
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="fechaAdquisicion">Fecha de adquisición:</label>
+                        <input type="date" id="fechaAdquisicion" name="fechaAdquisicion">
+                    </div>
+                    <div class="input-group">
+                        <label for="costoAdquisicion">Costo adquisición:</label>
+                        <input type="number" id="costoAdquisicion" name="costoAdquisicion" placeholder="Costo de adquisición">
+                    </div>
+                </div>
+                <div class="inputs-row">
+                    <div class="input-group">
+                        <label for="garantia">Garantía:</label>
+                        <input type="number" id="garantia" name="garantia" placeholder="Garantía en días">
+                    </div>
+                    <div class="input-group">
+                        <label for="categoria">Categoría:</label>
+                        <input type="text" id="categoria" name="categoria" placeholder="Categoría de la máquina">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="imagenMaquina">Imagen:</label>
+                    <input type="file" id="imagenMaquina" name="imagenMaquina" accept="image/*">
+                </div>
+                <div class="btn-container">
                 <button type="submit" class="btn btn-azul">
                     <i class="fa-solid fa-floppy-disk"></i> Guardar
                 </button>
+               
+                 </div>
             </form>
         </div>
     </div>
 
     </template>
 
-   
-    <script src="../scripts/busqueda_equipos.js"></script>
     <script src="../scripts/base.js"></script>
+    <script src="../scripts/busqueda_maquina.js"></script>
 </body>
 </html>

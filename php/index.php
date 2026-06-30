@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-        <!-- TARJETAS -->
+         <!-- TARJETAS -->
             <section class="cards">
             
                 <div class="card">
@@ -142,7 +142,7 @@
             
                 <div class="panel-title">
                     <h3>Alertas recientes</h3>
-                    <a href="alertas.html">Ver todas</a>
+                    <a href="alertas.php">Ver todas</a>
                 </div>
             
                 <div class="alert-item">

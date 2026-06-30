@@ -493,10 +493,15 @@ grid contenedor= grid individual de cada pagina*/
     font-size:24px;
 }
 
+
+
 .blue{
     background:rgba(57,76,170,.15);
     color:var(--principal);
 }
+
+
+
 
 .middle{
     display:grid;
@@ -698,11 +703,11 @@ grid contenedor= grid individual de cada pagina*/
     margin-right:10px;
 }
 
-/* LEYENDA */
 
-.legend p{
-    margin-bottom:12px;
-    color:var(--texto2);
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.25rem;
 }
 
 .team-card {

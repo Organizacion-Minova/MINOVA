@@ -119,10 +119,8 @@
             </div>
         </div>
     </template>
-    <!-- <script src="../scripts/roles.store.js"></script>
-    <script src="../scripts/auth.js"></script> -->
+    
     <script src="../scripts/base.js"></script>
-    <!-- <script>Auth.proteger(['ver_herramientas']);</script> -->
-
+    
 </body>
 </html>

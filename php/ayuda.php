@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/componentes.css">
-    <link rel="stylesheet" href="../styles/estilos_ayuda.css">
-    <link rel="stylesheet" href="../styles/estilos_acerca_de.css">
+    <link rel="stylesheet" href="../styles/estilos_index.css">
+    <link rel="icon" type="image/png" href="../img/logo-minova.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -43,13 +43,9 @@
                     </ul>
                 </div>
 
-                <div class="modulo-card" data-keywords="equipos buscar filtrar agregar codigo serie marca ubicacion estado tipo activo mantenimiento fuera servicio inactivo">
-                    <div class="modulo-card-header">
-                        <div class="modulo-icon verde"><i class="fa-solid fa-gears"></i></div>
                 <div class="card" data-keywords="equipos buscar filtrar agregar codigo serie marca ubicacion estado tipo activo mantenimiento fuera servicio inactivo">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-gears"></i></div>
-
                         <h3>Equipos</h3>
                     </div>
                     <p>Gestión y búsqueda de todos los equipos registrados en el sistema, con filtros avanzados y ordenamiento.</p>
@@ -61,18 +57,13 @@
                         <li><span class="step-num">5</span><span>Haz clic en <strong>Agregar equipo</strong> para registrar uno nuevo.</span></li>
                         <li><span class="step-num">6</span><span>Los estados posibles son: <strong>Activo</strong>, <strong>Mantenimiento</strong>, <strong>Fuera de servicio</strong> e <strong>Inactivo</strong>.</span></li>
                     </ul>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        <span>Puedes combinar varios filtros al mismo tiempo para refinar tu búsqueda.</span>
-                    </div>
+
                 </div>
-                <div class="modulo-card" data-keywords="herramientas consumibles aceites filtros insumos agregar editar eliminar inventario">
-                    <div class="modulo-card-header">
-                        <div class="modulo-icon amarillo"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+
+                <!-- HERRAMIENTAS CONSUMIBLES -->
                 <div class="card" data-keywords="herramientas consumibles aceites filtros insumos agregar editar eliminar inventario">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-
                         <h3>Herramientas Consumibles</h3>
                     </div>
                     <p>Registro y control de herramientas e insumos que se consumen durante el uso, como aceites, filtros y repuestos.</p>
@@ -112,9 +103,7 @@
                         <li><span class="step-num">4</span><span>Registra nuevas máquinas con código único, número de serie y ubicación asignada.</span></li>
                     </ul>
                 </div>
-                <div class="modulo-card" data-keywords="uso diario registro diario operacion horas inicio fin responsable observaciones exportar excel pdf">
-                    <div class="modulo-card-header">
-                        <div class="modulo-icon verde"><i class="fa-solid fa-clipboard-check"></i></div>
+
                 <div class="card" data-keywords="uso diario registro diario operacion horas inicio fin responsable observaciones exportar excel pdf">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-clipboard-check"></i></div>
@@ -128,17 +117,14 @@
                         <li><span class="step-num">4</span><span>Usa <strong>Exportar PDF</strong> para generar un informe imprimible.</span></li>
                         <li><span class="step-num">5</span><span>Este formulario debe llenarse al inicio y al final de cada jornada operativa.</span></li>
                     </ul>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        <span>El registro diario es obligatorio para llevar trazabilidad del uso de cada máquina.</span>
-                    </div>
                 </div>
                 </section>
-                <section class="middle">          
+                <section class="middle">
+            
+                <!-- USUARIOS -->
                 <div class="card" data-keywords="usuarios roles permisos crear cuenta administrador superadmin perfil contraseña">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-users"></i></div>
-
                         <h3>Usuarios</h3>
                     </div>
                     <p>Administración de cuentas de usuario, roles y permisos de acceso al sistema MINOVA.</p>
@@ -167,47 +153,26 @@
                 </section>
                 <br>
 
+
             <div class="card">
                     <div class="card-title">
                         <div class="icon blue"><i class="fa-solid fa-circle-question"></i></div>
                         <h3>Preguntas frecuentes</h3>
                     </div>
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Cómo recupero mi contraseña si la olvidé?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
-                    <div class="faq-answer">
-                        En la pantalla de inicio de sesión haz clic en <strong>"¿Olvidaste tu contraseña?"</strong>. Ingresa tu correo electrónico registrado y recibirás un enlace para restablecerla. Si no recibes el correo, revisa la carpeta de spam o contacta al administrador del sistema.
-                    </div>
+                    <div class="faq-question">¿Cómo agrego un nuevo equipo al sistema?<i class="fa-solid fa-chevron-down arrow"></i></div>
+                    <div class="faq-answer">Ve a <strong>Equipos</strong> en el menú lateral y haz clic en el botón <strong>"Agregar equipo"</strong>. Completa el formulario con el código, nombre, tipo, marca, número de serie, ubicación y estado inicial. Guarda los cambios para que quede registrado en el sistema.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Cómo agrego un nuevo equipo al sistema?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Ve a <strong>Equipos</strong> en el menú lateral y haz clic en el botón <strong>"Agregar equipo"</strong>. Completa el formulario con el código, nombre, tipo, marca, número de serie, ubicación y estado inicial. Guarda los cambios para que quede registrado en el sistema.
-                    </div>
+                    <div class="faq-question">¿Cómo exporto el registro de uso diario?<i class="fa-solid fa-chevron-down arrow"></i></div>
+                    <div class="faq-answer">En la página <strong>Uso Diario</strong> encontrarás dos botones: <strong>Exportar Excel</strong> y <strong>Exportar PDF</strong>. El primero descarga un archivo .xlsx con todos los registros. El segundo genera un PDF listo para imprimir.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Cómo exporto el registro de uso diario?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
+                    <div class="faq-question">¿Qué significa cada estado de un equipo?<i class="fa-solid fa-chevron-down arrow"></i></div>
                     <div class="faq-answer">
-                        En la página <strong>Uso Diario</strong> encontrarás dos botones: <strong>Exportar Excel</strong> y <strong>Exportar PDF</strong>. El primero descarga un archivo .xlsx con todos los registros. El segundo genera un PDF listo para imprimir.
-                    </div>
-                </div>
-
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Qué significa cada estado de un equipo?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
-                    <div class="faq-answer">
+                        <!-- Reutiliza .badge y .badge-* definidos en base.css -->
                         <span class="badge badge-activo">Activo</span> — el equipo está en funcionamiento normal.<br><br>
                         <span class="badge badge-mantto">Mantenimiento</span> — fuera de operación temporalmente para mantenimiento preventivo o correctivo.<br><br>
                         <span class="badge badge-fuera">Fuera de servicio</span> — no puede operar por avería o reparación mayor.<br><br>
@@ -216,43 +181,23 @@
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Cómo silencio o marco como leídas las alertas?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Haz clic en el ícono <i class="fa-solid fa-bell"></i> en la barra superior. En el panel desplegable haz clic en <strong>"Marcar todas como leídas"</strong> para resetear el contador a cero. Las alertas críticas deben atenderse antes de descartarlas.
-                    </div>
+                    <div class="faq-question">¿Cómo silencio o marco como leídas las alertas?<i class="fa-solid fa-chevron-down arrow"></i></div>
+                    <div class="faq-answer">Haz clic en el ícono de campana en la barra superior. En el panel desplegable haz clic en <strong>"Marcar todas como leídas"</strong> para resetear el contador a cero. Las alertas críticas deben atenderse antes de descartarlas.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Cómo cierro sesión de forma segura?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Haz clic en tu foto de perfil en la esquina superior derecha. En el menú desplegable haz clic en <strong>"Cerrar sesión"</strong>. Se recomienda hacerlo siempre al terminar tu jornada, especialmente en equipos compartidos.
-                    </div>
+                    <div class="faq-question">¿Cómo cierro sesión de forma segura?<i class="fa-solid fa-chevron-down arrow"></i></div>
+                    <div class="faq-answer">Haz clic en tu foto de perfil en la esquina superior derecha. En el menú desplegable haz clic en <strong>"Cerrar sesión"</strong>. Se recomienda hacerlo siempre al terminar tu jornada, especialmente en equipos compartidos.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Puedo acceder al sistema desde el celular?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Sí. MINOVA está diseñado con un layout responsivo que se adapta a dispositivos móviles y tabletas. Abre el navegador de tu dispositivo y accede a la misma URL del sistema.
-                    </div>
+                    <div class="faq-question">¿Puedo acceder al sistema desde el celular?<i class="fa-solid fa-chevron-down arrow"></i></div>
+                    <div class="faq-answer">Sí. MINOVA está diseñado con un layout responsivo que se adapta a dispositivos móviles y tabletas. Abre el navegador de tu dispositivo y accede a la misma URL del sistema.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        ¿Con qué frecuencia se realiza el backup automático?
-                        <i class="fa-solid fa-chevron-down arrow"></i>
-                    </div>
-                    <div class="faq-answer">
-                        El sistema realiza backups automáticos periódicamente. Recibirás una alerta de <strong>prioridad BAJA</strong> en el panel de notificaciones cada vez que se complete un backup correctamente. El administrador puede configurar la frecuencia desde el panel Superadmin.
-                    </div>
+                    <div class="faq-question">¿Con qué frecuencia se realiza el backup automático?<i class="fa-solid fa-chevron-down arrow"></i></div>
+                    <div class="faq-answer">El sistema realiza backups automáticos periódicamente. Recibirás una alerta de <strong>prioridad BAJA</strong> en el panel de notificaciones cada vez que se complete un backup correctamente. El administrador puede configurar la frecuencia desde el panel Superadmin.</div>
                 </div>
 
             </div>
@@ -260,32 +205,6 @@
     </template>
 
     <script src="../scripts/base.js"></script>
-    <script>
-        /* ── Fecha dinámica ── */
-        (function () {
-            const el = document.getElementById('fecha-ayuda');
-            if (el) {
-                el.textContent = new Date().toLocaleDateString('es-CO', {
-                day: 'numeric', month: 'long', year: 'numeric'
-                });
-            }
-        })();
-
-        /* ── FAQ accordion ── */
-        function toggleFaq(item) {
-            item.classList.toggle('open');
-        }
-
-        /* ── Búsqueda de ayuda ── */
-        function filtrarAyuda() {
-            const q = document.getElementById('help-search-input').value.toLowerCase().trim();
-            document.querySelectorAll('.modulo-card').forEach(card => {
-                const keywords = (card.dataset.keywords || '').toLowerCase();
-                const text     = card.innerText.toLowerCase();
-                card.style.display = (!q || keywords.includes(q) || text.includes(q)) ? '' : 'none';
-            });
-        }
-    </script>
 
 </body>
 </html>
