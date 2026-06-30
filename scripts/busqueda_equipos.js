@@ -41,6 +41,11 @@ let paginaActual = 1;
 // ============================================================
 //  BADGES DE ESTADO
 // ============================================================
+function getValue(id) {
+    const el = document.getElementById(id);
+    return el ? el.value : '';
+}
+
 function badge(estado) {
     const clases = {
         'Activo':            'badge-activo',
@@ -55,14 +60,14 @@ function badge(estado) {
 //  BÚSQUEDA Y FILTROS
 // ============================================================
 function doSearch() {
-    const q      = (document.getElementById('q').value || '').toLowerCase().trim();
-    const estado = document.getElementById('f-estado').value;
-    const tipo   = document.getElementById('f-tipo').value;
-    const marca  = document.getElementById('f-marca').value;
-    const codigo = (document.getElementById('f-codigo').value || '').toLowerCase().trim();
-    const serie  = (document.getElementById('f-serie').value  || '').toLowerCase().trim();
-    const ubic   = (document.getElementById('f-ubic').value   || '').toLowerCase().trim();
-    const orden  = document.getElementById('sort').value;
+    const q      = (getValue('q') || '').toLowerCase().trim();
+    const estado = getValue('f-estado');
+    const tipo   = getValue('f-tipo');
+    const marca  = getValue('f-marca');
+    const codigo = (getValue('f-codigo') || '').toLowerCase().trim();
+    const serie  = (getValue('f-serie') || '').toLowerCase().trim();
+    const ubic   = (getValue('f-ubic') || '').toLowerCase().trim();
+    const orden  = getValue('sort') || 'nombre';
 
     filtrados = equipos.filter(m => {
         const texto = `${m.nombre} ${m.codigo} ${m.serie} ${m.marca} ${m.tipo} ${m.ubicacion}`.toLowerCase();
@@ -100,6 +105,8 @@ function renderChips(q, estado, tipo, marca, codigo, serie, ubic) {
     ].filter(c => c.activo);
 
     const contenedor = document.getElementById('chips');
+    if (!contenedor) return;
+
     contenedor.innerHTML = '';
 
     lista.forEach(item => {
@@ -115,8 +122,11 @@ function render() {
     const inicio = (paginaActual - 1) * POR_PAGINA;
     const pagina = filtrados.slice(inicio, inicio + POR_PAGINA);
 
-    document.getElementById('rcount').textContent = filtrados.length;
+    const countEl = document.getElementById('rcount');
+    if (countEl) countEl.textContent = filtrados.length;
+
     const tbody = document.getElementById('tbody');
+    if (!tbody) return;
 
     if (!filtrados.length) {
         tbody.innerHTML = `
@@ -162,6 +172,7 @@ function renderPaginacion() {
     const total = Math.ceil(filtrados.length / POR_PAGINA);
     const pag   = document.getElementById('paginacion');
 
+    if (!pag) return;
     if (total <= 1) { pag.innerHTML = ''; return; }
 
     let html = `<span class="pg-info">Página ${paginaActual} de ${total}</span>`;
@@ -186,6 +197,7 @@ function irPagina(p) {
 function toggleFiltros() {
     const panel  = document.getElementById('filtrosPanel');
     const btn    = document.getElementById('btnFiltros');
+    if (!panel || !btn) return;
     const abierto = panel.classList.toggle('open');
     btn.classList.toggle('activo', abierto);
 }
@@ -202,17 +214,22 @@ function limpiarFiltros() {
 //  MODAL
 // ============================================================
 function abrirModal() {
-    document.getElementById('overlay').classList.add('open');
-    document.getElementById('backdropModal').classList.add('active');
+    const overlay = document.getElementById('overlay');
+    const backdrop = document.getElementById('backdropModal');
+    if (overlay) overlay.classList.add('open');
+    if (backdrop) backdrop.classList.add('active');
 }
 
 function cerrarModal() {
-    document.getElementById('overlay').classList.remove('open');
-    document.getElementById('backdropModal').classList.remove('active');
+    const overlay = document.getElementById('overlay');
+    const backdrop = document.getElementById('backdropModal');
+    if (overlay) overlay.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('active');
     indiceEditando = null;
-    document.querySelector('#overlay form').reset();
-    document.querySelector('#overlay .modal-header h3').innerHTML =
-        '<i class="fa-solid fa-plus"></i> Agregar nuevo equipo';
+    const form = document.querySelector('#overlay form');
+    if (form) form.reset();
+    const title = document.querySelector('#overlay .modal-header h2, #overlay .modal-header h3');
+    if (title) title.innerHTML = '<i class="fa-solid fa-plus"></i> Agregar nuevo equipo';
 }
 
 function guardarEquipo(e) {
@@ -251,8 +268,8 @@ function editarEquipo(indice) {
     document.getElementById('ubicacion').value = m.ubicacion;
     document.getElementById('estado').value    = m.estado;
 
-    document.querySelector('#overlay .modal-header h3').innerHTML =
-        '<i class="fa-solid fa-pencil"></i> Editar equipo';
+    const title = document.querySelector('#overlay .modal-header h2, #overlay .modal-header h3');
+    if (title) title.innerHTML = '<i class="fa-solid fa-pencil"></i> Editar equipo';
     abrirModal();
 }
 

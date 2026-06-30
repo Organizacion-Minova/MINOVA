@@ -29,6 +29,11 @@ let indiceEditando = null;
 // ============================================================
 //  BADGES DE ESTADO
 // ============================================================
+function getValue(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : '';
+}
+
 function badge(estado) {
   const clases = {
     'Activo':            'badge-activo',
@@ -43,14 +48,14 @@ function badge(estado) {
 //  BÚSQUEDA Y FILTROS
 // ============================================================
 function doSearch() {
-  const q      = (document.getElementById('q').value || '').toLowerCase().trim();
-  const estado = document.getElementById('f-estado').value;
-  const tipo   = document.getElementById('f-tipo').value;
-  const marca  = document.getElementById('f-marca').value;
-  const codigo = (document.getElementById('f-codigo').value || '').toLowerCase().trim();
-  const serie  = (document.getElementById('f-serie').value || '').toLowerCase().trim();
-  const ubic   = (document.getElementById('f-ubic').value || '').toLowerCase().trim();
-  const orden  = document.getElementById('sort').value;
+  const q      = (getValue('q') || '').toLowerCase().trim();
+  const estado = getValue('f-estado');
+  const tipo   = getValue('f-tipo');
+  const marca  = getValue('f-marca');
+  const codigo = (getValue('f-codigo') || '').toLowerCase().trim();
+  const serie  = (getValue('f-serie') || '').toLowerCase().trim();
+  const ubic   = (getValue('f-ubic') || '').toLowerCase().trim();
+  const orden  = getValue('sort');
 
   filtrados = maquinas.filter(m => {
     const texto = `${m.nombre} ${m.codigo} ${m.serie} ${m.marca} ${m.tipo} ${m.ubicacion}`.toLowerCase();
@@ -87,6 +92,8 @@ function renderChips(q, estado, tipo, marca, codigo, serie, ubic) {
   ].filter(c => c.activo);
 
   const contenedor = document.getElementById('chips');
+  if (!contenedor) return;
+
   contenedor.innerHTML = '';
 
   lista.forEach(item => {
@@ -100,7 +107,10 @@ function renderChips(q, estado, tipo, marca, codigo, serie, ubic) {
 
 function render() {
   const tbody = document.getElementById('tbody');
-  document.getElementById('rcount').textContent = filtrados.length;
+  if (!tbody) return;
+
+  const countEl = document.getElementById('rcount');
+  if (countEl) countEl.textContent = filtrados.length;
 
   if (!filtrados.length) {
     tbody.innerHTML = `
@@ -138,6 +148,7 @@ function render() {
 function toggleFiltros() {
   const panel = document.getElementById('filtrosPanel');
   const btn   = document.getElementById('btnFiltros');
+  if (!panel || !btn) return;
   const abierto = panel.classList.toggle('open');
   btn.classList.toggle('activo', abierto);
 }
@@ -151,16 +162,22 @@ function limpiarFiltros() {
 }
 
 function abrirModal() {
-  document.getElementById('overlay').classList.add('open');
-  document.getElementById('backdropModal').classList.add('active');
+  const overlay = document.getElementById('overlay');
+  const backdrop = document.getElementById('backdropModal');
+  if (overlay) overlay.classList.add('open');
+  if (backdrop) backdrop.classList.add('active');
 }
 
 function cerrarModal() {
-  document.getElementById('overlay').classList.remove('open');
-  document.getElementById('backdropModal').classList.remove('active');
+  const overlay = document.getElementById('overlay');
+  const backdrop = document.getElementById('backdropModal');
+  if (overlay) overlay.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('active');
   indiceEditando = null;
-  document.querySelector('#overlay form').reset();
-  document.querySelector('#overlay .modal-header h2').textContent = 'Agregar nueva máquina';
+  const form = document.querySelector('#overlay form');
+  if (form) form.reset();
+  const title = document.querySelector('#overlay .modal-header h2');
+  if (title) title.textContent = 'Agregar nueva máquina';
 }
 
 function guardarMaquina(e) {

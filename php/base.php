@@ -154,12 +154,11 @@
                     </li>
 
                     <li class="menu-desplegable">
-                        <div class="menu-titulo">
-                            <div>
+                        <a class="menu-titulo">
+                          
                                 <i class="fa-solid fa-screwdriver-wrench"></i>
                                 <span>Herramientas</span>
-                            </div>
-                        </div>
+                        </a>
 
                         <ul class="submenu">
                             <br><li><a href="herramientas_con.php"><i class="fa-solid fa-wrench"></i> <span>Consumibles</span></a></li><br>

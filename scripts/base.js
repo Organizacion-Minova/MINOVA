@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             'index.php': 'inicio',
             'equipos.php': 'equipos',
             'reportes.php': 'reportes',
-            'uso_diario.php': 'uso diario',
+            'uso_diario.php': 'diario',
             'usuarios.php': 'usuarios',
             'ubicaciones.php': 'ubicaciones',
             'maquinas.php': 'maquinas',
-            'herramientas_con.php': 'herramientas_consumibles',
+            'herramientas_con.php': 'consumibles',
             'acerca_de.php': 'acerca de',
             'ayuda.php': 'ayuda'
         };
