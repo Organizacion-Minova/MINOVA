@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MINOVA - MAQUINAS</title>
     <link rel="stylesheet" href="../styles/base.css ">
-    <link rel="stylesheet" href="../styles/estilos_ubicaciones.css">
+    <link rel="stylesheet" href="../styles/estilos_index.css">
     <link rel="stylesheet" href="../styles/estilos_tabla.css">
     <link rel="stylesheet" href="../styles/componentes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,21 +14,19 @@
     <div id="base-container"></div>
 
     <template id="page-content">
+        <div class="grid-contenedor-5">
         <div class="welcome">
             <div>
                 <h1>MAQUINAS</h1>
                 <p>Este es el formato de las máquinas.</p>
 
-
-                
             </div>
-
-
             <div class="date">
                 <i class="fa-regular fa-calendar"></i>
                 <span id="fechaActual"></span>
             </div>
         </div>
+        <section class="cards">
         <div class="search-main">
             <div class="search-wrapper">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -39,84 +37,14 @@
                     oninput="doSearch()"
                 />
             </div>
-            <button class="btn-filtros" id="btnFiltros" onclick="toggleFiltros()">
-                <i class="fa-solid fa-sliders"></i> Filtros
-            </button>
+
             <button class="btn-buscar" onclick="doSearch()">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
         </div>
-
-        <!-- PANEL DE FILTROS AVANZADOS -->
-        <div class="filters-panel" id="filtrosPanel">
-            <div class="filters-grid">
-                <div class="filter-group">
-                    <label>Estado</label>
-                    <select id="f-estado" onchange="doSearch()">
-                        <option value="">Todos</option>
-                        <option value="Activo">Activo</option>
-                        <option value="Mantenimiento">Mantenimiento</option>
-                        <option value="Fuera de servicio">Fuera de servicio</option>
-                        <option value="Inactivo">Inactivo</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Tipo</label>
-                    <select id="f-tipo" onchange="doSearch()">
-                        <option value="">Todos</option>
-                        <option value="Excavadora">Excavadora</option>
-                        <option value="Retroexcavadora">Retroexcavadora</option>
-                        <option value="Cargador">Cargador</option>
-                        <option value="Malacate">Malacate</option>
-                        <option value="Vagoneta">Vagoneta</option>
-                        <option value="Pulmón">Pulmón</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Marca</label>
-                    <select id="f-marca" onchange="doSearch()">
-                        <option value="">Todas</option>
-                        <option value="CAT">CAT</option>
-                        <option value="JCB">JCB</option>
-                        <option value="Komatsu">Komatsu</option>
-                        <option value="Volvo">Volvo</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Código</label>
-                    <input type="text" id="f-codigo" placeholder="EQ-001…" oninput="doSearch()" />
-                </div>
-                <div class="filter-group">
-                    <label>Número de serie</label>
-                    <input type="text" id="f-serie" placeholder="SN-…" oninput="doSearch()" />
-                </div>
-                <div class="filter-group">
-                    <label>Ubicación</label>
-                    <input type="text" id="f-ubic" placeholder="Zona, área…" oninput="doSearch()" />
-                </div>
-            </div>
-            <div class="filters-actions">
-                <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar filtros</button>
-                <button class="btn-aplicar" onclick="doSearch()">Aplicar</button>
-            </div>
-        </div>
-
-        <!-- CHIPS DE FILTROS ACTIVOS -->
-        <div class="chips-row" id="chips"></div>
-
-        <!-- META Y ORDENAMIENTO -->
-        <div class="results-meta">
-            <span>Mostrando <strong id="rcount">0</strong> equipos</span>
-            <select class="sort-sel" id="sort" onchange="doSearch()">
-                <option value="nombre">Ordenar: Nombre A-Z</option>
-                <option value="codigo">Ordenar: Código</option>
-                <option value="estado">Ordenar: Estado</option>
-                <option value="tipo">Ordenar: Tipo</option>
-                <option value="marca">Ordenar: Marca</option>
-            </select>
-        </div>
-        <!-- tabla -->
-        <div class="table-wrap">
+        </section>
+        <section class="cards2">
+   
         <table>
             <thead>
                 <tr>
@@ -131,11 +59,10 @@
                 </tr>
             </thead>
             <tbody id="tbody">
-                <!-- Aquí se insertarán los resultados de la búsqueda -->
             </tbody>
         </table>
-        <br>
-        <br>
+    </section>
+
         <div class="btn-container">
             <button id="abrirModal" class="btn btn-azul">
                 <i class="fa-solid fa-plus"></i>
@@ -221,6 +148,7 @@
                  </div>
             </form>
         </div>
+    </div>
 
     </template>
 

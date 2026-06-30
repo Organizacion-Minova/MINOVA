@@ -22,6 +22,12 @@
 }
 * {
     font-family: 'Segoe UI', sans-serif;
+    
+}
+
+body{
+    width: 100%;
+    height: 100vh;background: var(--contenedor);
 }
 
 /* ======================
@@ -589,7 +595,6 @@ main,
 }
 
 .form { display: flex; flex-direction: column; gap: 1rem; }
-
 .input-group        { display: flex; flex-direction: column; }
 .inputs-row         { display: flex; gap: 1rem; }
 .input-group label  { margin-bottom: .4rem; font-size: .9rem; font-weight: 600; color: var(--texto); flex-direction: column; }
@@ -614,53 +619,6 @@ main,
     border-color: var(--principal);
     box-shadow: 0 0 0 .2rem rgba(1,4,64,.12);
 }
-
-.container { flex: 1; display: flex; }
-
-.sidebar {
-    width: 260px;
-    background: var(--principal);
-    color: var(--white);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: 0.3s;
-}
-.sidebar.cerrado { width: 70px; }
-.sidebar.cerrado a,
-.sidebar.cerrado span,
-.sidebar.cerrado .flecha { display: none; }
-
-.sidebar ul { list-style: none; }
-
-.sidebar > ul > li {
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .3s;
-}
-.menu-titulo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-.menu-titulo div { display: flex; align-items: center; gap: 12px; }
-
-.sidebar li i     { font-size: 16px; width: 18px; text-align: center; flex-shrink: 0; }
-.sidebar li a     { color: var(--white); text-decoration: none; }
-.sidebar li:hover { background: rgba(255,255,255,.15); }
-.sidebar .active  { background: rgba(255,255,255,.20); }
-
-.sidebar .submenu             { list-style: none; padding-left: 20px; margin-top: 10px; display: none; }
-.menu-desplegable .submenu        { display: none; }
-.menu-desplegable.activo .submenu { display: block; }
-
-.flecha { transition: 0.3s; }
-.menu-desplegable.activo .flecha { transform: rotate(180deg); }
-
 .logout {
     width: 100%;
     display: flex;
@@ -752,9 +710,6 @@ footer {
 .logout i{
     font-size:18px;
 }
-
-
-
 
 footer{
     background:var(--Azul-difuminado);
