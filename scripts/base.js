@@ -15,16 +15,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
         const mapa = {
-            'index.html': 'inicio',
-            'equipos.html': 'equipos',
-            'reportes.html': 'reportes',
-            'uso_diario.html': 'uso diario',
-            'usuarios.html': 'usuarios',
-            'ubicaciones.html': 'ubicaciones',
-            'maquinas.html': 'maquinas',
-            'herramientas_con.html': 'herramientas_consumibles',
-            'acerca_de.html': 'acerca de',
-            'ayuda.html': 'ayuda'
+            'index.php': 'inicio',
+            'equipos.php': 'equipos',
+            'reportes.php': 'reportes',
+            'uso_diario.php': 'diario',
+            'usuarios.php': 'usuarios',
+            'ubicaciones.php': 'ubicaciones',
+            'maquinas.php': 'maquinas',
+            'herramientas_con.php': 'consumibles',
+            'acerca_de.php': 'acerca de',
+            'ayuda.php': 'ayuda'
         };
 
         const activo = mapa[pagina];
