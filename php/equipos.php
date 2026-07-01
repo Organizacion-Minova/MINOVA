@@ -15,7 +15,6 @@
 <body>
     <div id="base-container"></div>
     <template id="page-content">
-        <div class="grid-contenedor-5">
 
         <div class="welcome">
             <div>
@@ -27,7 +26,6 @@
                 <span id="fechaActual"></span>
             </div>
         </div>
-        <section class="cards">
 
         <div class="search-main">
             <div class="search-wrapper">
@@ -39,14 +37,85 @@
                     oninput="doSearch()"
                 />
             </div>
-
+            <button class="btn-filtros" id="btnFiltros" onclick="toggleFiltros()">
+                <i class="fa-solid fa-sliders"></i> Filtros
+            </button>
             <button class="btn-buscar" onclick="doSearch()">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
         </div>
-        </section>
-       <section class="cards2">
-            <table >
+
+        <div class="filters-panel" id="filtrosPanel">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Estado</label>
+                    <select id="f-estado" onchange="doSearch()">
+                        <option value="">Todos</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                        <option value="Fuera de servicio">Fuera de servicio</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Tipo</label>
+                    <select id="f-tipo" onchange="doSearch()">
+                        <option value="">Todos</option>
+                        <option value="Excavadora">Excavadora</option>
+                        <option value="Retroexcavadora">Retroexcavadora</option>
+                        <option value="Cargador">Cargador</option>
+                        <option value="Malacate">Malacate</option>
+                        <option value="Vagoneta">Vagoneta</option>
+                        <option value="Pulmón">Pulmón</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Marca</label>
+                    <select id="f-marca" onchange="doSearch()">
+                        <option value="">Todas</option>
+                        <option value="CAT">CAT</option>
+                        <option value="JCB">JCB</option>
+                        <option value="Komatsu">Komatsu</option>
+                        <option value="Volvo">Volvo</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Código</label>
+                    <input type="text" id="f-codigo" placeholder="EQ-001…" oninput="doSearch()" />
+                </div>
+                <div class="filter-group">
+                    <label>Número de serie</label>
+                    <input type="text" id="f-serie" placeholder="SN-…" oninput="doSearch()" />
+                </div>
+                <div class="filter-group">
+                    <label>Ubicación</label>
+                    <input type="text" id="f-ubic" placeholder="Zona, área…" oninput="doSearch()" />
+                </div>
+            </div>
+            <div class="filters-actions">
+                <button class="btn-limpiar" onclick="limpiarFiltros()">Limpiar filtros</button>
+                <button class="btn-aplicar" onclick="doSearch()">Aplicar</button>
+            </div>
+        </div>
+
+
+        <div class="chips-row" id="chips"></div>
+
+
+        <div class="results-meta">
+            <span>Mostrando <strong id="rcount">0</strong> equipos</span>
+            <select class="sort-sel" id="sort" onchange="doSearch()">
+                <option value="nombre">Ordenar: Nombre A-Z</option>
+                <option value="codigo">Ordenar: Código</option>
+                <option value="estado">Ordenar: Estado</option>
+                <option value="tipo">Ordenar: Tipo</option>
+                <option value="marca">Ordenar: Marca</option>
+            </select>
+        </div>
+
+   
+        <div class="table-wrap">
+            <table>
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -63,15 +132,21 @@
                      
                 </tbody>
             </table>
-        </section>
+            <br>
+            <br>
+        </div>
         
-
+        <div class="btn-container">
 
             <button id="abrirModal" class="btn btn-azul">
                 <i class="fa-solid fa-plus"></i>
                 Nuevo equipo 
             </button>
+
+              
         <div class="overlay-backdrop" id="backdropModal"></div>
+
+   
         <div class="overlay-panel modal-tool" id="overlay">
             <div class="modal-header">
                 <h2>Agregar nuevo equipo</h2>
@@ -125,7 +200,6 @@
                 </button>
             </form>
         </div>
-    </div>
 
     </template>
  

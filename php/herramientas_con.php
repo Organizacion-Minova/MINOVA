@@ -5,118 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MINOVA - HERRAMIENTAS</title>
 
-    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/base.css ">
     <link rel="stylesheet" href="../styles/estilos_tabla.css">
     <link rel="stylesheet" href="../styles/componentes.css">
-    <link rel="stylesheet" href="../styles/estilos_index.css">
+    <link rel="stylesheet" href="../styles/herramientas.css">
     <link rel="icon" type="image/png" href="../img/logo-minova.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
     <div id="base-container"></div>
 
     <template id="page-content">
-        <div class="grid-contenedor-5">
-            <div class="welcome">
-                <div>
-                    <h1>HERRAMIENTAS CONSUMIBLES</h1>
-                    <p>Este es el formato de las herramientas consumibles.</p>
-                </div>
-
-                <div class="date">
-                    <i class="fa-regular fa-calendar"></i>
-                    <span id="fechaActual"></span>
-                </div>
-            </div>
-            <section class="cards">
-                    <div class="search-main">
-                    <div class="search-wrapper">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input
-                            type="text"
-                            id="q"
-                            placeholder="Buscar por nombre, código, número de serie, marca, ubicación…"
-                            oninput="doSearch()"
-                        />
-                    </div>
-
-                    <button class="btn-buscar" onclick="doSearch()">
-                        <i class="fa-solid fa-magnifying-glass"></i> Buscar
-                    </button>
-                </div>
+        <div class="grid-contenedor">
+        <div class="welcome">
+            <div>
                 
-            </section>
-            
-        
-        <section class="cards2">
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Tipo Herramienta</th>
-                        <th>Descripción</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Aceites</td>
-                        <td>Los aceites son consumibles usados para lubricar y proteger motores, máquinas y equipos.</td>
-                        <td><button class="btn-azul"><i class="fa-solid fa-eye"></i></button>
-                        <button class="btn-azul"><i class="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>            
-                </tbody>
-            </table>
-            </section>
+                <h1>HERRAMIENTAS CONSUMIBLES</h1>
+                <p>Este es el formato de las herramientas consumibles.</p>
+            </div>
 
-                <button class="btn-azul" id="abrirModal">
-                    <i class="fa-solid fa-plus"></i> Agregar tipo herramienta
+            <div class="date">
+                <i class="fa-regular fa-calendar"></i>
+                <span id="fechaActual"></span>
+            </div>
+        </div>
+       
+    
+        <table class ="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo Herramienta</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Aceites</td>
+                <td>Los aceites son consumibles usados para lubricar y proteger motores, máquinas y equipos, reduciendo el desgaste y mejorando su funcionamiento.</td>
+                <td><button class="btn-azul"><i class="fa-solid fa-eye"></i></button><button class="btn-azul"><i class="fa-solid fa-trash"></i></button></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <!-- BOTON -->
+        <div class="btn-container">
+            <button class="btn-azul" id="abrirModal">
+                <i class="fa-solid fa-plus"></i> Agregar tipo herramienta
+            </button>
+        </div>
+            
+            
+
+    
+        <div class="overlay-backdrop" id="backdropModal"></div>
+
+        <div class="overlay-panel modal-tool" id="overlay">
+
+            <div class="modal-header">
+                <h3>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    Nueva Herramienta
+                </h3>
+
+                <button class="cerrar-modal" id="cerrarModal">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
+            </div>
 
-            <div class="overlay-backdrop" id="backdropModal"></div>
+            <form class="form">
 
-            <div class="overlay-panel modal-tool" id="overlay">
-
-                <div class="modal-header">
-                    <h3>
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                        Nueva Herramienta
-                    </h3>
-
-                    <button class="cerrar-modal" id="cerrarModal">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
+                <div class="input-group">
+                    <label>ID</label>
+                    <input type="number" placeholder="Ingrese el ID" required>
                 </div>
 
-                <form class="form">
+                <div class="input-group">
+                    <label>Tipo Herramienta</label>
+                    <input type="text" placeholder="Ingrese el tipo de herramienta" required>
+                </div>
 
-                    <div class="input-group">
-                        <label>ID</label>
-                        <input type="number" placeholder="Ingrese el ID" required>
-                    </div>
+                <div class="input-group">
+                    <label>Descripción</label>
+                    <textarea placeholder="Ingrese la descripción" required></textarea>
+                </div>
 
-                    <div class="input-group">
-                        <label>Tipo Herramienta</label>
-                        <input type="text" placeholder="Ingrese el tipo de herramienta" required>
-                    </div>
+                <div class="btn-container">
+                <button type="submit" class="btn btn-azul">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Guardar
+                </button>
+                </div>
 
-                    <div class="input-group">
-                        <label>Descripción</label>
-                        <textarea placeholder="Ingrese la descripción" required></textarea>
-                    </div>
+            </form>
 
-                    <div class="btn-container">
-                    <button type="submit" class="btn btn-azul">
-                        <i class="fa-solid fa-floppy-disk"></i>
-                        Guardar
-                    </button>
-                    </div>
-
-                </form>
-            </div>
+        </div>
         </div>
     </template>
     

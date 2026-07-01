@@ -6,8 +6,8 @@
   <title>MINOVA - MI PERFIL</title>
 
   <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/perfil.css">
   <link rel="stylesheet" href="../styles/componentes.css">
-  <link rel="stylesheet" href="../styles/estilos_index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
   <div id="base-container"></div>
 
   <template id="page-content">
-    <div class="grid-contenedor-3">
+    <div class="grid-contenedor">
 
       <div class="welcome">
         <div>
@@ -27,11 +27,10 @@
           <span id="fechaActual"></span>
         </div>
       </div>
-      <section class="cards">
-        <div class="card" style="text-align: center;">
-        <br>
-        <br>
-        <br>
+
+      <div class="perfil-wrapper">
+
+        <div class="panel tarjeta-avatar">
           <div class="avatar-section">
             <div class="avatar-wrap" onclick="document.getElementById('inputFoto').click()">
               <img id="avatarImg" src="https://ui-avatars.com/api/?name=Usuario&background=01044080&color=fff&size=110" alt="Avatar">
@@ -44,51 +43,70 @@
           </div>
           <div class="perfil-nombre-rol">
             <h3 id="nombreCompleto">Nombre Apellido</h3>
-            <span class="rol-badge" >
+            <span class="rol-badge">
               <i class="fa-solid fa-shield-halved"></i>
               <span id="rolUsuario">Rol</span>
             </span>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-title">
-                <div class="icon blue"><i class="fa-solid fa-address-card icono-titulo"></i></div>
-                <h3>Información de contacto</h3>
+        <div class="panel tarjeta-contacto">
+          <div class="seccion-titulo-row">
+            <div>
+              <h3>
+                <i class="fa-solid fa-address-card icono-titulo"></i>
+                Información de contacto
+              </h3>
+              <p>Datos registrados en el sistema.</p>
+            </div>
           </div>
-          <p>Datos registrados en el sistema.</p>
-          <ul class="steps">
-            <li><span class="step-num"><i class="fa-solid fa-id-card"></i></span><span>CC ___________</span></li>
-            <li><span class="step-num"><i class="fa-regular fa-envelope"></i></span><span>correo@ejemplo.co</span></li>
-            <li><span class="step-num"><i class="fa-solid fa-phone"></i></span><span>300 000 0000</span></li>
-            <li><span class="step-num"><i class="fa-regular fa-calendar-check"></i></span><span>Miembro desde ___</span></li>
-          </ul>
 
-        </section>
-        <section class="cards2">
-        <div class="card">
-          <div class="card-title">
-                <div class="icon blue"><i class="fa-solid fa-user icono-titulo"></i></div>
-                <h3>Datos personales</h3>
-                  <button class="btn-azul" style="margin-left: auto;" id="btnEditarDatos">
-                    <i class="fa-solid fa-pen-to-square"></i> Editar
-                  </button>
+          <div class="perfil-dato-lateral">
+            <i class="fa-solid fa-id-card"></i>
+            <span>CC ___________</span>
           </div>
-          <p>Edita tu información personal.</p><br>
-          <div class="form" id="formDatos">
-            <div class="inputs-row">
-              <div class="input-group">
+          <div class="perfil-dato-lateral">
+            <i class="fa-regular fa-envelope"></i>
+            <span>correo@ejemplo.co</span>
+          </div>
+          <div class="perfil-dato-lateral">
+            <i class="fa-solid fa-phone"></i>
+            <span>300 000 0000</span>
+          </div>
+          <div class="perfil-dato-lateral">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Miembro desde ___</span>
+          </div>
+        </div>
+
+        <div class="panel perfil-seccion">
+          <div class="seccion-titulo-row">
+            <div>
+              <h3>
+                <i class="fa-solid fa-user icono-titulo"></i>
+                Datos personales
+              </h3>
+              <p>Edita tu información personal.</p>
+            </div>
+            <button class="btn-editar" id="btnEditarDatos">
+              <i class="fa-solid fa-pen-to-square"></i> Editar
+            </button>
+          </div>
+
+          <div class="form-col" id="formDatos">
+            <div class="form-pair">
+              <div class="form-field">
                 <label for="inputNombre">Nombre</label>
                 <input type="text" id="inputNombre" placeholder="Nombre" disabled>
               </div>
-              <div class="input-group">
+              <div class="form-field">
                 <label for="inputApellido">Apellido</label>
                 <input type="text" id="inputApellido" placeholder="Apellido" disabled>
               </div>
             </div>
 
-            <div class="inputs-row">
-              <div class="input-group">
+            <div class="form-pair">
+              <div class="form-field">
                 <label for="inputTipoDoc">Tipo de documento</label>
                 <select id="inputTipoDoc" disabled>
                   <option value="">Selecciona…</option>
@@ -97,42 +115,47 @@
                   <option value="PP">Pasaporte</option>
                 </select>
               </div>
-              <div class="input-group">
+              <div class="form-field">
                 <label for="inputDoc">Número de documento</label>
                 <input type="text" id="inputDoc" placeholder="Número de documento" disabled>
               </div>
             </div>
 
-            <div class="inputs-row">
-              <div class="input-group">
+            <div class="form-pair">
+              <div class="form-field">
                 <label for="inputCorreo">Correo electrónico</label>
                 <input type="email" id="inputCorreo" placeholder="correo@ejemplo.co" disabled>
               </div>
-              <div class="input-group">
+              <div class="form-field">
                 <label for="inputTelefono">Teléfono</label>
                 <input type="tel" id="inputTelefono" placeholder="300 000 0000" disabled>
               </div>
             </div>
 
-            <div class="input-group">
+            <div class="form-field">
               <label for="inputDireccion">Dirección</label>
               <input type="text" id="inputDireccion" placeholder="Calle, ciudad" disabled>
             </div>
 
-              <button class="btn-azul" id="btnGuardar">
+            <div id="areaGuardar" class="hidden">
+              <button class="btn-guardar" id="btnGuardar">
                 <i class="fa-solid fa-floppy-disk"></i> Guardar cambios
               </button>
-
+            </div>
           </div>
         </div>
-      </section>
-      <section class="middle">
-        <div class="card">
-          <div class="card-title"> 
-                <div class="icon blue"><i class="fa-solid fa-lock icono-titulo"></i></div>
-                <h3>Seguridad</h3>
+
+        <div class="panel perfil-seccion">
+          <div class="seccion-titulo-row">
+            <div>
+              <h3>
+                <i class="fa-solid fa-lock icono-titulo"></i>
+                Seguridad
+              </h3>
+              <p>Contraseña y acceso a la cuenta.</p>
+            </div>
           </div>
-          <p>Contraseña y acceso a la cuenta.</p>
+
           <div class="seguridad-item">
             <div class="seg-info">
               <div class="seg-icon"><i class="fa-solid fa-key"></i></div>
@@ -141,7 +164,7 @@
                 <div class="seg-desc">Última actualización: —</div>
               </div>
             </div>
-            <button class="btn-azul">
+            <button class="btn-cambiar">
               <i class="fa-solid fa-rotate-right"></i> Cambiar
             </button>
           </div>
@@ -154,18 +177,22 @@
                 <div class="seg-desc">No configurada</div>
               </div>
             </div>
-            <button class="btn-azul">
+            <button class="btn-cambiar">
               <i class="fa-solid fa-plus"></i> Activar
             </button>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-title">
-                <div class="icon blue"><i class="fa-solid fa-clock-rotate-left icono-titulo"></i></div>
-                <h3>Últimos accesos</h3>
+        <div class="panel perfil-seccion tarjeta-accesos">
+          <div class="seccion-titulo-row sin-borde">
+            <div>
+              <h3>
+                <i class="fa-solid fa-clock-rotate-left icono-titulo"></i>
+                Últimos accesos
+              </h3>
+              <p>Historial reciente de sesiones.</p>
+            </div>
           </div>
-          <p>Historial reciente de sesiones.</p>
 
           <div class="historial-wrap">
             <div class="historial-item">
@@ -182,7 +209,8 @@
             </div>
           </div>
         </div>
-      </section>
+
+      </div>
     </div>
   </template>
 
