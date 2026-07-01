@@ -81,25 +81,10 @@
       <div id="alerta1" class="alert alert-error"></div>
 
       <div class="campo">
-        <label>Tipo de documento</label>
-        <div class="select-wrap">
-          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9 12h6M9 16h6M9 8h2M5 3h14a2 2 0 012 2v16a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
-          <select id="tipoDoc">
-            <option value="" disabled selected>Selecciona un tipo...</option>
-            <option value="CC">CC  Cédula de Ciudadanía</option>
-            <option value="TI">TI  Tarjeta de Identidad</option>
-            <option value="CE">CE – Cédula de Extranjería</option>
-            <option value="PA">PA – Pasaporte</option>
-          </select>
-          <svg class="chevron" viewBox="0 0 24 24" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>Número de documento</label>
+        <label>Correo Electronico</label>
         <div class="input-group" id="wrapDoc">
           <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <input type="text" id="numDoc" placeholder="Ej: 1234567890" inputmode="numeric">
+          <input type="email" id="numDoc" placeholder="Ej: usuario@ejemplo.com">
         </div>
       </div>
 
