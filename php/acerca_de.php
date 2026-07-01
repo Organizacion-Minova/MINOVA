@@ -95,10 +95,10 @@
 
                 <div class="team-card">
                     <div class="team-avatar">
-                        <img src="../img/santiago2.png" alt="Avatar de Dilan">
+                        <img src="../img/santiagodictador.jpeg" alt="Avatar de Dilan">
                     </div>
                     <h4>Dilan Santiago</h4>
-                    <span class="team-role">Frontend Developer</span>
+                    <span class="team-role">Dictador</span>
                 </div>
 
                 <div class="team-card">

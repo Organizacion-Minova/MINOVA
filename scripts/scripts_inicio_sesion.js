@@ -14,6 +14,30 @@
   setInterval(siguiente, 4500);
 })();
 
+document.getElementById('rol').addEventListener('change', function() {
+    const contenedorTipo = document.getElementById('contenedor-tipo-tecnico');
+    const selectTipo = document.getElementById('tipo_tecnico');
+    const errTipo = document.getElementById('errTipo_tecnico'); 
+    const okTipo = document.getElementById('okTipo_tecnico');   
+    
+    if (this.value === 'tecnico') {
+        // Mostrar el menú secundario de forma visible
+        contenedorTipo.style.display = 'block';
+        // Hacerlo obligatorio solo si es técnico
+        selectTipo.setAttribute('required', 'required');
+    } else {
+        // Ocultar si eligen Administrador o Recepcionista
+        contenedorTipo.style.display = 'none';
+        // Quitar la obligación y restablecer su valor
+        selectTipo.removeAttribute('required');
+        selectTipo.value = ""; 
+        
+        // Limpiar los estados y clases de validación residuales
+        contenedorTipo.classList.remove('valido', 'invalido');
+        if (errTipo) errTipo.classList.remove('visible');
+        if (okTipo)  okTipo.classList.remove('visible');
+    }
+});
 /* ═══════════════════════════════════════════
    2. TOGGLE VER / OCULTAR CONTRASEÑA
    Compartido por crear_cuenta y recuperar_contraseña
@@ -147,27 +171,59 @@ function calcularFuerza(pass) {
   const form = document.getElementById('registroForm');
   if (!form) return;
 
+  // 1. Añadimos 'rol' y 'tipo_tecnico' a las REGLAS
   const REGLAS = {
     nombre:    { re: /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]{2,50}$/ },
     apellido:  { re: /^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]{2,50}$/ },
     email:     { re: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+    rol:       { custom: v => v !== '' }, // Validar que seleccionen un rol
     tipoDoc:   { custom: v => v !== '' },
     numDoc:    { re: /^\d{6,15}$/ },
     telefono:  { re: /^3\d{9}$/ },
     password:  { custom: v => v.length >= 8 },
     confirmar: { custom: v => v.length > 0 && v === document.getElementById('password').value },
+    tipo_tecnico: { 
+      custom: v => {
+        const rol = document.getElementById('rol').value;
+        // Solo es obligatorio si el rol seleccionado es 'tecnico'
+        if (rol === 'tecnico') {
+          return v !== '';
+        }
+        return true; // Si es otro rol, pasa la validación automáticamente
+      } 
+    }
   };
 
   function validarCampo(campo) {
     const input = document.getElementById(campo);
+    if (!input) return true; // Si el elemento no existe en el HTML, saltar
+
+    // Modificación para encontrar correctamente tu contenedor 'contenedor-tipo-tecnico' o 'grp...'
     const cap   = campo.charAt(0).toUpperCase() + campo.slice(1);
-    const grp   = document.getElementById('grp' + cap);
+    let grp     = document.getElementById('grp' + cap);
+    
+    // Caso especial para tu diseño de tipo técnico
+    if (campo === 'tipo_tecnico') {
+      grp = document.getElementById('contenedor-tipo-tecnico');
+      // Si el contenedor está oculto, limpiar clases y devolver válido sin tocar nada
+      if (grp && grp.style.display === 'none') {
+        grp.classList.remove('valido', 'invalido');
+        const errT = document.getElementById('errTipo_tecnico');
+        const okT  = document.getElementById('okTipo_tecnico');
+        if (errT) errT.classList.remove('visible');
+        if (okT)  okT.classList.remove('visible');
+        return true;
+      }
+    }
+    
     const err   = document.getElementById('err' + cap);
     const ok    = document.getElementById('ok'  + cap);
-    if (!input || !grp) return true;
+    if (!grp) return true;
 
     const val   = input.value.trim ? input.value.trim() : input.value;
     const regla = REGLAS[campo];
+    if (!regla) return true; // Si no hay regla, es válido
+    
     const esValido = regla.re ? regla.re.test(val) : regla.custom(input.value);
 
     grp.classList.toggle('valido',   esValido);
@@ -202,10 +258,17 @@ function calcularFuerza(pass) {
     if (!el) return;
     el.addEventListener('blur', () => validarCampo(campo));
     el.addEventListener('input', function () {
-      const cap = campo.charAt(0).toUpperCase() + campo.slice(1);
-      const grp = document.getElementById('grp' + cap);
-      if (grp && (grp.classList.contains('valido') || grp.classList.contains('invalido'))) {
-        validarCampo(campo);
+      if (campo === 'tipo_tecnico') {
+        const grp = document.getElementById('contenedor-tipo-tecnico');
+        if (grp && (grp.classList.contains('valido') || grp.classList.contains('invalido'))) {
+          validarCampo(campo);
+        }
+      } else {
+        const cap = campo.charAt(0).toUpperCase() + campo.slice(1);
+        const grp = document.getElementById('grp' + cap);
+        if (grp && (grp.classList.contains('valido') || grp.classList.contains('invalido'))) {
+          validarCampo(campo);
+        }
       }
     });
   });
@@ -231,12 +294,14 @@ function calcularFuerza(pass) {
     if (!todoValido) {
       if (alertaTxt) alertaTxt.textContent = 'Por favor corrige los campos marcados en rojo antes de continuar.';
       if (alerta) alerta.classList.add('visible');
-      const primerError = document.querySelector('.input-group.invalido input, .input-group.invalido select');
+      
+      // Ajuste para enfocar también el select si falla
+      const primerError = document.querySelector('.input-group.invalido input, .input-group.invalido select, .form-group.invalido select');
       if (primerError) primerError.focus();
       return;
     }
 
-    if (alerta) alerta.classList.remove('visible');
+    if (alerta) alerta.remove('visible'); // O .classList.remove('visible') dependiendo de tu CSS
 
     /* ── Aquí iría el fetch/POST al servidor ── */
 

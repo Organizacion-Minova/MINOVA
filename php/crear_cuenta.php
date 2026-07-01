@@ -102,6 +102,36 @@
           </div>
           <span class="msg-error" id="errEmail">Ingresa un correo válido (ej: usuario@gmail.com).</span>
         </div>
+        <div class="campo">
+          <label for="rol">Postularse para rol <span class="req"></span></label>
+          <div class="input-group" id="grpRol">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
+       <select id="rol" name="rol" required onchange="var c=document.getElementById('contenedor-tipo-tecnico'),s=document.getElementById('tipo_tecnico');if(this.value==='tecnico'){c.style.setProperty('display','block','important');s.setAttribute('required','required');}else{c.style.setProperty('display','none','important');s.removeAttribute('required');s.value='';c.classList.remove('valido','invalido');}">
+        <option value="">Selecciona un rol</option>
+        <option value="Administrador">Administrador</option>
+        <option value="Recepcionista">Recepcionista</option>
+        <option value="tecnico">Tecnico</option>
+    </select>
+</div>
+
+<div class="campo">
+  <div class="form-group" id="contenedor-tipo-tecnico" style="display: none; margin-top: 15px;">
+    <label for="tipo_tecnico" class="form-label fw-bold small text-muted">Seleccione el tipo de técnico *</label>
+    <div class="input-group">
+      <span class="input-group-text bg-light text-muted">
+        <i class="bi bi-tools"></i> 
+      </span>
+      <select id="tipo_tecnico" name="tipo_tecnico" class="form-select form-control-lg bg-light-subtle">
+          <option value="">--Elige una especialidad--</option>
+          <option value="Electricista">Electricista</option>
+          <option value="Mecanico">Mecánico</option>
+          <option value="Operador">Operador</option>
+          <option value="Supervisor">Supervisor</option>
+      </select>
+    </div>
+  </div>
+</div>
+        </div>
 
        
         <div class="form-row">
@@ -226,10 +256,12 @@
         Ayudas y manuales
       </a>
     </div>
-
+    
   </div>
+
 </div>
 
 <script src="../scripts/scripts_inicio_sesion.js"></script>
+
 </body>
 </html>
